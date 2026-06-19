@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { basePath } from "../../../lib/basePath";
 
 export default function Navbar() {
   type NavLink = {
@@ -21,7 +22,7 @@ export default function Navbar() {
         <Link href={"/"} className="flex cursor-none">
           <div className="relative w-15 h-15" style={{ perspective: "800px" }}>
             <Image
-              src="/logo-animation/bp-logo-back-animation.png"
+              src={`${basePath}/logo-animation/bp-logo-back-animation.png`}
               width={60}
               height={60}
               alt=""
@@ -37,7 +38,7 @@ export default function Navbar() {
               }}
             >
               <Image
-                src="/logo-animation/b-logo.png"
+                src={`${basePath}/logo-animation/b-logo.png`}
                 width={60}
                 height={60}
                 alt="BloomPoint logo"

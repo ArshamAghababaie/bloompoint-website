@@ -150,7 +150,7 @@ export default function Projects() {
               <div className="absolute inset-0 bg-linear-to-br from-neutral-800 to-neutral-900 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                 <div className="text-center text-neutral-600">
                   <Image
-                    src="/bp-logo-white.png"
+                    src={`${basePath}/bp-logo-white.png`}
                     width={60}
                     height={60}
                     alt="Project placeholder"
