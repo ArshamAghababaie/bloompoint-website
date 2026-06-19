@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import { categories, projects, type Category } from "./projects-data";
+import { basePath } from "../../../lib/basePath";
 
 export default function Projects() {
   const [selectedCategories, setSelectedCategories] = useState<Set<Category>>(

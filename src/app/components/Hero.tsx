@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { basePath } from "../../../lib/basePath";
 
 type LogoItem = {
   file: string;
@@ -97,7 +98,7 @@ function OrbitRingLayer({
                   className="rounded-xl border border-neutral-600/30 bg-neutral-800/20 overflow-hidden flex items-center justify-center"
                 >
                   <Image
-                    src={`/logos-hero/${logo.file}`}
+                    src={`${basePath}/logos-hero/${logo.file}`}
                     width={imgSize}
                     height={imgSize}
                     alt=""
