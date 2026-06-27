@@ -145,7 +145,7 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <Link
               key={project.id}
-              href={`${basePath}/projects/${project.slug}`}
+              href={`/projects/${project.slug}`}
               className="group relative overflow-hidden aspect-square bg-neutral-900 cursor-none rounded-2xl"
             >
               {/* Placeholder Image */}

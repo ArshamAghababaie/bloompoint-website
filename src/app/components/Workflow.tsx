@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { basePath } from "../../../lib/basePath";
 
 export default function Workflow() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -76,7 +77,7 @@ export default function Workflow() {
       </div>
       <div className="relative flex -top-10 right-60 justify-end">
         <Image
-          src="/bloomPoint-workflow.png"
+          src={`${basePath}/bloomPoint-workflow.png`}
           width={1100}
           height={1100}
           alt="bloomPoint_workflow"

@@ -31,7 +31,7 @@ export default function Footer() {
         <div>
           <div className="flex text-2xl font-DMSans font-bold items-center mb-2">
             <Image
-              src="/bp-logo-white.png"
+              src={`${basePath}/bp-logo-white.png`}
               alt="BloomPoint Logo"
               width={70}
               height={50}
