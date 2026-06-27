@@ -27,6 +27,14 @@ export default function Solutions() {
         "Prototyping the Problem or Need",
         "Short-Term Results",
       ],
+      backsvg: (
+        <div className="absolute inset-0">
+          <div className="absolute h-5 w-5 rounded-full bg-neutral-200 bottom-[38.6px] left-10 z-10" />
+          <div className="absolute h-5 w-5 rounded-full bg-neutral-200 bottom-[38.6px] left-80 z-10" />
+          <div className="absolute h-8 w-8 rounded-full bg-yellow bottom-8 right-11 z-10 duration-500 delay-200 group-hover:bg-neutral-900" />
+          <div className="dashed-line absolute bottom-12 left-0" />
+        </div>
+      ),
     },
     {
       title: "Circle",
@@ -36,15 +44,26 @@ export default function Solutions() {
         // "Designated Community",
         "Focusing on a specific part of the business community (Designated Community)",
         "Fully Strategy Plan",
-        "Long-Term Results",
         "Supervision",
         "Coordination",
+        "Long-Term Results",
       ],
+      backsvg: (
+        <div className="absolute inset-0">
+          <div className="dashed-circle absolute -bottom-40 -right-31" />
+          <div className="absolute h-5 w-5 rounded-full bg-neutral-200 z-10 bottom-40 right-3" />
+          <div className="absolute h-5 w-5 rounded-full bg-neutral-200 z-10 bottom-4 right-51.5" />
+          <div className="absolute h-8 w-8 rounded-full bg-yellow z-10 bottom-32.5 right-38 duration-500 delay-200 group-hover:bg-neutral-900" />
+        </div>
+      ),
     },
   ];
 
   return (
-    <div id="solutions" className="h-screen px-10 bg-neutral-950 text-yellow">
+    <div
+      id="solutions"
+      className="relative z-10 h-screen px-10 bg-neutral-950 text-yellow"
+    >
       <div className="reveal flex items-center pt-20">
         <div className="w-6 h-px bg-yellow" />
         <span className="pl-2 text-xs font-DMSans tracking-widest uppercase">
@@ -116,12 +135,13 @@ export default function Solutions() {
                     key={i}
                     className="pt-3 pr-52 font-DMSans font-light text-neutral-400 transition duration-500 delay-200 group-hover:text-neutral-800"
                   >
-                    <span className="pr-2 font-DMSans font-light text-yellow transition duration-500 delay-200 group-hover:text-neutral-800">
+                    <span className="text-base pr-2 font-DMSans font-light text-yellow transition duration-500 delay-200 group-hover:text-neutral-800">
                       →
                     </span>
-                    <span key={i} className="">
+                    <span key={i} className="text-base">
                       {item}
                     </span>
+                    {s.backsvg}
                   </div>
                 ))}
               </div>

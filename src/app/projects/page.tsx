@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import { categories, projects, type Category } from "./projects-data";
 import { basePath } from "../../../lib/basePath";
+import Footer from "../components/Footer";
 
 export default function Projects() {
   const [selectedCategories, setSelectedCategories] = useState<Set<Category>>(
@@ -74,7 +75,7 @@ export default function Projects() {
           <h1 className="uppercase text-7xl md:text-8xl">Projects</h1>
         </div>
         <div className="reveal reveal-delay-2 text-neutral-500 font-DMSans pb-12">
-          <p className="w-full md:w-125 text-sm md:text-base">
+          <p className="w-full md:w-100 text-sm md:text-base">
             You could explore our projects with their specific, extensive scales
             and subjects.
           </p>
@@ -135,17 +136,17 @@ export default function Projects() {
       </div>
 
       {/* Projects Grid */}
-      <div className="reveal reveal-delay-4 px-10 md:px-16 lg:px-20 bg-neutral-950 py-16 md:py-24">
+      <div className="hero-reveal hero-reveal-delay-4 px-10 md:px-16 lg:px-20 bg-neutral-950 py-16 md:py-24">
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 transition-all duration-200 ${
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 transition-all duration-200 ${
             isAnimating ? "opacity-0 scale-[0.98]" : "opacity-100 scale-100"
           }`}
         >
           {filteredProjects.map((project) => (
             <Link
               key={project.id}
-              href={`/projects/${project.slug}`}
-              className="group relative overflow-hidden aspect-square bg-neutral-900 cursor-none"
+              href={`${basePath}/projects/${project.slug}`}
+              className="group relative overflow-hidden aspect-square bg-neutral-900 cursor-none rounded-2xl"
             >
               {/* Placeholder Image */}
               <div className="absolute inset-0 bg-linear-to-br from-neutral-800 to-neutral-900 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
@@ -164,7 +165,7 @@ export default function Projects() {
               {/* Hover Overlay with Name */}
               <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div className="flex items-center justify-between w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bebas text-white text-2xl md:text-3xl uppercase">
+                  <h3 className="font-bebas text-white text-xl md:text-2xl uppercase">
                     {project.name}
                   </h3>
                   <svg
@@ -200,6 +201,7 @@ export default function Projects() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

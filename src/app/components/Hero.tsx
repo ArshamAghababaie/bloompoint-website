@@ -1,25 +1,58 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { basePath } from "../../../lib/basePath";
 
 type LogoItem = {
   file: string;
+  name: string;
   boxSize?: number;
-  rounded?: boolean;
   imgScale?: number;
 };
 
+// NORMAL COLORIZED LOGOS
+
 const LOGOS: LogoItem[] = [
-  { file: "Aseh.png" },
-  { file: "Bahaman.png" },
-  { file: "Crouse.png", imgScale: 2 },
-  { file: "DBST.png", imgScale: 1.6 },
-  { file: "Darasiab.jpg", rounded: true },
-  { file: "Keunee.png", rounded: true },
-  { file: "Mahram.png" },
-  { file: "Mammut.jpg", rounded: true },
-  { file: "Talashim.png" },
+  { file: "Aseh.png", name: "Aseh" },
+  { file: "Bahaman.png", name: "Bahaman" },
+  { file: "Crouse.png", name: "Crouse", imgScale: 1.5 },
+  { file: "DBST.png", name: "DBST", imgScale: 1.6 },
+  { file: "Darasiab.jpg", name: "Darasiab" },
+  { file: "Keunee.png", name: "Keune" },
+  { file: "Mahram.png", name: "Mahram" },
+  { file: "Mammut.jpg", name: "Mammut" },
+  { file: "Talashim.png", name: "Talashim", imgScale: 1.1 },
 ];
+
+// NEGATIVE LOGOS
+
+// const LOGOS: LogoItem[] = [
+//   { file: "Aseh-negative.jpg", name: "Aseh" },
+//   { file: "BAHAMAN-negative.jpg", name: "Bahaman" },
+//   { file: "Crouse-negative.jpg", name: "Crouse" },
+//   { file: "DBST-negative.jpg", name: "DBST", imgScale: 1.6 },
+//   { file: "Darasiab-negative.jpg", name: "Darasiab" },
+//   { file: "Keunee-negative.jpg", name: "Keune" },
+//   { file: "Mahram-negative.jpg", name: "Mahram" },
+//   { file: "Mammut-negative.jpg", name: "Mammut" },
+//   { file: "Talashim-negative.jpg", name: "Talashim", imgScale: 0.5 },
+// ];
+
+// WHITE LOGOS
+
+// const LOGOS: LogoItem[] = [
+//   { file: "Aseh.png", name: "Aseh" },
+//   { file: "BAHAMAN.png", name: "Bahaman" },
+//   { file: "Crouse.png", name: "Crouse" },
+//   { file: "DBST.png", name: "DBST", imgScale: 1.6 },
+//   { file: "Darasiab.png", name: "Darasiab" },
+//   { file: "Keunee.png", name: "Keune" },
+//   { file: "Mahram.png", name: "Mahram" },
+//   { file: "Mammut.png", name: "Mammut" },
+//   { file: "Talashim.png", name: "Talashim", imgScale: 0.5 },
+// ];
 
 type OrbitRing = {
   diameter: string;
@@ -35,37 +68,41 @@ const ORBIT_RINGS: OrbitRing[] = [
     count: 3,
     duration: 95,
     direction: "ccw",
-    box: 60,
+    box: 40,
   },
   {
     diameter: "clamp(360px, 52vw, 620px)",
     count: 3,
     duration: 120,
     direction: "cw",
-    box: 60,
+    box: 40,
   },
   {
     diameter: "clamp(440px, 64vw, 780px)",
     count: 3,
     duration: 150,
     direction: "ccw",
-    box: 60,
+    box: 40,
   },
 ];
 
 function OrbitRingLayer({
   ring,
   logoOffset,
+  onHoverChange,
+  allHighlighted,
 }: {
   ring: OrbitRing;
   logoOffset: number;
+  onHoverChange: (hovered: boolean) => void;
+  allHighlighted: boolean;
 }) {
   const spinAnim = ring.direction === "cw" ? "orbit-cw" : "orbit-ccw";
   const counterAnim = ring.direction === "cw" ? "orbit-ccw" : "orbit-cw";
 
   return (
     <div
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-700 dashed"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-700 dashed pointer-events-none"
       style={{ width: ring.diameter, height: ring.diameter }}
     >
       <div
@@ -90,25 +127,35 @@ function OrbitRingLayer({
                 }}
               >
                 <div
-                  style={{
-                    width: box,
-                    height: box,
-                    transform: `rotate(-${angle}deg)`,
-                  }}
-                  className="rounded-xl border border-neutral-600/30 bg-neutral-800/20 overflow-hidden flex items-center justify-center"
+                  className="group/logo relative pointer-events-auto"
+                  style={{ transform: `rotate(-${angle}deg)` }}
+                  onMouseEnter={() => onHoverChange(true)}
+                  onMouseLeave={() => onHoverChange(false)}
                 >
-                  <Image
-                    src={`${basePath}/logos-hero/${logo.file}`}
-                    width={imgSize}
-                    height={imgSize}
-                    alt=""
-                    className={`object-contain ${logo.rounded ? "rounded-xl w-full h-full" : ""}`}
-                    style={
-                      logo.imgScale
-                        ? { transform: `scale(${logo.imgScale})` }
-                        : undefined
-                    }
-                  />
+                  <div
+                    style={{ width: box, height: box }}
+                    className={`rounded-full border border-neutral-600/30 bg-neutral-800/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2] group-hover/logo:border-yellow/40 group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] border-yellow/40! shadow-[0_0_18px_4px_rgba(234,179,8,0.25)]" : ""}`}
+                  >
+                    <Image
+                      src={`${basePath}/logos-hero/${logo.file}`}
+                      // src={`${basePath}/logo-hero-new/negative/${logo.file}`}
+                      // src={`${basePath}/logo-hero-new/white/${logo.file}`}
+                      width={imgSize}
+                      height={imgSize}
+                      alt={logo.name}
+                      className={`object-cover rounded-full w-full h-full transition-opacity duration-300 ${allHighlighted ? "opacity-100" : "opacity-0"} group-hover/logo:opacity-100`}
+                      style={
+                        logo.imgScale
+                          ? { transform: `scale(${logo.imgScale})` }
+                          : undefined
+                      }
+                    />
+                  </div>
+                  <span
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-5.5 px-2.5 py-1 text-[11px] font-DMSans text-neutral-300 bg-neutral-800/80 backdrop-blur-sm rounded-lg whitespace-nowrap transition-opacity duration-300 pointer-events-none ${allHighlighted ? "opacity-100" : "opacity-0"} group-hover/logo:opacity-100`}
+                  >
+                    {logo.name}
+                  </span>
                 </div>
               </div>
             </div>
@@ -120,17 +167,31 @@ function OrbitRingLayer({
 }
 
 export default function Hero() {
+  const [logoHovered, setLogoHovered] = useState(false);
+  const [exploreHovered, setExploreHovered] = useState(false);
+  const anyHighlight = logoHovered || exploreHovered;
   const segments = ["SMEs", "LARGE ENTERPRISES", "CITIES"];
 
   return (
-    <div className="relative h-screen flex justify-center items-center bg-neutral-950 text-neutral-100 overflow-hidden">
-      {/* Logo orbits - ambient background only, kept faint so text stays fully legible */}
-      <div className="orbit-mask absolute inset-0 flex items-center justify-center opacity-[0.35]">
+    <div
+      id="hero"
+      className="sticky top-0 z-0 h-screen flex justify-center items-center bg-neutral-950 text-neutral-100 overflow-hidden"
+    >
+      <div
+        className="orbit-mask absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+        style={{ opacity: anyHighlight ? 0.75 : 0.35 }}
+      >
         {
           ORBIT_RINGS.reduce<{ offset: number; elements: React.ReactNode[] }>(
             (acc, ring, i) => {
               acc.elements.push(
-                <OrbitRingLayer key={i} ring={ring} logoOffset={acc.offset} />,
+                <OrbitRingLayer
+                  key={i}
+                  ring={ring}
+                  logoOffset={acc.offset}
+                  onHoverChange={setLogoHovered}
+                  allHighlighted={exploreHovered}
+                />,
               );
               acc.offset += ring.count;
               return acc;
@@ -140,7 +201,10 @@ export default function Hero() {
         }
       </div>
 
-      <div className="relative z-10 flex-col p-32 text-center justify-center items-center flex">
+      <div
+        className="relative z-10 flex-col p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
+        style={{ opacity: anyHighlight ? 0.15 : 1 }}
+      >
         <div className="font-bebas flex items-center justify-center flex-col">
           <h1 className="hero-reveal text-[110px]/24">
             Grow
@@ -154,9 +218,7 @@ export default function Hero() {
               Community-Led Solution
             </span>
             <br />A viable approach to deal with{" "}
-            {/* <span className="animate-text-sweep font-semibold text-transparent bg-clip-text"> */}
             <span className="font-semibold">problems</span>/
-            {/* <span className="animate-text-sweep font-semibold text-transparent bg-clip-text"> */}
             <span className="font-semibold">needs</span> of
           </p>
         </div>
@@ -164,20 +226,31 @@ export default function Hero() {
           {segments.map((s, i) => (
             <div key={i} className="flex gap-2">
               <div className="mt-1.5 w-3 h-3 rounded-full bg-yellow" />
-              <span className="text-[16px] font-medium text-light-gray/90">
+              <span className="text-[16px] font-medium text-light-gray/70">
                 {s}
               </span>
             </div>
           ))}
         </div>
-        <div className="hero-reveal hero-reveal-delay-3 mt-6 flex gap-4 font-DMSans">
-          <Link href={"/projects"} className="">
+        <div className="hero-reveal hero-reveal-delay-3 mt-6 flex gap-4 font-DMSans pointer-events-auto">
+          <Link
+            href={"/projects"}
+            onMouseEnter={() => setExploreHovered(true)}
+            onMouseLeave={() => setExploreHovered(false)}
+          >
             <button className="text-sm px-9 py-4 border bg-neutral-950/10 backdrop-blur-[1px] border-neutral-700 text-neutral-500 rounded-xl hover:bg-white hover:-translate-y-1 transition duration-300 cursor-none">
               Explore Projects
             </button>
           </Link>
-          <button className="font-medium text-sm px-9 py-4 bg-yellow text-gray-800 rounded-xl hover:bg-white hover:-translate-y-1  transition duration-300 cursor-none">
-            Book a meeting
+          <button
+            onClick={() =>
+              document
+                .getElementById("problem-need")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="font-medium text-sm px-9 py-4 bg-yellow text-gray-800 rounded-xl hover:bg-white hover:-translate-y-1  transition duration-300 cursor-none"
+          >
+            Let’s Get Started
           </button>
         </div>
       </div>
@@ -185,10 +258,6 @@ export default function Hero() {
         <div className="relative mt-2 w-[0.1rem] rounded-full h-8 overflow-hidden bg-neutral-600">
           <div className="absolute inset-0 bg-yellow animate-scroll-line"></div>
         </div>
-
-        {/* <span className="text-neutral-600 pl-2 text-[11px] font-DmSans">
-          SCROLL TO EXPLORE
-        </span> */}
       </div>
     </div>
   );

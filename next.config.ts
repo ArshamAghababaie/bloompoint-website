@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const basePath = "/bloompoint-website";
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? "/bloompoint-website" : "";
 
 const nextConfig = {
   output: "export",

@@ -8,7 +8,15 @@ const PURPOSES = ["Path", "Circle", "General Inquiry", "Partnership"];
 
 const SEGMENTS = ["SME", "Large Enterprise", "City / Ecosystem"];
 
-export default function BookACall() {
+type Props = {
+  selectedProblems: string[];
+  selectedNeeds: string[];
+};
+
+export default function BookAMeeting({
+  selectedProblems,
+  selectedNeeds,
+}: Props) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -37,8 +45,8 @@ export default function BookACall() {
 
   return (
     <section
-      id="bookacall"
-      className="bg-rose"
+      id="bookAMeeting"
+      className="relative z-10"
       style={{
         background: "#f5f5f0",
         // border: 10,
@@ -108,7 +116,7 @@ export default function BookACall() {
               lineHeight: 1.8,
               color: "rgba(0,0,0,0.55)",
               maxWidth: 380,
-              marginBottom: 48,
+              marginBottom: 38,
             }}
           >
             Tell us about your business problems or needs and what you're
@@ -144,7 +152,11 @@ export default function BookACall() {
             ].map((item) => (
               <div
                 key={item.label}
-                style={{ display: "flex", alignItems: "flex-start", gap: 1 }}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 1,
+                }}
               >
                 <span
                   style={{
@@ -191,7 +203,7 @@ export default function BookACall() {
 
         {/* Right — form card */}
         <div
-          className="reveal reveal-delay-3 bg-neutral-100 border border-neutral-200"
+          className="reveal reveal-delay-3 bg-neutral-100 border border-neutral-300"
           style={{
             background: "#e8e8e8",
             borderRadius: 30,
@@ -220,7 +232,6 @@ export default function BookACall() {
                 style={{
                   fontFamily: '"Bebas Neue", sans-serif',
                   fontSize: "2rem",
-                  // color: "#f5f5f0",
                   color: "#0a0a0a",
                   marginBottom: 12,
                   letterSpacing: "0.04em",
@@ -288,7 +299,7 @@ export default function BookACall() {
                 <Field label="Company / Organisation">
                   <input
                     type="text"
-                    placeholder="Acme Corp"
+                    placeholder="J.S. Corp"
                     value={form.company}
                     onChange={set("company")}
                     style={{ color: "#0a0a0a" }}
@@ -322,6 +333,117 @@ export default function BookACall() {
                 </select>
               </Field>
 
+              {selectedProblems.length > 0 || selectedNeeds.length > 0 ? (
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: 24,
+                    padding: "16px 20px",
+                    background: "rgba(0,0,0,0.04)",
+                    borderRadius: 12,
+                  }}
+                >
+                  {selectedProblems.length > 0 && (
+                    <div>
+                      <h4
+                        // className="border-b-[0.5px] border-neutral-400"
+                        style={{
+                          fontFamily: '"DM Sans", sans-serif',
+                          fontSize: "1.05rem",
+                          fontWeight: 600,
+                          color: "#0a0a0a",
+                          marginBottom: 8,
+                        }}
+                      >
+                        Problems
+                      </h4>
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                        {selectedProblems.map((p) => (
+                          <li
+                            key={p}
+                            style={{
+                              fontFamily: '"DM Sans", sans-serif',
+                              fontSize: "0.82rem",
+                              color: "rgba(10,10,10,0.65)",
+                              paddingBottom: 4,
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 6,
+                            }}
+                          >
+                            <span style={{ color: "#FECB2F" }}>●</span>
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {selectedNeeds.length > 0 && (
+                    <div>
+                      <h4
+                        // className="border-b-[0.5px] border-neutral-400"
+                        style={{
+                          fontFamily: '"DM Sans", sans-serif',
+                          fontSize: "1.05rem",
+                          fontWeight: 600,
+                          color: "#0a0a0a",
+                          marginBottom: 8,
+                        }}
+                      >
+                        Needs
+                      </h4>
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                        {selectedNeeds.map((n) => (
+                          <li
+                            key={n}
+                            style={{
+                              fontFamily: '"DM Sans", sans-serif',
+                              fontSize: "0.82rem",
+                              color: "rgba(10,10,10,0.65)",
+                              paddingBottom: 4,
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 6,
+                            }}
+                          >
+                            <span style={{ color: "#FECB2F" }}>●</span>
+                            {n}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div
+                  style={{
+                    padding: "16px 20px",
+                    background: "rgba(0,0,0,0.04)",
+                    borderRadius: 12,
+                  }}
+                >
+                  <p
+                    className="font-DMSans text-[0.82rem] font-light leading-relaxed"
+                    style={{ color: "rgba(0,0,0,0.45)" }}
+                  >
+                    Haven't identified your problems or needs yet? We recommend
+                    reviewing them first for a more productive conversation.{" "}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        document
+                          .getElementById("problem-need")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="bg-transparent border-none p-0 font-DMSans text-[0.82rem] font-medium text-neutral-900 underline underline-offset-[3px] cursor-none transition-all duration-200 hover:text-yellow hover:-translate-y-0.5"
+                    >
+                      Go to context ↑
+                    </button>
+                  </p>
+                </div>
+              )}
+
               {/* Message */}
               <Field label="Tell us about your challenges *">
                 <textarea
@@ -337,22 +459,11 @@ export default function BookACall() {
               <button
                 type="submit"
                 disabled={state === "sending"}
-                style={{
-                  marginTop: 4,
-                  background:
-                    state === "sending" ? "rgba(254,203,47,0.5)" : "#FECB2F",
-                  color: "#0a0a0a",
-                  fontFamily: "DM Sans",
-                  fontSize: "0.72rem",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  padding: "16px",
-                  border: "10",
-                  borderRadius: 15,
-                  cursor: state === "sending" ? "not-allowed" : "none",
-                  transition: "background 0.2s",
-                  width: "100%",
-                }}
+                className={`mt-1 w-full font-DMSans text-[0.72rem] tracking-[0.14em] uppercase p-4 border-0 rounded-[15px] text-neutral-900 transition-all duration-300 ${
+                  state === "sending"
+                    ? "bg-yellow/50 cursor-not-allowed"
+                    : "bg-yellow hover:bg-neutral-950 hover:text-light-gray hover:-translate-y-1 cursor-none"
+                }`}
               >
                 {state === "sending" ? "Sending…" : "Send Message →"}
               </button>
