@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --yellow: oklch(0.8634 0.1657 88.82);
+  --yellow: oklch(0.8634 0.1657 88.82); /* #fecb2f */
   --light-gray: oklch(0.9688 0.0066 106.52);
 
   /* ---- COMPANIES COLOR ---- */
@@ -67,6 +67,32 @@ body {
   );
   background-size: 200% 100%;
   animation: text-sweep 5s linear infinite;
+}
+
+@keyframes underline-anim-ltr {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-underline-ltr {
+  animation: underline-anim-ltr 2s infinite;
+}
+
+@keyframes underline-anim-rtl {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-underline-rtl {
+  animation: underline-anim-rtl 2s infinite;
 }
 
 @keyframes scroll-anim {
@@ -178,6 +204,7 @@ body {
   z-index: 9999;
   transition: transform 0.35s ease;
   transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
 }
 
 .cursor-ring {
@@ -192,6 +219,7 @@ body {
   transition:
     opacity 0.12s ease,
     border-color 0.12s ease;
+  mix-blend-mode: difference;
 }
 
 body:hover .cursor {
@@ -223,7 +251,10 @@ body:hover .cursor {
   transform: translateY(40px);
   transition:
     opacity 0.8s ease,
-    transform 0.8s ease;
+    transform 0.8s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .reveal.visible {
@@ -232,34 +263,34 @@ body:hover .cursor {
 }
 
 .reveal-delay-1 {
-  transition-delay: 0.1s;
+  transition-delay: 0.1s, 0.1s, 0s, 0s, 0s;
 }
 .reveal-delay-2 {
-  transition-delay: 0.2s;
+  transition-delay: 0.2s, 0.2s, 0s, 0s, 0s;
 }
 .reveal-delay-3 {
-  transition-delay: 0.3s;
+  transition-delay: 0.3s, 0.3s, 0s, 0s, 0s;
 }
 .reveal-delay-4 {
-  transition-delay: 0.4s;
+  transition-delay: 0.4s, 0.4s, 0s, 0s, 0s;
 }
 .reveal-delay-5 {
-  transition-delay: 0.5s;
+  transition-delay: 0.5s, 0.5s, 0s, 0s, 0s;
 }
 .reveal-delay-6 {
-  transition-delay: 0.6s;
+  transition-delay: 0.6s, 0.6s, 0s, 0s, 0s;
 }
 .reveal-delay-7 {
-  transition-delay: 0.7s;
+  transition-delay: 0.7s, 0.7s, 0s, 0s, 0s;
 }
 .reveal-delay-8 {
-  transition-delay: 0.8s;
+  transition-delay: 0.8s, 0.8s, 0s, 0s, 0s;
 }
 .reveal-delay-9 {
-  transition-delay: 0.9s;
+  transition-delay: 0.9s, 0.9s, 0s, 0s, 0s;
 }
 .reveal-delay-10 {
-  transition-delay: 1s;
+  transition-delay: 1s, 1s, 0s, 0s, 0s;
 }
 
 /* ---- HERO LOAD REVEAL ---- */
@@ -289,6 +320,23 @@ body:hover .cursor {
 }
 .hero-reveal-delay-4 {
   animation-delay: 0.4s;
+}
+
+.cta-book {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #171717;
+  paint-order: stroke fill;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    -webkit-text-stroke-color 0.3s ease,
+    background-color 0.35s ease;
+}
+
+.cta-book:hover {
+  -webkit-text-stroke-color: #fecb2f;
 }
 
 /* ── BookACall form fields ── */
@@ -451,7 +499,18 @@ footer {
     transparent 12px,
     transparent 18px
   );
+  background-size: 18px 100%;
   transition: --dash-color 0.5s 0.2s;
+  animation: dash-flow-ltr 1.1s linear infinite;
+}
+
+@keyframes dash-flow-ltr {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 18px;
+  }
 }
 
 .group:hover .dashed-line {
@@ -489,14 +548,177 @@ footer {
     transparent 3.9deg 5.9deg
   );
   transition: --circle-color 0.5s 0.2s;
+  animation: dashed-circle-spin 30s linear infinite;
 }
 
 .group:hover .dashed-circle {
   --circle-color: #262626;
 }
 
+@keyframes dashed-circle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashed-circle-dark {
+  --circle-color: oklch(0.2046 0 0 / 0.35);
+}
+
 @property --circle-color {
   syntax: "<color>";
   inherits: false;
   initial-value: oklch(0.8634 0.1657 88.82);
+}
+
+.circuit-ring {
+  --circle-color: oklch(0.2046 0 0 / 0.35);
+  border-radius: 50%;
+  background-color: var(--circle-color);
+  mask-image: radial-gradient(
+    circle,
+    transparent calc(50% - 1px),
+    black calc(50% - 1px),
+    black 50%,
+    transparent 50%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent calc(50% - 1px),
+    black calc(50% - 1px),
+    black 50%,
+    transparent 50%
+  );
+}
+
+.circuit-ring-current {
+  border-radius: 50%;
+  mask-image: radial-gradient(
+    circle,
+    transparent calc(50% - 1px),
+    black calc(50% - 1px),
+    black 50%,
+    transparent 50%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent calc(50% - 1px),
+    black calc(50% - 1px),
+    black 50%,
+    transparent 50%
+  );
+  background-image: conic-gradient(
+    from 0deg,
+    transparent 0deg 300deg,
+    rgba(255, 247, 196, 0) 300deg,
+    rgba(255, 240, 150, 0.55) 330deg,
+    rgba(255, 251, 220, 0.9) 350deg,
+    #fffef2 360deg
+  );
+  filter: drop-shadow(0 0 5px rgba(255, 244, 150, 0.9))
+    drop-shadow(0 0 14px rgba(255, 236, 120, 0.55));
+  transform-origin: 50% 50%;
+  animation: circuit-current-spin 8s linear infinite;
+}
+
+@keyframes circuit-current-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-ring-current {
+    animation: none;
+  }
+}
+
+.circuit-spoke {
+  position: absolute;
+  top: 0;
+  height: 1px;
+  border-radius: 1px;
+  background-color: oklch(0.2046 0 0 / 0.35);
+  transform: translateY(-50%);
+}
+
+.circuit-spoke-current {
+  position: absolute;
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+  border-radius: 1.5px;
+  transform: translateY(-50%);
+}
+
+.circuit-spoke-current::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 251, 220, 0.95),
+    transparent
+  );
+  filter: drop-shadow(0 0 4px rgba(255, 244, 150, 0.9));
+  animation: circuit-spoke-flow 3s linear infinite;
+  animation-delay: var(--spoke-delay, 0s);
+}
+
+@keyframes circuit-spoke-flow {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-spoke-current::after {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashed-line,
+  .dashed-circle {
+    animation: none;
+  }
+}
+
+/* ---- SOLUTIONS: dot hover cards ---- */
+.dot-card {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 30;
+  margin-bottom: 1rem;
+  width: 260px;
+  transform: translate(-50%, 4px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 0.75rem;
+  background: var(--light-gray);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
+}
+
+.dot-marker:hover .dot-card {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0) scale(1);
 }

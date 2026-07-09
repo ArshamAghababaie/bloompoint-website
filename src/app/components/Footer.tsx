@@ -7,9 +7,9 @@ const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "#solutions", label: "Solutions" },
   { href: "#workflow", label: "Workflow" },
+  { href: "#faq", label: "FAQ" },
   // { href: '#offer', label: 'What We Offer' },
   { href: "/pricing", label: "Pricing" },
-  // { href: "#faq", label: "FAQ" },
 ];
 
 // const solutionLinks = [

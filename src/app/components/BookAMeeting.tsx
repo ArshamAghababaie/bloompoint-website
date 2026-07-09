@@ -438,7 +438,7 @@ export default function BookAMeeting({
                       }
                       className="bg-transparent border-none p-0 font-DMSans text-[0.82rem] font-medium text-neutral-900 underline underline-offset-[3px] cursor-none transition-all duration-200 hover:text-yellow hover:-translate-y-0.5"
                     >
-                      Go to context ↑
+                      Go to problems/needs ↑
                     </button>
                   </p>
                 </div>

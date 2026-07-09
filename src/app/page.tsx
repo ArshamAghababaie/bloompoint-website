@@ -9,6 +9,7 @@ import BPEcosystem from "./components/BPEcosystem";
 import Workflow from "./components/Workflow";
 import BookAMeeting from "./components/BookAMeeting";
 import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
 
 export default function Page() {
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
@@ -27,6 +28,7 @@ export default function Page() {
       <Solutions />
       <BPEcosystem />
       <Workflow />
+      <FAQ />
       <BookAMeeting
         selectedProblems={selectedProblems}
         selectedNeeds={selectedNeeds}

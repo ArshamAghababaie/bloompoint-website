@@ -88,7 +88,8 @@ export default async function ProjectPage({
             />
           )}
 
-          <h1 className="reveal reveal-delay-2 font-bebas uppercase text-4xl md:text-6xl leading-none mb-9">
+          {/* <h1 className="reveal reveal-delay-2 text-wrap max-w-xl font-bebas uppercase text-4xl md:text-6xl leading-none mb-9"> */}
+          <h1 className="max-w-xl font-bebas uppercase text-4xl md:text-6xl leading-none mb-9">
             {project.name}
           </h1>
 

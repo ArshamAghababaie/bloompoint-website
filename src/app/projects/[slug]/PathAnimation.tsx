@@ -119,12 +119,13 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
             <img
               src={`${basePath}${data.clientLogo}`}
               alt={data.clientName}
-              className="w-20 h-20 object-contain rounded-2xl border border-neutral-900"
+              // className="w-20 h-20 object-contain rounded-2xl border border-neutral-900"
+              className="w-20 h-20 object-contain rounded-2xl"
             />
           </div>
 
           {/* ── Line 1 ── */}
-          <div className="flex-1 h-px bg-neutral-900 min-w-0" />
+          <div className="flex-1 ml-3 h-px bg-neutral-600 min-w-0" />
 
           {/* ── Node B : bloompointClsTitle pill ── */}
           <div
@@ -143,7 +144,8 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
                 <img
                   src={`${basePath}${data.clientDepartmentLogo}`}
                   alt=""
-                  className="w-20 h-20 object-contain rounded-2xl border border-neutral-900"
+                  // className="w-20 h-20 object-contain rounded-2xl border border-neutral-900"
+                  className="w-20 h-20 object-contain rounded-2xl"
                 />
               )}
             </div>
@@ -172,7 +174,7 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
           </div>
 
           {/* ── Line 2 ── */}
-          <div className="flex-1 h-px bg-neutral-900 min-w-0" />
+          <div className="flex-1 h-px bg-neutral-600 min-w-0" />
 
           {/* ── Node C : Blueprint icon ── */}
           <div
@@ -206,7 +208,7 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
           </div>
 
           {/* ── Line 3 ── */}
-          <div className="flex-1 h-px bg-neutral-900 min-w-0" />
+          <div className="flex-1 h-px bg-neutral-600 min-w-0" />
 
           {/* ── Node D : Goal pill ── */}
           <div

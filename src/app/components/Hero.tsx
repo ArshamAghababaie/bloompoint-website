@@ -14,17 +14,17 @@ type LogoItem = {
 
 // NORMAL COLORIZED LOGOS
 
-const LOGOS: LogoItem[] = [
-  { file: "Aseh.png", name: "Aseh" },
-  { file: "Bahaman.png", name: "Bahaman" },
-  { file: "Crouse.png", name: "Crouse", imgScale: 1.5 },
-  { file: "DBST.png", name: "DBST", imgScale: 1.6 },
-  { file: "Darasiab.jpg", name: "Darasiab" },
-  { file: "Keunee.png", name: "Keune" },
-  { file: "Mahram.png", name: "Mahram" },
-  { file: "Mammut.jpg", name: "Mammut" },
-  { file: "Talashim.png", name: "Talashim", imgScale: 1.1 },
-];
+// const LOGOS: LogoItem[] = [
+//   { file: "Aseh.png", name: "Aseh" },
+//   { file: "Bahaman.png", name: "Bahaman" },
+//   { file: "Crouse.png", name: "Crouse", imgScale: 1.5 },
+//   { file: "DBST.png", name: "DBST", imgScale: 1.6 },
+//   { file: "Darasiab.jpg", name: "Darasiab" },
+//   { file: "Keunee.png", name: "Keune" },
+//   { file: "Mahram.png", name: "Mahram" },
+//   { file: "Mammut.jpg", name: "Mammut" },
+//   { file: "Talashim.png", name: "Talashim", imgScale: 1.1 },
+// ];
 
 // NEGATIVE LOGOS
 
@@ -42,17 +42,17 @@ const LOGOS: LogoItem[] = [
 
 // WHITE LOGOS
 
-// const LOGOS: LogoItem[] = [
-//   { file: "Aseh.png", name: "Aseh" },
-//   { file: "BAHAMAN.png", name: "Bahaman" },
-//   { file: "Crouse.png", name: "Crouse" },
-//   { file: "DBST.png", name: "DBST", imgScale: 1.6 },
-//   { file: "Darasiab.png", name: "Darasiab" },
-//   { file: "Keunee.png", name: "Keune" },
-//   { file: "Mahram.png", name: "Mahram" },
-//   { file: "Mammut.png", name: "Mammut" },
-//   { file: "Talashim.png", name: "Talashim", imgScale: 0.5 },
-// ];
+const LOGOS: LogoItem[] = [
+  { file: "Aseh-white.png", name: "Aseh" },
+  { file: "Bahaman-white.png", name: "Bahaman" },
+  { file: "Crouse-white.png", name: "Crouse" },
+  { file: "DBST-white.png", name: "DBST" },
+  { file: "Darasiab-white.png", name: "Darasiab" },
+  { file: "KeuneCare-white.png", name: "Keune" },
+  { file: "Mahram-white.png", name: "Mahram" },
+  { file: "Mammut-white.png", name: "Mammut" },
+  { file: "Talashim-white.png", name: "Talashim", imgScale: 1 },
+];
 
 type OrbitRing = {
   diameter: string;
@@ -64,25 +64,25 @@ type OrbitRing = {
 
 const ORBIT_RINGS: OrbitRing[] = [
   {
-    diameter: "clamp(280px, 40vw, 460px)",
-    count: 3,
-    duration: 95,
-    direction: "ccw",
-    box: 40,
-  },
-  {
     diameter: "clamp(360px, 52vw, 620px)",
     count: 3,
     duration: 120,
     direction: "cw",
-    box: 40,
+    box: 30,
   },
   {
     diameter: "clamp(440px, 64vw, 780px)",
     count: 3,
     duration: 150,
     direction: "ccw",
-    box: 40,
+    box: 30,
+  },
+  {
+    diameter: "clamp(520px, 76vw, 940px)",
+    count: 3,
+    duration: 150,
+    direction: "cw",
+    box: 30,
   },
 ];
 
@@ -134,12 +134,15 @@ function OrbitRingLayer({
                 >
                   <div
                     style={{ width: box, height: box }}
-                    className={`rounded-full border border-neutral-600/30 bg-neutral-800/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2] group-hover/logo:border-yellow/40 group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] border-yellow/40! shadow-[0_0_18px_4px_rgba(234,179,8,0.25)]" : ""}`}
+                    className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2] group-hover/logo:border-yellow/40 group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] border-yellow/40! shadow-[0_0_18px_4px_rgba(234,179,8,0.25)]" : ""}`} // With border & yellow shadow
+                    // className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(234,179,8,0.25)]" : ""}`}                                                    // Without border - yellow shadow
+                    // className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(255,255,255,0.15)]" : ""}`}                                                   // Without border - white shadow
+                    // className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  ${allHighlighted ? "scale-[2] " : ""}`}                                                                                                                                                           // Without border & shadow
                   >
                     <Image
-                      src={`${basePath}/logos-hero/${logo.file}`}
+                      // src={`${basePath}/logos-hero/${logo.file}`}
                       // src={`${basePath}/logo-hero-new/negative/${logo.file}`}
-                      // src={`${basePath}/logo-hero-new/white/${logo.file}`}
+                      src={`${basePath}/logo-hero-new/mains/${logo.file}`}
                       width={imgSize}
                       height={imgSize}
                       alt={logo.name}
@@ -213,16 +216,29 @@ export default function Hero() {
             <br />
             <span className="text-yellow">Community</span>
           </h1>
-          <p className="hero-reveal hero-reveal-delay-1 mt-6 text-lg text-neutral-500 font-DMSans font-light">
-            <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text">
-              Community-Led Solution
-            </span>
-            <br />A viable approach to deal with{" "}
-            <span className="font-semibold">problems</span>/
-            <span className="font-semibold">needs</span> of
-          </p>
+          <div className="hero-reveal hero-reveal-delay-1">
+            <div className="flex items-center justify-center">
+              <div className="relative mt-6 mr-2 w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+                <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
+              </div>
+              <p className="pt-6 text-lg text-neutral-500 font-DMSans font-light">
+                {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
+                <span className="font-semibold text-xl">
+                  Community-Led Solutions
+                </span>
+              </p>
+              <div className="relative mt-6 ml-2 w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+                <div className="absolute inset-0 bg-yellow animate-underline-rtl"></div>
+              </div>
+            </div>
+            <p className="-mt-4 text-lg text-neutral-500 font-DMSans font-light">
+              <br />A viable approach to deal with{" "}
+              <span className="font-semibold">problems</span>/
+              <span className="font-semibold">needs</span> of
+            </p>
+          </div>
         </div>
-        <div className="hero-reveal hero-reveal-delay-2 mb-8 pt-4 font-DMSans flex gap-8 text-neutral-500">
+        <div className="hero-reveal hero-reveal-delay-2 mb-8 pt-2 font-DMSans flex gap-8 text-neutral-500">
           {segments.map((s, i) => (
             <div key={i} className="flex gap-2">
               <div className="mt-1.5 w-3 h-3 rounded-full bg-yellow" />

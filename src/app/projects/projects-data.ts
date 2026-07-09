@@ -62,7 +62,7 @@ export const projects: Project[] = [
   // SMEs (7)
   {
     id: "1",
-    name: `B2C Haircare Consultancy (BHC)`,
+    name: `Haircare Consultancy (BHC) & Care Community Club (BCC)`,
     category: "SMEs",
     image: "/projects/sme-1.jpg",
     tagline: "community-wellbeing",

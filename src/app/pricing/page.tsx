@@ -57,16 +57,16 @@ export default function Pricing() {
 
   const HybridCard = () => {
     return (
-      <div className="group grid grid-cols-3 gap-2 mt-8 mb-24">
+      <div className="grid grid-cols-3 gap-2 mt-8 mb-24">
         {hybridPlans.map((h, i) => (
           <div
             key={i}
-            className={`reveal reveal-delay-${i + 3} flex-col p-10 border border-neutral-800 rounded-3xl hover:bg-yellow transition duration-200`}
+            className={`group reveal reveal-delay-${i + 3} flex-col p-10 border border-neutral-600 rounded-3xl hover:bg-yellow transition-colors duration-200`}
           >
             {/* first section */}
             <div className="flex-col h-110">
               {/* name section */}
-              <div className="flex-col border-b border-neutral-800 pb-6">
+              <div className="flex-col border-b border-neutral-500 pb-4">
                 <h1 className="text-4xl font-bebas text-neutral-950">
                   {h.name}
                 </h1>
@@ -95,9 +95,9 @@ export default function Pricing() {
                 {h.features.map((f, i) => (
                   <div
                     key={i}
-                    className="flex border-b border-neutral-800 py-2"
+                    className="flex border-b border-neutral-300 group-hover:border-neutral-600 py-2"
                   >
-                    <span className="flex justify-start items-baseline pr-2 group-hover:text-neutral-600 transition duration-200">
+                    <span className="flex justify-start items-baseline -mt-1 pr-2 group-hover:text-neutral-600 transition duration-200">
                       →
                     </span>
                     <span className="text-sm text-neutral-500 font-DMSans font-medium group-hover:text-neutral-600 transition duration-200">
@@ -116,22 +116,23 @@ export default function Pricing() {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className="h-260 px-10 bg-light-gray text-yellow">
-        <div className="reveal flex items-center pt-32">
+      <div className="h-245 px-10 pt-20 bg-light-gray text-yellow">
+        {/* <div className="reveal flex items-center pt-32">
           <div className="w-6 h-px bg-neutral-950" />
           <span className="pl-2 text-neutral-950 text-xs font-DMSans tracking-widest uppercase">
             our plans
           </span>
-        </div>
-        <div className="reveal reveal-delay-1 mt-6 flex-col font-bebas text-7xl">
+        </div> */}
+
+        <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
           <h1 className="text-neutral-950 uppercase">flexible</h1>
           <h1 className="uppercase">pricing</h1>
         </div>
         <div className="reveal reveal-delay-2 flex-col text-neutral-500 font-DMSans pt-4">
-          <span className="font-medium">Two models;</span>
-          <p className=" w-120">
-            a current Hybrid Model with human-in-the-loop, and a Future
-            Subscription Model built for scale.
+          {/* <span className="font-medium">Two models;</span> */}
+          <p className="w-120">
+            You can select the best plan that is a perfect match for your
+            business size.
           </p>
         </div>
         <HybridCard />
