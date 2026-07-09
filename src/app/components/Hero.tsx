@@ -48,7 +48,7 @@ const LOGOS: LogoItem[] = [
   { file: "Crouse-white.png", name: "Crouse" },
   { file: "DBST-white.png", name: "DBST" },
   { file: "Darasiab-white.png", name: "Darasiab" },
-  { file: "KeuneCare-white.png", name: "KeuneCare" },
+  { file: "Keune-care-white.png", name: "KeuneCare" },
   { file: "Mahram-white.png", name: "Mahram" },
   { file: "Mammut-white.png", name: "Mammut" },
   { file: "Talashim-white.png", name: "Talashim", imgScale: 1 },
