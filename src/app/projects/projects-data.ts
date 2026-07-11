@@ -82,7 +82,7 @@ export const projects: Project[] = [
     },
     section2: {
       clientName: "Keune Care",
-      clientLogo: "/project-path/keune-care/Keune-logo.png",
+      clientLogo: "/project-path/keune-care/keune-logo.png",
       clientDepartment: "KeuneCare-Iran | B2C Dept.",
       clientDepartmentLogo: "/project-path/keune-care/keune-care-logo.png",
       bloompointLogo: "/bp-logo-yellow.png",
