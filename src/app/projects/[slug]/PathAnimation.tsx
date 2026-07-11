@@ -135,9 +135,9 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
             {/* above: client dept info — slides DOWN from top */}
             <div
               ref={aboveBRef}
-              className="absolute bottom-full mb-7 flex flex-col items-center gap-2"
+              className="absolute bottom-full mb-3 flex flex-col items-center"
             >
-              <p className="font-DMSans text-center w-36 text-xs text-neutral-500 tracking-wide pb-2">
+              <p className="font-DMSans text-center w-40 text-xs text-neutral-500 tracking-wide pb-2">
                 {data.clientDepartment}
               </p>
               {data.clientDepartmentLogo && (
@@ -145,7 +145,7 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
                   src={`${basePath}${data.clientDepartmentLogo}`}
                   alt=""
                   // className="w-20 h-20 object-contain rounded-2xl border border-neutral-900"
-                  className="w-20 h-20 object-contain rounded-2xl"
+                  className="w-20 h-20 object-contain"
                 />
               )}
             </div>

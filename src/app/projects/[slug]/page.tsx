@@ -61,11 +61,11 @@ export default async function ProjectPage({
   const detailRows = s1
     ? [
         { label: "Client", value: s1.clientName },
-        { label: "Description", value: s1.clientDescription },
+        // { label: "Description", value: s1.clientDescription },
         { label: "Problem", value: s1.problem },
         { label: "Community-led Solution", value: s1.communityLedSolution },
         { label: "Prototype", value: s1.prototype },
-        { label: "Designated Group", value: s1.designatedGroup },
+        // { label: "Designated Group", value: s1.designatedGroup },
         { label: "Target", value: s1.target },
       ]
     : [];
@@ -76,35 +76,40 @@ export default async function ProjectPage({
 
       {/* ─── SECTION 1 : Hero ─── */}
       <section
-        className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col justify-center`}
+        className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className="px-10 md:px-16 lg:px-20 pt-20">
-          {s2?.clientLogo && (
-            <img
-              src={`${basePath}${s2.clientLogo}`}
-              alt={project.name}
-              className="reveal reveal-delay-1 w-30 h-30 object-contain mb-6 rounded-3xl"
-            />
-          )}
+        <div className="h-full px-10 md:px-16 lg:px-20 pt-48 pb-16 flex flex-col xl:flex-row gap-x-16 gap-y-4">
+          {/* Left column: client logo + project name, pinned to the top */}
+          <div>
+            {s2?.clientLogo && (
+              <img
+                src={`${basePath}${s2.clientLogo}`}
+                alt={project.name}
+                className="reveal reveal-delay-1 w-30 h-30 object-contain mb-6 bg-white rounded-3xl"
+              />
+            )}
 
-          {/* <h1 className="reveal reveal-delay-2 text-wrap max-w-xl font-bebas uppercase text-4xl md:text-6xl leading-none mb-9"> */}
-          <h1 className="max-w-xl font-bebas uppercase text-4xl md:text-6xl leading-none mb-9">
-            {project.name}
-          </h1>
+            <h1 className="reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9">
+              {project.name}
+            </h1>
+          </div>
 
+          {/* Right column: detail rows, pinned to the bottom-right */}
           {detailRows.length > 0 && (
-            <div className="reveal reveal-delay-3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 max-w-3xl">
-              {detailRows.map((row) => (
-                <div key={row.label} className="flex flex-col">
-                  <span className="font-DMSans text-xs uppercase tracking-widest opacity-60 mb-1">
-                    {row.label}
-                  </span>
-                  <span className="font-DMSans text-sm leading-relaxed whitespace-pre-line">
-                    {row.value}
-                  </span>
-                </div>
-              ))}
+            <div className="flex-1 flex flex-col justify-end md:items-end">
+              <div className="reveal reveal-delay-3 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-4 max-w-3xl">
+                {detailRows.map((row) => (
+                  <div key={row.label} className="flex flex-col">
+                    <span className="font-DMSans text-xs uppercase tracking-widest opacity-60 mb-1">
+                      {row.label}
+                    </span>
+                    <span className="font-DMSans text-sm leading-relaxed whitespace-pre-line">
+                      {row.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>

@@ -11,11 +11,15 @@ const SEGMENTS = ["SME", "Large Enterprise", "City / Ecosystem"];
 type Props = {
   selectedProblems: string[];
   selectedNeeds: string[];
+  otherProblem: string;
+  otherNeed: string;
 };
 
 export default function BookAMeeting({
   selectedProblems,
   selectedNeeds,
+  otherProblem,
+  otherNeed,
 }: Props) {
   const [form, setForm] = useState({
     name: "",
@@ -333,85 +337,168 @@ export default function BookAMeeting({
                 </select>
               </Field>
 
-              {selectedProblems.length > 0 || selectedNeeds.length > 0 ? (
+              {selectedProblems.length > 0 ||
+              selectedNeeds.length > 0 ||
+              otherProblem.trim() ||
+              otherNeed.trim() ? (
                 <div
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: 24,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 16,
                     padding: "16px 20px",
                     background: "rgba(0,0,0,0.04)",
                     borderRadius: 12,
                   }}
                 >
-                  {selectedProblems.length > 0 && (
-                    <div>
-                      <h4
-                        // className="border-b-[0.5px] border-neutral-400"
-                        style={{
-                          fontFamily: '"DM Sans", sans-serif',
-                          fontSize: "1.05rem",
-                          fontWeight: 600,
-                          color: "#0a0a0a",
-                          marginBottom: 8,
-                        }}
-                      >
-                        Problems
-                      </h4>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                        {selectedProblems.map((p) => (
-                          <li
-                            key={p}
+                  {(selectedNeeds.length > 0 ||
+                    selectedProblems.length > 0 ||
+                    otherNeed.trim() ||
+                    otherProblem.trim()) && (
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: 24,
+                      }}
+                    >
+                      <div style={{ gridColumn: 1 }}>
+                        {(selectedNeeds.length > 0 || otherNeed.trim()) && (
+                          <h4
                             style={{
                               fontFamily: '"DM Sans", sans-serif',
-                              fontSize: "0.82rem",
-                              color: "rgba(10,10,10,0.65)",
-                              paddingBottom: 4,
-                              display: "flex",
-                              alignItems: "center",
-                              gap: 6,
+                              fontSize: "1.05rem",
+                              fontWeight: 600,
+                              color: "#0a0a0a",
+                              marginBottom: 8,
                             }}
                           >
-                            <span style={{ color: "#FECB2F" }}>●</span>
-                            {p}
-                          </li>
-                        ))}
-                      </ul>
+                            Needs
+                          </h4>
+                        )}
+                        {selectedNeeds.length > 0 && (
+                          <>
+                            <ul
+                              style={{
+                                listStyle: "none",
+                                padding: 0,
+                                margin: 0,
+                              }}
+                            >
+                              {selectedNeeds.map((n) => (
+                                <li
+                                  key={n}
+                                  style={{
+                                    fontFamily: '"DM Sans", sans-serif',
+                                    fontSize: "0.82rem",
+                                    color: "rgba(10,10,10,0.65)",
+                                    paddingBottom: 4,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 6,
+                                  }}
+                                >
+                                  <span style={{ color: "#FECB2F" }}>●</span>
+                                  {n}
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
+                      </div>
+                      <div style={{ gridColumn: 2 }}>
+                        {(selectedProblems.length > 0 || otherProblem.trim()) && (
+                          <h4
+                            style={{
+                              fontFamily: '"DM Sans", sans-serif',
+                              fontSize: "1.05rem",
+                              fontWeight: 600,
+                              color: "#0a0a0a",
+                              marginBottom: 8,
+                            }}
+                          >
+                            Problems
+                          </h4>
+                        )}
+                        {selectedProblems.length > 0 && (
+                          <>
+                            <ul
+                              style={{
+                                listStyle: "none",
+                                padding: 0,
+                                margin: 0,
+                              }}
+                            >
+                              {selectedProblems.map((p) => (
+                                <li
+                                  key={p}
+                                  style={{
+                                    fontFamily: '"DM Sans", sans-serif',
+                                    fontSize: "0.82rem",
+                                    color: "rgba(10,10,10,0.65)",
+                                    paddingBottom: 4,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 6,
+                                  }}
+                                >
+                                  <span style={{ color: "#FECB2F" }}>●</span>
+                                  {p}
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
+                      </div>
                     </div>
                   )}
-                  {selectedNeeds.length > 0 && (
-                    <div>
-                      <h4
-                        // className="border-b-[0.5px] border-neutral-400"
-                        style={{
-                          fontFamily: '"DM Sans", sans-serif',
-                          fontSize: "1.05rem",
-                          fontWeight: 600,
-                          color: "#0a0a0a",
-                          marginBottom: 8,
-                        }}
-                      >
-                        Needs
-                      </h4>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                        {selectedNeeds.map((n) => (
-                          <li
-                            key={n}
-                            style={{
-                              fontFamily: '"DM Sans", sans-serif',
-                              fontSize: "0.82rem",
-                              color: "rgba(10,10,10,0.65)",
-                              paddingBottom: 4,
-                              display: "flex",
-                              alignItems: "center",
-                              gap: 6,
-                            }}
-                          >
-                            <span style={{ color: "#FECB2F" }}>●</span>
-                            {n}
-                          </li>
-                        ))}
-                      </ul>
+
+                  {(otherNeed.trim() || otherProblem.trim()) && (
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: 24,
+                      }}
+                    >
+                      <div>
+                        {otherNeed.trim() && (
+                          <>
+                            <p
+                              style={{
+                                fontFamily: '"DM Sans", sans-serif',
+                                fontSize: "0.82rem",
+                                fontStyle: "italic",
+                                color: "rgba(10,10,10,0.65)",
+                                paddingLeft: 18,
+                                borderLeft: "2px solid #FECB2F",
+                                whiteSpace: "pre-wrap",
+                              }}
+                            >
+                              "{otherNeed}"
+                            </p>
+                          </>
+                        )}
+                      </div>
+                      <div>
+                        {otherProblem.trim() && (
+                          <>
+                            <p
+                              style={{
+                                fontFamily: '"DM Sans", sans-serif',
+                                fontSize: "0.82rem",
+                                fontStyle: "italic",
+                                color: "rgba(10,10,10,0.65)",
+                                paddingLeft: 18,
+                                borderLeft: "2px solid #FECB2F",
+                                whiteSpace: "pre-wrap",
+                              }}
+                            >
+                              "{otherProblem}"
+                            </p>
+                          </>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>

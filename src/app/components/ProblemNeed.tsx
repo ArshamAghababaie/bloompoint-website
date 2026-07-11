@@ -7,6 +7,10 @@ type Props = {
   setSelectedProblems: Dispatch<SetStateAction<string[]>>;
   selectedNeeds: string[];
   setSelectedNeeds: Dispatch<SetStateAction<string[]>>;
+  otherProblem: string;
+  setOtherProblem: Dispatch<SetStateAction<string>>;
+  otherNeed: string;
+  setOtherNeed: Dispatch<SetStateAction<string>>;
 };
 
 function toggleItem(set: Dispatch<SetStateAction<string[]>>, item: string) {
@@ -20,6 +24,10 @@ export default function ProblemNeed({
   setSelectedProblems,
   selectedNeeds,
   setSelectedNeeds,
+  otherProblem,
+  setOtherProblem,
+  otherNeed,
+  setOtherNeed,
 }: Props) {
   const [hovered, setHovered] = useState<"problem" | "need" | null>(null);
 
@@ -33,34 +41,52 @@ export default function ProblemNeed({
     "Weak Community Engagement",
     "Limited Brand Differentiation",
     "Low Employee Motivation",
-    "Inefficient Internal Processes",
-    "Disconnected Teams",
     "Difficulty Building Partnerships",
-    "Weak Professional Network",
-    "Lack of Strategic Collaborations",
     "Slow Business Growth",
     "Lack of Local Presence",
     "Unclear Community Strategy",
-    "Missed Business Opportunities",
-    "Limited Customer Insights",
-    "Difficulty Measuring Impact",
+
+    // "Low Customer Retention",
+    // "Weak Community Engagement",
+    // "Limited Brand Differentiation",
+    // "Low Employee Motivation",
+    // "Inefficient Internal Processes",
+    // "Disconnected Teams",
+    // "Difficulty Building Partnerships",
+    // "Weak Professional Network",
+    // "Lack of Strategic Collaborations",
+    // "Slow Business Growth",
+    // "Lack of Local Presence",
+    // "Unclear Community Strategy",
+    // "Missed Business Opportunities",
+    // "Limited Customer Insights",
+    // "Difficulty Measuring Impact",
   ];
   const needs = [
     "Grow Customer Belonging & Loyalty",
     "Increase Customer Retention",
     "Build a Stronger Community",
     "Strengthen Brand Reputation",
-    "Improve Operational Efficiency",
-    "Build Better Business Systems",
     "Create Meaningful Partnerships",
-    "Expand Professional Networks",
-    "Join a Collaborative Business Circle",
+    "Achieve Sustainable Growth",
     "Improve Employee Engagement",
     "Drive Innovation",
-    "Achieve Sustainable Growth",
-    "Generate New Business Opportunities",
-    "Increase Cross-Organization Collaboration",
-    "Measure Community & Business Impact",
+
+    // "Grow Customer Belonging & Loyalty",
+    // "Increase Customer Retention",
+    // "Build a Stronger Community",
+    // "Strengthen Brand Reputation",
+    // "Improve Operational Efficiency",
+    // "Build Better Business Systems",
+    // "Create Meaningful Partnerships",
+    // "Expand Professional Networks",
+    // "Join a Collaborative Business Circle",
+    // "Improve Employee Engagement",
+    // "Drive Innovation",
+    // "Achieve Sustainable Growth",
+    // "Generate New Business Opportunities",
+    // "Increase Cross-Organization Collaboration",
+    // "Measure Community & Business Impact",
   ];
 
   const Checkmark = () => {
@@ -149,7 +175,7 @@ export default function ProblemNeed({
               Where do you want to go?
             </h2>
 
-            <div className="translate-y-8 opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 pt-4">
+            <div className="translate-y-8 opacity-30 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 pt-4">
               <p className="pb-6 transition-colors duration-300 group-hover:text-neutral-400 w-80">
                 Select the most common needs you want to address.
               </p>
@@ -166,6 +192,20 @@ export default function ProblemNeed({
                   </label>
                 </div>
               ))}
+              <div className="font-DMSans pt-2 pr-5">
+                <label className="block w-80 text-neutral-950/70 transition-colors duration-300 group-hover:text-neutral-400 cursor-none select-none pb-2">
+                  Have other needs that aren't listed? <br /> Tell us in your
+                  own words.
+                </label>
+                <textarea
+                  value={otherNeed}
+                  onChange={(e) => setOtherNeed(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  rows={3}
+                  placeholder="Describe the need that matters to you…"
+                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow group-hover:border-white/30 group-hover:text-white group-hover:placeholder:text-white/40"
+                />
+              </div>
             </div>
             <div
               className="absolute top-3 right-3 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out group-hover:opacity-20 group-hover:translate-y-0 group-hover:scale-100 pointer-events-none"
@@ -188,9 +228,9 @@ export default function ProblemNeed({
         >
           <div className="relative rounded-3xl pl-5 pt-6 transition-all duration-300 hover:bg-neutral-950 overflow-hidden">
             <h2 className="w-3/4 font-DMSans text-5xl text-neutral-950/60 transition-all duration-500 group-hover:-translate-y-2 group-hover:text-yellow">
-              What's preventing you from getting there?
+              What's keeping you from getting there?
             </h2>
-            <div className="translate-y-8 opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 pt-4">
+            <div className="translate-y-8 opacity-30 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 pt-4">
               <p className="pb-6 transition-colors duration-300 group-hover:text-neutral-400 w-80">
                 Select the most common problems your business is dealing with.
               </p>
@@ -207,6 +247,20 @@ export default function ProblemNeed({
                   </label>
                 </div>
               ))}
+              <div className="font-DMSans pt-2 pr-5">
+                <label className="block text-neutral-950/70 transition-colors duration-300 group-hover:text-neutral-400 cursor-none select-none pb-2">
+                  Have other problems that aren't listed? <br />
+                  Tell us in your own words.
+                </label>
+                <textarea
+                  value={otherProblem}
+                  onChange={(e) => setOtherProblem(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  rows={3}
+                  placeholder="Describe the problem you're facing…"
+                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow group-hover:border-white/30 group-hover:text-white group-hover:placeholder:text-white/40"
+                />
+              </div>
             </div>
             <div
               className="absolute top-3 right-3 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out group-hover:opacity-20 group-hover:translate-y-0 group-hover:scale-100 pointer-events-none"

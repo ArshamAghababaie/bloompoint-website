@@ -8,6 +8,7 @@ import { basePath } from "../../../lib/basePath";
 type LogoItem = {
   file: string;
   name: string;
+  ring: number;
   boxSize?: number;
   imgScale?: number;
 };
@@ -42,44 +43,46 @@ type LogoItem = {
 
 // WHITE LOGOS
 
+// `ring` is the index into ORBIT_RINGS this logo orbits on. Assigning it
+// explicitly (instead of inferring it from array position + ring.count)
+// means adding/removing a logo never reshuffles the angle of any other logo.
 const LOGOS: LogoItem[] = [
-  { file: "Aseh-white.png", name: "Aseh" },
-  { file: "Bahaman-white.png", name: "Bahaman" },
-  { file: "Crouse-white.png", name: "Crouse" },
-  { file: "DBST-white.png", name: "DBST" },
-  { file: "Darasiab-white.png", name: "Darasiab" },
-  { file: "Keune-care-white.png", name: "KeuneCare" },
-  { file: "Mahram-white.png", name: "Mahram" },
-  { file: "Mammut-white.png", name: "Mammut" },
-  { file: "Talashim-white.png", name: "Talashim", imgScale: 1 },
+  { file: "Aseh-white.png", name: "Aseh", ring: 0 },
+  { file: "AVH-white.png", name: "AVH", ring: 0, imgScale: 0.85 },
+  { file: "Bahaman-white.png", name: "Bahaman", ring: 0 },
+  { file: "Crouse-white.png", name: "Crouse", ring: 0 },
+  { file: "Darasiab-white.png", name: "Darasiab", ring: 1 },
+  { file: "DBST-white.png", name: "DBST", ring: 1 },
+  { file: "Keune-care-white.png", name: "KeuneCare", ring: 1 },
+  { file: "Mahram-white.png", name: "Mahram", ring: 2 },
+  { file: "Mammut-white.png", name: "Mammut", ring: 2 },
+  { file: "Raad-white.png", name: "Raad", ring: 2 },
 ];
 
 type OrbitRing = {
   diameter: string;
-  count: number;
   duration: number;
   direction: "cw" | "ccw";
   box: number;
 };
 
+// Each ring's logo count is derived from how many LOGOS entries reference it
+// (see `ring` field on LogoItem) — there's nothing here to keep in sync.
 const ORBIT_RINGS: OrbitRing[] = [
   {
     diameter: "clamp(360px, 52vw, 620px)",
-    count: 3,
     duration: 120,
     direction: "cw",
     box: 30,
   },
   {
     diameter: "clamp(440px, 64vw, 780px)",
-    count: 3,
     duration: 150,
     direction: "ccw",
     box: 30,
   },
   {
     diameter: "clamp(520px, 76vw, 940px)",
-    count: 3,
     duration: 150,
     direction: "cw",
     box: 30,
@@ -88,12 +91,12 @@ const ORBIT_RINGS: OrbitRing[] = [
 
 function OrbitRingLayer({
   ring,
-  logoOffset,
+  logos,
   onHoverChange,
   allHighlighted,
 }: {
   ring: OrbitRing;
-  logoOffset: number;
+  logos: LogoItem[];
   onHoverChange: (hovered: boolean) => void;
   allHighlighted: boolean;
 }) {
@@ -109,14 +112,13 @@ function OrbitRingLayer({
         className="orbit-anim absolute inset-0"
         style={{ animation: `${spinAnim} ${ring.duration}s linear infinite` }}
       >
-        {Array.from({ length: ring.count }).map((_, i) => {
-          const angle = (360 / ring.count) * i;
-          const logo = LOGOS[logoOffset + i];
+        {logos.map((logo, i) => {
+          const angle = (360 / logos.length) * i;
           const box = logo.boxSize ?? ring.box;
           const imgSize = box - 6;
           return (
             <div
-              key={i}
+              key={logo.file}
               className="absolute inset-0"
               style={{ transform: `rotate(${angle}deg)` }}
             >
@@ -134,14 +136,9 @@ function OrbitRingLayer({
                 >
                   <div
                     style={{ width: box, height: box }}
-                    // className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2] group-hover/logo:border-yellow/40 group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] border-yellow/40! shadow-[0_0_18px_4px_rgba(234,179,8,0.25)]" : ""}`} // With border & yellow shadow
-                    // className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  group-hover/logo:shadow-[0_0_18px_4px_rgba(234,179,8,0.25)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(234,179,8,0.25)]" : ""}`} // Without border - yellow shadow
                     className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  group-hover/logo:shadow-[0_0_18px_4px_rgba(255,255,255,0.15)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(255,255,255,0.15)]" : ""}`} // Without border - white shadow
-                    // className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  ${allHighlighted ? "scale-[2] " : ""}`} // Without border & shadow
                   >
                     <Image
-                      // src={`${basePath}/logos-hero/${logo.file}`}
-                      // src={`${basePath}/logo-hero-new/negative/${logo.file}`}
                       src={`${basePath}/logo-hero-new/mains/${logo.file}`}
                       width={imgSize}
                       height={imgSize}
@@ -155,7 +152,7 @@ function OrbitRingLayer({
                     />
                   </div>
                   <span
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-5.5 px-2.5 py-1 text-[11px] font-DMSans text-neutral-300 bg-neutral-800/80 backdrop-blur-sm rounded-lg whitespace-nowrap transition-opacity duration-300 pointer-events-none ${allHighlighted ? "opacity-100" : "opacity-0"} group-hover/logo:opacity-100`}
+                    className={`absolute uppercase top-full left-1/2 -translate-x-1/2 mt-5.5 px-2.5 py-1 text-[11px] font-DMSans text-neutral-300 bg-neutral-800/80 backdrop-blur-sm rounded-lg whitespace-nowrap transition-opacity duration-300 pointer-events-none ${allHighlighted ? "opacity-100" : "opacity-0"} group-hover/logo:opacity-100`}
                   >
                     {logo.name}
                   </span>
@@ -184,24 +181,15 @@ export default function Hero() {
         className="orbit-mask absolute inset-0 flex items-center justify-center transition-opacity duration-500"
         style={{ opacity: anyHighlight ? 0.75 : 0.35 }}
       >
-        {
-          ORBIT_RINGS.reduce<{ offset: number; elements: React.ReactNode[] }>(
-            (acc, ring, i) => {
-              acc.elements.push(
-                <OrbitRingLayer
-                  key={i}
-                  ring={ring}
-                  logoOffset={acc.offset}
-                  onHoverChange={setLogoHovered}
-                  allHighlighted={exploreHovered}
-                />,
-              );
-              acc.offset += ring.count;
-              return acc;
-            },
-            { offset: 0, elements: [] },
-          ).elements
-        }
+        {ORBIT_RINGS.map((ring, i) => (
+          <OrbitRingLayer
+            key={i}
+            ring={ring}
+            logos={LOGOS.filter((logo) => logo.ring === i)}
+            onHoverChange={setLogoHovered}
+            allHighlighted={exploreHovered}
+          />
+        ))}
       </div>
 
       <div

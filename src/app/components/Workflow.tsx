@@ -154,11 +154,13 @@ export default function Workflow() {
               {/* outer ring */}
               <div className="relative w-30 h-30 rounded-full border border-neutral-950/40 flex items-center justify-center transition-all duration-300 ease-out group-hover/step:scale-110 group-hover/step:border-neutral-950/70 group-hover/step:shadow-[0_0_18px_4px_rgba(23,23,23,0.2)]">
                 {/* inner filled circle */}
-                <div className="flex flex-col items-center justify-center w-25 h-25 rounded-full bg-neutral-950 px-2 text-center">
-                  <span className="font-DMSans text-xs tracking-widest text-yellow/70">
-                    {step.num}
-                  </span>
-                  <span className="mt-0.5 font-DMSans text-sm font-semibold leading-tight text-yellow">
+                <div className="flex flex-col items-center justify-center w-25 h-25 rounded-full bg-neutral-950 px-2 text-center overflow-hidden">
+                  <div className="relative">
+                    <span className="absolute flex justify-center font-DMSans -top-7 right-0 left-0 tracking-widest text-8xl text-light-gray/25">
+                      {step.num}
+                    </span>
+                  </div>
+                  <span className="mt-0.5 font-DMSans text-sm z-2 font-semibold leading-tight text-yellow">
                     {step.name}
                   </span>
                 </div>

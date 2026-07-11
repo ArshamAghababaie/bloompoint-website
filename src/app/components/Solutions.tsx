@@ -100,14 +100,14 @@ export default function Solutions() {
           [ Hover over the circles to reach more information. ]
         </span>
       </div>
-      <div className="flex flex-col gap-4 pt-14 pb-16">
+      <div className="flex flex-col gap-0 pt-14 -mx-12">
         {solutions.map((s, i) => (
           <div
             key={i}
-            className={`reveal reveal-delay-${i + 2} group relative rounded-4xl border border-neutral-800 transition-colors duration-300 hover:border-yellow`}
+            className={`reveal reveal-delay-${i + 2} group relative transition-colors duration-300`}
           >
-            <div className="absolute inset-0 overflow-hidden rounded-4xl pointer-events-none">
-              <div className="absolute inset-0 rounded-4xl bg-yellow origin-bottom scale-y-0 transition-transform duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100" />
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 bg-yellow origin-bottom scale-y-0 transition-transform duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100" />
               <div className="absolute inset-0 -mx-12">{s.line}</div>
             </div>
 

@@ -14,6 +14,8 @@ import FAQ from "./components/FAQ";
 export default function Page() {
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
+  const [otherProblem, setOtherProblem] = useState("");
+  const [otherNeed, setOtherNeed] = useState("");
 
   return (
     <div className="overflow-x-clip">
@@ -24,6 +26,10 @@ export default function Page() {
         setSelectedProblems={setSelectedProblems}
         selectedNeeds={selectedNeeds}
         setSelectedNeeds={setSelectedNeeds}
+        otherProblem={otherProblem}
+        setOtherProblem={setOtherProblem}
+        otherNeed={otherNeed}
+        setOtherNeed={setOtherNeed}
       />
       <Solutions />
       <BPEcosystem />
@@ -32,6 +38,8 @@ export default function Page() {
       <BookAMeeting
         selectedProblems={selectedProblems}
         selectedNeeds={selectedNeeds}
+        otherProblem={otherProblem}
+        otherNeed={otherNeed}
       />
       <Footer />
     </div>

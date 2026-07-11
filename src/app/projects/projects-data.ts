@@ -16,11 +16,11 @@ export type ProjectColor =
 export interface ProjectSection1 {
   color: ProjectColor;
   clientName: string;
-  clientDescription: string;
+  // clientDescription: string;
   problem: string;
   communityLedSolution: string;
   prototype: string;
-  designatedGroup: string;
+  // designatedGroup: string;
   target: string;
 }
 
@@ -62,7 +62,7 @@ export const projects: Project[] = [
   // SMEs (7)
   {
     id: "1",
-    name: `Haircare Consultancy (BHC) & Care Community Club (BCC)`,
+    name: `Keune Care Ecosystem`,
     category: "SMEs",
     image: "/projects/sme-1.jpg",
     tagline: "community-wellbeing",
@@ -70,21 +70,21 @@ export const projects: Project[] = [
     section1: {
       color: "keune_umber",
       clientName: "KEUNE Care",
-      clientDescription: "Community-Driven Wellbeing Perspective",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `• Low Retention
-        • Low Basket Confidence
-        • Weak Belonging & Loyalty`,
-      communityLedSolution:
-        "• A Digital Dynamic System | Keune B2C Online Haircare Consultancy",
-      prototype: "Keune Care B2C Department",
-      designatedGroup: "Kaune Care Club Members",
-      target: "Sustainable Dynamic System",
+                • Low Basket Confidence
+                • Weak Belonging & Loyalty`,
+      communityLedSolution: "Keune Care Ecosystem",
+      prototype: `• B2C Haircare Consultancy (BHC)
+                  • Community Care Club (CCC)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Community Wellbeing",
     },
     section2: {
-      clientName: "KEUNE Care",
-      clientLogo: "/project-path/keune-care/keune-logo.png",
-      clientDepartment: "Keune Care | B2C Dept.",
-      clientDepartmentLogo: "/project-path/keune-care/keune-care-logo.jpg",
+      clientName: "Keune Care",
+      clientLogo: "/project-path/keune-care/Keune-logo.png",
+      clientDepartment: "KeuneCare-Iran | B2C Dept.",
+      clientDepartmentLogo: "/project-path/keune-care/keune-care-logo.png",
       bloompointLogo: "/bp-logo-yellow.png",
       bloompointDepartment: "BloomPoint Studio",
       bloompointClsTitle: "Perspective",
@@ -92,12 +92,14 @@ export const projects: Project[] = [
       blueprintTitle: "Digital Dynamic System",
       blueprintDescription: [
         "B2C Online Haircare Consultancy (BHC)",
-        "A Layer Between Diagnosis & Commerce",
+        "Care Community Club (CCC)",
       ],
-      goalTitle: "Sustainable Dynamic System",
+      goalTitle: "Keune Care Ecosystem",
       goalDescription: [
-        "Viable Community Health & Wellbeing",
-        "Increased Retention & Loyalty",
+        "Prototype | KeuneCare-Iran Community",
+        "4000 Costumers & 6000 Salons",
+        // "Viable Community Health & Wellbeing",
+        // "Increased Retention & Loyalty",
       ],
     },
     section3: {
