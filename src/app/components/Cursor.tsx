@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TRAIL_POOL_SIZE = 30;
 const TRAIL_SPAWN_DISTANCE = 16; // px between dashes
@@ -14,8 +14,19 @@ export default function Cursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const trailRefs = useRef<HTMLDivElement[]>([]);
+  const [isCoarsePointer, setIsCoarsePointer] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(hover: none), (pointer: coarse)");
+    setIsCoarsePointer(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsCoarsePointer(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (isCoarsePointer) return;
+
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -128,7 +139,9 @@ export default function Cursor() {
       document.removeEventListener("mousemove", onMouseMove);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [isCoarsePointer]);
+
+  if (isCoarsePointer) return null;
 
   return (
     <>

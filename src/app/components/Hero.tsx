@@ -129,21 +129,21 @@ function OrbitRingLayer({
                 }}
               >
                 <div
-                  className="group/logo relative pointer-events-auto"
+                  className="group/logo relative pointer-events-none lg:pointer-fine:pointer-events-auto"
                   style={{ transform: `rotate(-${angle}deg)` }}
                   onMouseEnter={() => onHoverChange(true)}
                   onMouseLeave={() => onHoverChange(false)}
                 >
                   <div
                     style={{ width: box, height: box }}
-                    className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 group-hover/logo:scale-[2]  group-hover/logo:shadow-[0_0_18px_4px_rgba(255,255,255,0.15)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(255,255,255,0.15)]" : ""}`} // Without border - white shadow
+                    className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 lg:pointer-fine:group-hover/logo:scale-[2] lg:pointer-fine:group-hover/logo:shadow-[0_0_18px_4px_rgba(255,255,255,0.15)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(255,255,255,0.15)]" : ""}`} // Without border - white shadow
                   >
                     <Image
                       src={`${basePath}/logo-hero-new/mains/${logo.file}`}
                       width={imgSize}
                       height={imgSize}
                       alt={logo.name}
-                      className={`object-cover rounded-full w-full h-full transition-opacity duration-300 ${allHighlighted ? "opacity-100" : "opacity-0"} group-hover/logo:opacity-100`}
+                      className={`object-cover rounded-full w-full h-full transition-opacity duration-300 ${allHighlighted ? "opacity-100" : "opacity-0"} lg:pointer-fine:group-hover/logo:opacity-100`}
                       style={
                         logo.imgScale
                           ? { transform: `scale(${logo.imgScale})` }
@@ -152,7 +152,7 @@ function OrbitRingLayer({
                     />
                   </div>
                   <span
-                    className={`absolute uppercase top-full left-1/2 -translate-x-1/2 mt-5.5 px-2.5 py-1 text-[11px] font-DMSans text-neutral-300 bg-neutral-800/80 backdrop-blur-sm rounded-lg whitespace-nowrap transition-opacity duration-300 pointer-events-none ${allHighlighted ? "opacity-100" : "opacity-0"} group-hover/logo:opacity-100`}
+                    className={`absolute uppercase top-full left-1/2 -translate-x-1/2 mt-5.5 px-2.5 py-1 text-[11px] font-DMSans text-neutral-300 bg-neutral-800/80 backdrop-blur-sm rounded-lg whitespace-nowrap transition-opacity duration-300 pointer-events-none ${allHighlighted ? "opacity-100" : "opacity-0"} lg:pointer-fine:group-hover/logo:opacity-100`}
                   >
                     {logo.name}
                   </span>
@@ -178,7 +178,7 @@ export default function Hero() {
       className="sticky top-0 z-0 h-screen flex justify-center items-center bg-neutral-950 text-neutral-100 overflow-hidden"
     >
       <div
-        className="orbit-mask absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+        className="orbit-mask hidden md:flex absolute inset-0 items-center justify-center transition-opacity duration-500 md:scale-125 lg:pointer-fine:scale-100"
         style={{ opacity: anyHighlight ? 0.75 : 0.35 }}
       >
         {ORBIT_RINGS.map((ring, i) => (
@@ -193,11 +193,11 @@ export default function Hero() {
       </div>
 
       <div
-        className="relative z-10 flex-col p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
+        className="relative z-10 flex-col px-6 py-20 sm:px-10 md:p-20 lg:p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
         style={{ opacity: anyHighlight ? 0.15 : 1 }}
       >
         <div className="font-bebas flex items-center justify-center flex-col">
-          <h1 className="hero-reveal text-[110px]/24">
+          <h1 className="hero-reveal text-[clamp(4.5rem,10vw,6.875rem)] leading-[0.95] md:leading-[0.9]">
             Grow
             <br />
             Through
@@ -206,43 +206,44 @@ export default function Hero() {
           </h1>
           <div className="hero-reveal hero-reveal-delay-1">
             <div className="flex items-center justify-center">
-              <div className="relative mt-6 mr-2 w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+              <div className="relative mt-6 mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
                 <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
               </div>
-              <p className="pt-6 text-lg text-neutral-500 font-DMSans font-light">
+              <p className="pt-6 text-base sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-500 font-DMSans font-light">
                 {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
-                <span className="font-semibold text-xl">
+                <span className="font-semibold text-base sm:text-xl md:text-2xl lg:pointer-fine:text-xl">
                   Community-Led Solutions
                 </span>
               </p>
-              <div className="relative mt-6 ml-2 w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+              <div className="relative mt-6 ml-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
                 <div className="absolute inset-0 bg-yellow animate-underline-rtl"></div>
               </div>
             </div>
-            <p className="-mt-4 text-lg text-neutral-500 font-DMSans font-light">
+            <p className="-mt-4 text-sm sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-500 font-DMSans font-light">
               <br />A viable approach to deal with{" "}
               <span className="font-semibold">problems</span>/
               <span className="font-semibold">needs</span> of
             </p>
           </div>
         </div>
-        <div className="hero-reveal hero-reveal-delay-2 mb-8 pt-2 font-DMSans flex gap-8 text-neutral-500">
+        <div className="hero-reveal hero-reveal-delay-2 mb-8 pt-2 font-DMSans flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 text-neutral-500">
           {segments.map((s, i) => (
             <div key={i} className="flex gap-2">
               <div className="mt-1.5 w-3 h-3 rounded-full bg-yellow" />
-              <span className="text-[16px] font-medium text-light-gray/70">
+              <span className="text-sm sm:text-[16px] md:text-lg lg:pointer-fine:text-[16px] font-medium text-light-gray/70">
                 {s}
               </span>
             </div>
           ))}
         </div>
-        <div className="hero-reveal hero-reveal-delay-3 mt-6 flex gap-4 font-DMSans pointer-events-auto">
+        <div className="hero-reveal hero-reveal-delay-3 mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto font-DMSans pointer-events-auto">
           <Link
             href={"/projects"}
             onMouseEnter={() => setExploreHovered(true)}
             onMouseLeave={() => setExploreHovered(false)}
+            className="w-full sm:w-auto"
           >
-            <button className="text-sm px-9 py-4 border bg-neutral-950/10 backdrop-blur-[1px] border-neutral-700 text-neutral-500 rounded-xl hover:bg-white hover:-translate-y-1 transition duration-300 cursor-none">
+            <button className="w-full sm:w-auto text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 border bg-neutral-950/10 backdrop-blur-[1px] border-neutral-700 text-neutral-500 rounded-xl md:hover:bg-white md:hover:-translate-y-1 transition duration-300 cursor-none">
               Explore Projects
             </button>
           </Link>
@@ -252,7 +253,7 @@ export default function Hero() {
                 .getElementById("problem-need")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="font-medium text-sm px-9 py-4 bg-yellow text-gray-800 rounded-xl hover:bg-white hover:-translate-y-1  transition duration-300 cursor-none"
+            className="w-full sm:w-auto font-medium text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 bg-yellow text-gray-800 rounded-xl md:hover:bg-white md:hover:-translate-y-1 transition duration-300 cursor-none"
           >
             Let’s Get Started
           </button>

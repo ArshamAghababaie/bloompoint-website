@@ -132,56 +132,55 @@ export default function ProblemNeed({
         </span>
       </div> */}
 
-      {/* Headings */}
-      <div className="reveal reveal-delay-1 mt-6 pt-20 grid grid-cols-2">
+      {/* Headings & Cards */}
+      <div className="mt-6 pt-20 grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center">
+        {/* Top separator */}
+        <div className="hidden lg:block order-10 lg:order-30 lg:col-span-2 h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" />
+
+        {/* Need heading */}
         <h1
-          className={`font-bebas text-8xl transition-colors duration-300 ${
+          className={`order-20 lg:order-10 pt-6 lg:pt-0 font-bebas text-6xl sm:text-7xl lg:text-8xl transition-colors duration-300 text-neutral-950 ${
             hovered === "need"
-              ? "text-white"
+              ? "pointer-fine:text-white"
               : hovered === "problem"
-                ? "text-black/50"
-                : "text-neutral-950"
+                ? "pointer-fine:text-black/50"
+                : ""
           }`}
         >
           Need
         </h1>
 
+        {/* Problem heading */}
         <h1
-          className={`font-bebas text-8xl text-right transition-colors duration-300 ${
+          className={`order-40 lg:order-20 pt-6 lg:pt-0 font-bebas text-6xl sm:text-7xl lg:text-8xl lg:text-right transition-colors duration-300 text-neutral-950 ${
             hovered === "problem"
-              ? "text-white"
+              ? "pointer-fine:text-white"
               : hovered === "need"
-                ? "text-black/50"
-                : "text-neutral-950"
+                ? "pointer-fine:text-black/50"
+                : ""
           }`}
         >
           Problem
         </h1>
-      </div>
 
-      {/* Top separator */}
-      <div className="h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" />
-
-      {/* Cards */}
-      <div className="reveal reveal-delay-2 grid grid-cols-2 divide-x divide-neutral-950/20">
         {/* Need */}
         <div
-          className="group"
+          className="order-30 lg:order-40 group"
           onMouseEnter={() => setHovered("need")}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="relative rounded-3xl pl-5 pt-6 transition-all duration-300 hover:bg-neutral-950 overflow-hidden">
-            <h2 className="w-[320px] font-DMSans text-5xl text-neutral-950/60 transition-all duration-500 group-hover:-translate-y-2 group-hover:text-yellow">
+          <div className="relative rounded-3xl pl-5 pt-6 pb-4 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
+            <h2 className="w-[320px] font-DMSans text-3xl sm:text-4xl lg:text-4xl xl:text-5xl text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               Where do you want to go?
             </h2>
 
-            <div className="translate-y-8 opacity-30 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 pt-4">
-              <p className="pb-6 transition-colors duration-300 group-hover:text-neutral-400 w-80">
+            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-8 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-4">
+              <p className="pb-6 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 w-80">
                 Select the most common needs you want to address.
               </p>
               {needs.map((n, i) => (
                 <div key={i} className="font-DMSans pb-2">
-                  <label className="pb-16 text-md transition-colors duration-300 group-hover:text-white cursor-none select-none">
+                  <label className="pb-16 text-md transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                     <input
                       type="checkbox"
                       className="accent-yellow mr-1 cursor-none"
@@ -193,7 +192,7 @@ export default function ProblemNeed({
                 </div>
               ))}
               <div className="font-DMSans pt-2 pr-5">
-                <label className="block w-80 text-neutral-950/70 transition-colors duration-300 group-hover:text-neutral-400 cursor-none select-none pb-2">
+                <label className="block w-80 text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other needs that aren't listed? <br /> Tell us in your
                   own words.
                 </label>
@@ -203,12 +202,12 @@ export default function ProblemNeed({
                   onClick={(e) => e.stopPropagation()}
                   rows={3}
                   placeholder="Describe the need that matters to you…"
-                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow group-hover:border-white/30 group-hover:text-white group-hover:placeholder:text-white/40"
+                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
                 />
               </div>
             </div>
             <div
-              className="absolute top-3 right-3 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out group-hover:opacity-20 group-hover:translate-y-0 group-hover:scale-100 pointer-events-none"
+              className="absolute top-3 right-3 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out pointer-fine:group-hover:opacity-20 pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:scale-100 pointer-events-none"
               style={{
                 maskImage: "linear-gradient(135deg, transparent 0%, black 70%)",
                 WebkitMaskImage:
@@ -220,23 +219,26 @@ export default function ProblemNeed({
           </div>
         </div>
 
+        {/* Divider between Need and Problem cards (mobile/tablet only) */}
+        <div className="order-35 lg:hidden h-px bg-neutral-950/20" />
+
         {/* Problem */}
         <div
-          className="group"
+          className="order-50 group lg:border-l lg:border-neutral-950/20"
           onMouseEnter={() => setHovered("problem")}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="relative rounded-3xl pl-5 pt-6 transition-all duration-300 hover:bg-neutral-950 overflow-hidden">
-            <h2 className="w-3/4 font-DMSans text-5xl text-neutral-950/60 transition-all duration-500 group-hover:-translate-y-2 group-hover:text-yellow">
+          <div className="relative rounded-3xl pl-5 pt-6 pb-4 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
+            <h2 className="w-3/4 font-DMSans text-3xl sm:text-4xl lg:text-4xl xl:text-5xl text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               What's keeping you from getting there?
             </h2>
-            <div className="translate-y-8 opacity-30 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 pt-4">
-              <p className="pb-6 transition-colors duration-300 group-hover:text-neutral-400 w-80">
+            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-8 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-4">
+              <p className="pb-6 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 w-80">
                 Select the most common problems your business is dealing with.
               </p>
               {problems.map((p, i) => (
                 <div key={i} className="font-DMSans pb-2">
-                  <label className="pb-16 text-md transition-colors duration-300 group-hover:text-white cursor-none select-none">
+                  <label className="pb-16 text-md transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                     <input
                       type="checkbox"
                       className="accent-yellow mr-1.5 cursor-none"
@@ -248,7 +250,7 @@ export default function ProblemNeed({
                 </div>
               ))}
               <div className="font-DMSans pt-2 pr-5">
-                <label className="block text-neutral-950/70 transition-colors duration-300 group-hover:text-neutral-400 cursor-none select-none pb-2">
+                <label className="block text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other problems that aren't listed? <br />
                   Tell us in your own words.
                 </label>
@@ -258,12 +260,12 @@ export default function ProblemNeed({
                   onClick={(e) => e.stopPropagation()}
                   rows={3}
                   placeholder="Describe the problem you're facing…"
-                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow group-hover:border-white/30 group-hover:text-white group-hover:placeholder:text-white/40"
+                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
                 />
               </div>
             </div>
             <div
-              className="absolute top-3 right-3 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out group-hover:opacity-20 group-hover:translate-y-0 group-hover:scale-100 pointer-events-none"
+              className="absolute top-3 right-3 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out pointer-fine:group-hover:opacity-20 pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:scale-100 pointer-events-none"
               style={{
                 maskImage: "linear-gradient(135deg, transparent 0%, black 80%)",
                 WebkitMaskImage:
@@ -274,9 +276,10 @@ export default function ProblemNeed({
             </div>
           </div>
         </div>
+
+        {/* Bottom separator */}
+        <div className="order-60 lg:col-span-2 h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" />
       </div>
-      {/* Bottom separator */}
-      <div className="h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" />
 
       {/* <div className="flex-col items-center reveal reveal-delay-3 mt-7.5 mb-20 flex justify-center"> */}
       {/* <div className="reveal reveal-delay-3 flex-col -mx-10 items-center flex justify-center"> */}
