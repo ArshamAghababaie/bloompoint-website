@@ -128,13 +128,50 @@ export default function Workflow() {
         })}
 
         {/* center mark */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-[0.5px] border-neutral-950/40 shadow-[0_0_18px_4px_rgba(23,23,23,0.15)] overflow-hidden flex items-center justify-center">
-          <Image
+        <div className="bg-neutral-950 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-[0.5px] border-neutral-950/40 shadow-[0_0_18px_4px_rgba(23,23,23,0.15)] overflow-hidden flex items-center justify-center">
+          {/* <Image
             src={`${basePath}/bp-w-b-logo.png`}
             width={80}
             height={80}
             alt="bloomPoint"
-          />
+          /> */}
+
+          <div className="relative w-12 h-12 sm:w-13.5 sm:h-13.5 md:w-15 md:h-15 shrink-0">
+            <div
+              className="absolute top-0 left-0 w-15 h-15 origin-top-left scale-80 sm:scale-90 md:scale-100"
+              style={{ perspective: "800px" }}
+            >
+              <Image
+                src={`${basePath}/logo-animation/bp-logo-back-animation.png`}
+                width={60}
+                height={60}
+                alt=""
+                className="logo-swoosh absolute inset-0"
+                style={{
+                  animation: "logo-swoosh-pulse 12s ease-in-out infinite",
+                }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  animation: "logo-swoosh-pulse 12s ease-in-out infinite",
+                  left: "-13.5px",
+                }}
+              >
+                <Image
+                  src={`${basePath}/logo-animation/b-logo.png`}
+                  width={60}
+                  height={60}
+                  alt="BloomPoint logo"
+                  className="logo-letter"
+                  style={{
+                    animation: "logo-flip 12s ease-in-out infinite",
+                    transformOrigin: "center center",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {workflow_steps.map((step, i) => {
@@ -155,11 +192,12 @@ export default function Workflow() {
               <div className="relative w-30 h-30 rounded-full border border-neutral-950/40 flex items-center justify-center transition-all duration-300 ease-out group-hover/step:scale-110 group-hover/step:border-neutral-950/70 group-hover/step:shadow-[0_0_18px_4px_rgba(23,23,23,0.2)]">
                 {/* inner filled circle */}
                 <div className="flex flex-col items-center justify-center w-25 h-25 rounded-full bg-neutral-950 px-2 text-center overflow-hidden">
-                  <div className="relative">
-                    <span className="absolute flex justify-center font-DMSans -top-7 right-0 left-0 tracking-widest text-8xl text-light-gray/25">
-                      {step.num}
-                    </span>
-                  </div>
+                  {/* <div className="relative"> */}
+                  {/* <span className="absolute flex justify-center font-DMSans -top-7 right-0 left-0 tracking-widest text-8xl text-light-gray/25"> */}
+                  <span className="flex justify-center font-DMSans tracking-widest text-md text-yellow">
+                    {step.num}
+                  </span>
+                  {/* </div> */}
                   <span className="mt-0.5 font-DMSans text-sm z-2 font-semibold leading-tight text-yellow">
                     {step.name}
                   </span>

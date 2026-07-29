@@ -193,8 +193,8 @@ export default function ProblemNeed({
               ))}
               <div className="font-DMSans pt-2 pr-5">
                 <label className="block w-80 text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
-                  Have other needs that aren't listed? <br /> Tell us in your
-                  own words.
+                  Have other needs that aren't listed? <br />
+                  Tell us about your challenges in your own words.
                 </label>
                 <textarea
                   value={otherNeed}
@@ -252,7 +252,7 @@ export default function ProblemNeed({
               <div className="font-DMSans pt-2 pr-5">
                 <label className="block text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other problems that aren't listed? <br />
-                  Tell us in your own words.
+                  Tell us about your challenges in your own words.
                 </label>
                 <textarea
                   value={otherProblem}

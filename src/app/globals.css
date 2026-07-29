@@ -234,6 +234,7 @@ body:hover .cursor {
   z-index: 9998;
   border-radius: 1px;
   opacity: 0;
+  mix-blend-mode: difference;
 }
 
 @keyframes cursor-dash-fade {

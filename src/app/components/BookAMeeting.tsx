@@ -407,7 +407,8 @@ export default function BookAMeeting({
                         )}
                       </div>
                       <div style={{ gridColumn: 2 }}>
-                        {(selectedProblems.length > 0 || otherProblem.trim()) && (
+                        {(selectedProblems.length > 0 ||
+                          otherProblem.trim()) && (
                           <h4
                             style={{
                               fontFamily: '"DM Sans", sans-serif',
@@ -532,7 +533,7 @@ export default function BookAMeeting({
               )}
 
               {/* Message */}
-              <Field label="Tell us about your challenges *">
+              {/* <Field label="Tell us about your challenges *">
                 <textarea
                   placeholder="Briefly describe your business context, community goals, needs or the problem you're trying to solve…"
                   required
@@ -540,7 +541,7 @@ export default function BookAMeeting({
                   value={form.message}
                   onChange={set("message")}
                 />
-              </Field>
+              </Field> */}
 
               {/* Submit button */}
               <button
