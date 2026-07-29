@@ -224,7 +224,8 @@ export default function ProblemNeed({
 
         {/* Problem */}
         <div
-          className="order-50 group lg:border-l lg:border-neutral-950/20"
+          // className="order-50 group lg:border-l lg:border-neutral-950/20"
+          className="order-50 group"
           onMouseEnter={() => setHovered("problem")}
           onMouseLeave={() => setHovered(null)}
         >

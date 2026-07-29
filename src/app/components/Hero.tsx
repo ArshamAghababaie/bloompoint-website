@@ -243,7 +243,7 @@ export default function Hero() {
             onMouseLeave={() => setExploreHovered(false)}
             className="w-full sm:w-auto"
           >
-            <button className="w-full sm:w-auto text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 border bg-neutral-950/10 backdrop-blur-[1px] border-neutral-700 text-neutral-500 rounded-xl md:hover:bg-white md:hover:-translate-y-1 transition duration-300 cursor-none">
+            <button className="w-full sm:w-auto text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 border backdrop-blur-[1px] border-neutral-700 text-neutral-800 rounded-xl bg-white md:hover:bg-white/90 md:hover:-translate-y-1 transition duration-300 cursor-none">
               Explore Projects
             </button>
           </Link>
@@ -253,7 +253,7 @@ export default function Hero() {
                 .getElementById("problem-need")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="w-full sm:w-auto font-medium text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 bg-yellow text-gray-800 rounded-xl md:hover:bg-white md:hover:-translate-y-1 transition duration-300 cursor-none"
+            className="w-full sm:w-auto font-medium text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 bg-yellow text-gray-800 rounded-xl md:hover:bg-yellow/70 md:hover:-translate-y-1 transition duration-300 cursor-none"
           >
             Let’s Get Started
           </button>

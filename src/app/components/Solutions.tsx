@@ -89,10 +89,10 @@ export default function Solutions() {
   return (
     <div
       id="solutions"
-      className="relative z-10 h-fit px-10 bg-neutral-950 text-yellow"
+      className="relative z-10 h-fit px-10 bg-light-gray text-yellow"
     >
       <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
-        <h1 className="text-white uppercase">our</h1>
+        <h1 className="text-neutral-950 uppercase">our</h1>
         <h1 className="uppercase">solutions</h1>
       </div>
       <div className="reveal reveal-delay-2 pt-4 font-DMSans">
@@ -142,7 +142,7 @@ export default function Solutions() {
             </div>
 
             <div className="relative z-10 flex h-110 flex-col p-12">
-              <h1 className="font-bebas text-7xl text-white duration-500 delay-200 group-hover:text-neutral-950">
+              <h1 className="font-bebas text-7xl text-neutral-950 duration-500 delay-200 group-hover:text-neutral-950">
                 {s.title}
               </h1>
 

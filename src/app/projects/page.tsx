@@ -70,7 +70,7 @@ export default function Projects() {
             our Projects
           </span> */}
         </div>
-        <div className="reveal reveal-delay-1 mt-6 pb-6 font-bebas">
+        {/* <div className="reveal reveal-delay-1 mt-6 pb-6 font-bebas">
           <h1 className="text-white uppercase text-6xl md:text-7xl">Our</h1>
           <h1 className="uppercase text-6xl md:text-7xl">Projects</h1>
         </div>
@@ -79,11 +79,12 @@ export default function Projects() {
             You can explore our projects with their specific, extensive scales
             and subjects.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* Filter Section */}
-      <div className="reveal reveal-delay-3 px-10 md:px-12 bg-neutral-950 pt-8 border-t border-neutral-800">
+      {/* <div className="reveal reveal-delay-3 px-10 md:px-12 bg-neutral-950 pt-8 border-t border-neutral-800"> */}
+      <div className="reveal reveal-delay-3 px-10 md:px-12 bg-neutral-950">
         <div className="flex items-center gap-2 mb-5 text-neutral-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"

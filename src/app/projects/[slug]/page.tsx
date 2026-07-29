@@ -79,16 +79,16 @@ export default async function ProjectPage({
         className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className="h-full px-10 md:px-16 lg:px-20 pt-48 pb-16 flex flex-col xl:flex-row gap-x-16 gap-y-4">
-          {/* Left column: client logo + project name, pinned to the top */}
+        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4">
+          {/* Upper section: client logo + project name, pinned to the top */}
           <div>
-            {s2?.clientLogo && (
+            {/* {s2?.clientLogo && (
               <img
                 src={`${basePath}${s2.clientLogo}`}
                 alt={project.name}
                 className="reveal reveal-delay-1 w-30 h-30 object-contain mb-6 bg-white rounded-3xl"
               />
-            )}
+            )} */}
 
             <h1 className="reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9">
               {project.name}
@@ -96,7 +96,7 @@ export default async function ProjectPage({
           </div>
 
           {/* Right column: detail rows, pinned to the bottom-right */}
-          {detailRows.length > 0 && (
+          {/* {detailRows.length > 0 && (
             <div className="flex-1 flex flex-col justify-end md:items-end">
               <div className="reveal reveal-delay-3 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-4 max-w-3xl">
                 {detailRows.map((row) => (
@@ -111,41 +111,52 @@ export default async function ProjectPage({
                 ))}
               </div>
             </div>
-          )}
+          )} */}
+
+          <div className="flex flex-col mt-20">
+            <div className="reveal reveal-delay-3 max-w-3xl">
+              {detailRows.map((row) => (
+                <div key={row.label} className="flex mb-4 gap-x-2 items-center">
+                  <span className="font-DMSans text-sm uppercase tracking-widest font-semibold text-neutral-950">
+                    {row.label}
+                  </span>
+                  {/* <span className="font-DMSans leading-relaxed whitespace-pre-line"> */}
+                  <span className="font-DMSans leading-relaxed">
+                    {row.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ─── SECTION 2 : Path Animation ─── */}
       {s2 && <PathAnimation data={s2} basePath={basePath} />}
 
-      {/* ─── SECTION 3 : PDF Viewer ─── */}
-      <section className="relative z-10 bg-neutral-950 py-12 px-10 md:px-16 lg:px-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="font-bebas text-light-gray text-3xl md:text-4xl uppercase">
-              {s3?.pdfTitle || "Project Document"}
+      {/* ─── SECTION 3 : Image Gallery ─── */}
+      <section className="relative z-10 bg-neutral-950 py-12">
+        <div className="mx-auto">
+          <div className="mb-8">
+            <h2 className="font-bebas text-light-gray pl-10 text-3xl md:text-4xl uppercase">
+              {s3?.title || "Project Document"}
             </h2>
-            {/* {s3?.pdfUrl && (
-              <a
-                href={`${basePath}${s3.pdfUrl}`}
-                download
-                className="font-DMSans text-sm bg-yellow text-neutral-900 px-5 py-2.5 rounded hover:opacity-90 transition"
-              >
-                Download PDF
-              </a>
-            )} */}
           </div>
 
-          {s3?.pdfUrl ? (
-            <embed
-              src={`${basePath}${s3.pdfUrl}`}
-              type="application/pdf"
-              className="w-full rounded-2xl"
-              style={{ height: "80vh" }}
-            />
+          {s3?.images && s3.images.length > 0 ? (
+            <div className="flex flex-col">
+              {s3.images.map((image, index) => (
+                <img
+                  key={image}
+                  src={`${basePath}${image}`}
+                  alt={`${s3.title} ${index + 1}`}
+                  className="w-full h-auto"
+                />
+              ))}
+            </div>
           ) : (
             <div
-              className="w-full rounded-lg border border-neutral-800 flex items-center justify-center"
+              className="w-full border border-neutral-800 flex items-center justify-center"
               style={{ height: "80vh" }}
             >
               <p className="font-DMSans text-neutral-500 text-lg">
