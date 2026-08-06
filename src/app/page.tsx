@@ -10,6 +10,7 @@ import Workflow from "./components/Workflow";
 import BookAMeeting from "./components/BookAMeeting";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
+import Ongoing from "./components/Ongoing";
 
 export default function Page() {
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
@@ -31,6 +32,7 @@ export default function Page() {
         otherNeed={otherNeed}
         setOtherNeed={setOtherNeed}
       />
+      <Ongoing />
       <Solutions />
       <BPEcosystem />
       <Workflow />

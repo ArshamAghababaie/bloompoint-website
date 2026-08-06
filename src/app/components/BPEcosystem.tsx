@@ -9,7 +9,7 @@ export default function Solutions() {
           BloomPoint Ecosystem
         </span>
       </div> */}
-      <div className="reveal reveal-delay-1 mt-0 pt-30 px-40 flex-col text-[32px] text-center">
+      <div className="reveal reveal-delay-1 mt-0 pt-30 px-40 flex-col text-[30px] text-center">
         <p className="font-DMSans leading-14">
           <span className="font-medium">BloomPoint</span> builds practical, and{" "}
           <span className="bg-yellow px-2 rounded-xl text-neutral-950">
