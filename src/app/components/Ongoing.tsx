@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "../projects/projects-data";
+import { basePath } from "../../../lib/basePath";
 
 export default function Ongoing() {
   const latestProjects = projects.filter(
@@ -34,7 +35,9 @@ export default function Ongoing() {
               {/* IMAGE */}
               <div className="relative h-full w-full overflow-hidden bg-neutral-950">
                 <Image
-                  src={project.section3?.images[1] || project.image}
+                  src={
+                    basePath + (project.section3?.images[1] || project.image)
+                  }
                   alt={project.name}
                   // fill
                   width={500}
