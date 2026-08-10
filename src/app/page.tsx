@@ -6,7 +6,6 @@ import Hero from "./components/Hero";
 import Solutions from "./components/Solutions";
 import ProblemNeed from "./components/ProblemNeed";
 import BPEcosystem from "./components/BPEcosystem";
-import Workflow from "./components/Workflow";
 import BookAMeeting from "./components/BookAMeeting";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
@@ -35,7 +34,6 @@ export default function Page() {
       <Ongoing />
       <Solutions />
       <BPEcosystem />
-      <Workflow />
       <FAQ />
       <BookAMeeting
         selectedProblems={selectedProblems}

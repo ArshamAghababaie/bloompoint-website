@@ -13,7 +13,7 @@ export default function Navbar() {
   const navlinks: NavLink[] = [
     { id: "1", title: "Projects", url: "/projects" },
     // { id: "2", title: "Solutions", url: "#solutions" },
-    // { id: "3", title: "Workflow", url: "#workflow" },
+    { id: "3", title: "Workflow", url: "/workflow" },
     // { id: "4", title: "FAQ", url: "#faq" },
     { id: "5", title: "Pricing", url: "/pricing" },
   ];

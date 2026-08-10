@@ -1,6 +1,6 @@
 "use client";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Image from "next/image";
 import { basePath } from "../../../lib/basePath";
 
@@ -78,7 +78,7 @@ export default function Workflow() {
       <Navbar />
       <div
         id="workflow"
-        className="relative z-10 h-screen px-10 bg-yellow text-neutral-950"
+        className="relative z-10 h-screen mt-20 px-10 bg-yellow text-neutral-950 overflow-hidden"
       >
         <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
           <h1 className="text-light-gray uppercase">agentic</h1>
@@ -92,7 +92,7 @@ export default function Workflow() {
           </p>
         </div>
 
-        <div className="reveal reveal-delay-2 absolute right-[-10%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-150 h-150">
+        <div className="reveal reveal-delay-2 absolute right-[-10%] top-[45%] -translate-x-1/2 -translate-y-1/2 w-150 h-150">
           {/* sequence ring linking the 4 steps — solid circuit trace */}
           <div
             className="circuit-ring absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"

@@ -50,43 +50,14 @@ export default function BookAMeeting({
   return (
     <section
       id="bookAMeeting"
-      className="relative z-10"
-      style={{
-        background: "#f5f5f0",
-        // border: 10,
-        // borderColor: "red",
-        // color: "#0a0a0a",
-        padding: "120px 60px",
-        position: "relative",
-      }}
+      className="relative z-10 min-h-screen px-10 pb-12 bg-light-gray"
     >
-      {/* Section label */}
-      <div
-        className="reveal font-DMSans uppercase"
-        style={{
-          fontFamily: '"DM Sans", sans-serif',
-          fontSize: "0.65rem",
-          letterSpacing: "0.22em",
-          textTransform: "uppercase",
-          color: "#0a0a0a",
-          marginBottom: 20,
-          display: "flex",
-          alignItems: "center",
-          gap: 14,
-        }}
-      >
-        <span
-          className="text-rose-400"
-          style={{
-            display: "block",
-            width: 28,
-            height: 1,
-            background: "#0a0a0a",
-            flexShrink: 0,
-          }}
-        />
-        Let's Talk
+      <div className="reveal reveal-delay-1 justify-center flex font-bebas text-[200px] tracking-wide">
+        <h1 className="text-neutral-950 uppercase">Book</h1>
+        <h1 className="text-yellow uppercase">&nbsp;A Meeting</h1>
       </div>
+
+      {/* Section label */}
 
       {/* Two-column layout */}
       <div
@@ -99,20 +70,6 @@ export default function BookAMeeting({
       >
         {/* Left — copy */}
         <div className="reveal reveal-delay-1">
-          <h2
-            style={{
-              fontFamily: '"Bebas Neue", sans-serif',
-              fontSize: "clamp(2.8rem, 5vw, 5.5rem)",
-              lineHeight: 0.94,
-              letterSpacing: "-0.01em",
-              color: "#0a0a0a",
-              marginBottom: 24,
-            }}
-          >
-            Book a<br />
-            <span style={{ color: "#FECB2F" }}>Meeting</span>
-          </h2>
-
           <p
             style={{
               fontSize: "0.95rem",
@@ -120,6 +77,7 @@ export default function BookAMeeting({
               lineHeight: 1.8,
               color: "rgba(0,0,0,0.55)",
               maxWidth: 380,
+              marginTop: 120,
               marginBottom: 38,
             }}
           >
@@ -524,7 +482,7 @@ export default function BookAMeeting({
                           .getElementById("problem-need")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="bg-transparent border-none p-0 font-DMSans text-[0.82rem] font-medium text-neutral-900 underline underline-offset-[3px] cursor-none transition-all duration-200 hover:text-yellow hover:-translate-y-0.5"
+                      className="bg-transparent border-none p-0 font-DMSans text-[0.82rem] font-medium text-neutral-900 underline underline-offset-[3px] cursor-none transition-all duration-200 hover:text-neutral-500 hover:-translate-y-0.5"
                     >
                       Go to problems/needs ↑
                     </button>
@@ -571,7 +529,7 @@ export default function BookAMeeting({
                 }}
               ></button> */}
 
-              <p
+              {/* <p
                 style={{
                   fontFamily: "DM Sans",
                   fontSize: ".75rem",
@@ -584,7 +542,7 @@ export default function BookAMeeting({
                 }}
               >
                 | We reply within one business day |
-              </p>
+              </p> */}
             </form>
           )}
         </div>

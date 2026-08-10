@@ -1,140 +1,82 @@
 import Image from "next/image";
+import Link from "next/link";
+import { projects } from "../projects/projects-data";
 
 export default function Ongoing() {
-  const ongoing_Proj = [
-    {
-      id: "01",
-      title: "Keune Care",
-      category: "SMEs",
-      description:
-        "A short description of the project. Replace this placeholder with your own text.",
-      image: "project-path/keune-care/section3/keune_04.jpg",
-      url: "projects/keune-care",
-    },
-    {
-      id: "02",
-      title: "Waste",
-      category: "Large Enterprises",
-      description:
-        "A short description of the project. Replace this placeholder with your own text.",
-      image: "project-path/aseh/section3/aseh_04.jpg",
-      url: "projects/keune-care",
-    },
-    {
-      id: "03",
-      title: "NY",
-      category: "Cities",
-      description:
-        "A short description of the project. Replace this placeholder with your own text.",
-      image: "project-path/darasiab/section3/darasiab_05.jpg",
-      url: "projects/keune-care",
-    },
-  ];
+  const latestProjects = projects.filter(
+    (project) => project.state === "latest",
+  );
 
   return (
-    <div
+    <section
       id="ongoing"
-      className="relative z-10 min-h-screen px-10 md:px-12 bg-neutral-950 text-yellow pb-12"
+      className="relative z-10  h-180 bg-light-gray text-yellow pb-12"
     >
-      {/* <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl"> */}
-      <div className="mt-0 pt-20 flex-col font-bebas text-7xl">
-        <h1 className="text-white uppercase">Ongoing</h1>
-        <h1 className="uppercase">Projects...</h1>
+      {/* ======= Title ======= */}
+      <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
+        <h1 className="text-[90px] uppercase leading-none text-neutral-950 sm:text-[120px] md:text-[160px] lg:text-[200px]">
+          Latest
+        </h1>
+
+        <h1 className="ml-3 text-[90px] uppercase leading-none text-yellow sm:text-[120px] md:text-[160px] lg:text-[200px]">
+          Projects
+        </h1>
       </div>
-
       {/* ======= Projects ======= */}
-      <div className="relative mt-20">
-        <div className="mt-16">
-          <div className="space-y-8">
-            {ongoing_Proj.map((project, index) => (
-              <div
-                key={project.id}
-                // className={`reveal reveal-delay-${Math.min(index + 2, 10)}
-                className={`
-        group
-        overflow-hidden
-        rounded-3xl
-        border
-        border-neutral-800
-        transition-all
-        duration-300
-        hover:border-yellow/50`}
-              >
-                <div
-                  className={`grid lg:grid-cols-2 items-stretch ${
-                    index % 2 !== 1 ? "lg:[&>*:first-child]:order-2" : ""
-                  }`}
-                >
-                  {/* IMAGE */}
-                  <div className="relative min-h-70 md:min-h-90 overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
+      <div className="reveal reveal-delay-2 relative mt-28 px-4 sm:px-6 md:px-10 lg:px-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+          {latestProjects.map((project) => (
+            <Link
+              key={project.id}
+              href={`/projects/${project.slug}`}
+              className="group relative block aspect-auto overflow-hidden rounded-3xl border border-neutral-800 transition-all duration-300"
+            >
+              {/* IMAGE */}
+              <div className="relative h-full w-full overflow-hidden bg-neutral-950">
+                <Image
+                  src={project.section3?.images[1] || project.image}
+                  alt={project.name}
+                  // fill
+                  width={500}
+                  height={500}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-                  {/* CONTENT */}
-                  <div className="flex flex-col justify-center p-8 md:p-12">
-                    {/* Category */}
-                    <span className="w-fit rounded-lg bg-yellow px-2 py-1 mb-3 text-[11px] font-DMSans uppercase tracking-wider text-neutral-950">
-                      {project.category}
-                    </span>
-                    <span className="font-bebas text-6xl text-neutral-700">
-                      {project.id}
-                    </span>
+                {/* Category Badge */}
+                <span className="absolute right-5 top-5 z-10 rounded-lg bg-yellow px-2 py-1 font-DMSans text-[11px] uppercase tracking-wider text-neutral-950">
+                  {project.category}
+                </span>
 
-                    <h2 className="mt-2 font-bebas text-5xl uppercase leading-none text-white md:text-6xl">
-                      {project.title}
-                    </h2>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 flex items-end bg-black/80 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:p-8">
+                  <div className="flex w-full translate-y-8 items-center justify-between transition-transform duration-300 group-hover:translate-y-0">
+                    {/* Project Name */}
+                    <h3 className="font-bebas text-xl uppercase text-white sm:text-2xl md:text-3xl">
+                      {project.name}
+                    </h3>
 
-                    <p className="mt-6 max-w-xl font-DMSans leading-8 text-light-gray">
-                      {project.description}
-                    </p>
-
-                    <div className="mt-8 flex items-center gap-4">
-                      {/* <span className="rounded-full border border-yellow/20 bg-yellow/10 px-4 py-2 text-xs uppercase tracking-widest text-yellow">
-                        ● In Progress
-                      </span> */}
-
-                      {project.url && (
-                        <a
-                          href={project.url || "#"}
-                          target={project.url ? "_blank" : undefined}
-                          rel={project.url ? "noopener noreferrer" : undefined}
-                          onClick={(e) => !project.url && e.preventDefault()}
-                          className={`group/button inline-flex items-center gap-3 rounded-xl border px-5 py-3 font-DMSans text-sm uppercase tracking-widest transition-all duration-300 cursor-none ${
-                            project.url
-                              ? "border-yellow text-yellow group-hover:bg-yellow group-hover:text-neutral-950 hover:bg-white hover:text-neutral-950"
-                              : "border-neutral-700 text-neutral-500 hover:border-yellow/50 hover:text-yellow"
-                          }`}
-                        >
-                          View Project
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 transition-transform duration-300 group-hover/button:translate-x-1"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={1.5}
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
+                    {/* Arrow */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      className="ml-3 h-6 w-6 shrink-0 -translate-x-2 text-yellow opacity-0 transition-all delay-75 duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:h-7 md:w-7"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </Link>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

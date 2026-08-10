@@ -50,6 +50,7 @@ export interface Project {
   category: Category;
   image: string;
   tagline: string;
+  state: "latest" | "old";
   slug: string;
   section1?: ProjectSection1;
   section2?: ProjectSection2;
@@ -66,6 +67,7 @@ export const projects: Project[] = [
     category: "SMEs",
     image: "/projects-cover-image/SMEs/eune-care.jpg",
     tagline: "community-wellbeing",
+    state: "latest",
     slug: "keune-care",
     section1: {
       color: "keune_umber",
@@ -134,6 +136,7 @@ export const projects: Project[] = [
   //   category: "SMEs",
   //   image: "/projects/sme-3.jpg",
   //   tagline: "private-business-club",
+  // state: "old",
   //   slug: "bahaman",
   // },
   // {
@@ -142,6 +145,7 @@ export const projects: Project[] = [
   //   category: "SMEs",
   //   image: "/projects/sme-4.jpg",
   //   tagline: "floating-center",
+  // state: "old",
   //   slug: "makoko",
   // },
   {
@@ -150,12 +154,15 @@ export const projects: Project[] = [
     category: "SMEs",
     image: "/projects-cover-image/SMEs/aseh.jpg",
     tagline: "efficient-system",
+    state: "latest",
     slug: "aseh",
     section1: {
       color: "aseh_gray",
       clientName: "ASEH CO. - Refrigeration Manufacturer",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `?`,
+      problem: `Inefficient Installation Practices
+              • Lack of Structured Technical Training`,
+
       communityLedSolution: "Learning by Doing Academy",
       prototype: `Installers Community (1200 People)`,
 
@@ -198,13 +205,15 @@ export const projects: Project[] = [
     category: "SMEs",
     image: "/projects-cover-image/SMEs/dbst.jpg",
     tagline: "dbst-after-School",
+    state: "old",
     slug: "dbst",
     section1: {
       color: "companies_red",
       clientName:
         "Deutsche Botschaftsschule Teheran (DBST) | German Embassy School Tehran",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `?`,
+      problem: `Low Environmental Awareness
+              • Limited Hands-On Learning`,
       communityLedSolution: "After School Academy",
       prototype: `5th-8th Grades (100 Students)`,
       // designatedGroup: "Keune Care Club Members",
@@ -213,7 +222,7 @@ export const projects: Project[] = [
     section2: {
       clientName: "DBST",
       clientLogo: "/project-path/dbst/section2/dbst-logo.png",
-      clientDepartment: "DBST | ? Dept.",
+      clientDepartment: "DBST | Principal Dept.",
       clientDepartmentLogo: "/project-path/dbst/section2/dbst-logo.png",
       bloompointLogo: "/bp-logo-yellow.png",
       bloompointDepartment: "BloomPoint",
@@ -255,12 +264,15 @@ export const projects: Project[] = [
     category: "SMEs",
     image: "/projects-cover-image/SMEs/darasiab.jpg",
     tagline: "experience-garden",
+    state: "old",
     slug: "darasiab",
     section1: {
       color: "darasiab_green",
       clientName: "DARASIAB",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `?`,
+      problem: `Theoretical Environmental Education
+              • Lack of Experiential Learning`,
+
       communityLedSolution: "Experience Garden for Kids",
       prototype: `  International Schools (20 Schools)`,
       // designatedGroup: "Keune Care Club Members",
@@ -269,7 +281,7 @@ export const projects: Project[] = [
     section2: {
       clientName: "DARASIAB",
       clientLogo: "/project-path/darasiab/section2/darasiab-logo.png",
-      clientDepartment: "DARASIAB | ? Dept.",
+      clientDepartment: "DARASIAB | Principal Dept.",
       clientDepartmentLogo: "/project-path/darasiab/section2/darasiab-logo.png",
       bloompointLogo: "/bp-logo-yellow.png",
       bloompointDepartment: "BloomPoint",
@@ -305,6 +317,7 @@ export const projects: Project[] = [
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/crouse.jpg",
     tagline: "food-waste-management",
+    state: "latest",
     slug: "cfw",
     section1: {
       color: "crouse_blue",
@@ -363,6 +376,7 @@ export const projects: Project[] = [
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mammut.jpg",
     tagline: "industrial-sustainability",
+    state: "old",
     slug: "mammut",
     section1: {
       color: "companies_red",
@@ -423,6 +437,7 @@ export const projects: Project[] = [
     image: "/projects-cover-image/LEs/mahram.jpg",
     tagline: "culinary-learning",
     slug: "mahram-co",
+    state: "old",
     section1: {
       color: "companies_red",
       clientName: "MAHRAM CO. - Food Industries (Since 1970)",

@@ -75,15 +75,21 @@ export default function FAQ() {
   return (
     <div
       id="faq"
-      className="relative z-10 h-screen px-10 bg-neutral-950 text-yellow"
+      className="relative z-10 min-h-screen px-10 bg-neutral-950 text-yellow"
     >
-      <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
-        <h1 className="text-white uppercase">common</h1>
-        <h1 className="uppercase">questions</h1>
+      {/* ======= Title ======= */}
+      <div className="reveal reveal-delay-1 flex justify-center sm:px-12 pt-14 text-center font-bebas tracking-wide">
+        <h1 className="text-[80px] uppercase leading-none text-light-gray sm:text-[100px] md:text-[125px] lg:text-[160px] xl:text-[200px]">
+          Common
+        </h1>
+
+        <h1 className="text-[80px] uppercase leading-none text-yellow sm:text-[100px] md:text-[125px] lg:text-[160px] xl:text-[200px]">
+          &nbsp;Questions
+        </h1>
       </div>
 
       {/* Right column — accordions */}
-      <div className="mt-6 ml-auto flex w-full max-w-[50%] flex-col text-lg">
+      <div className="mt-6 ml-auto flex w-full flex-col text-lg">
         {faqs.map((faq, i) => {
           const isOpen = openIndex === i;
           return (
@@ -107,7 +113,7 @@ export default function FAQ() {
                 className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
               >
                 <div className="overflow-hidden">
-                  <p className="pb-5 pr-10 font-DMSans text-sm text-light-gray">
+                  <p className="pb-5 pr-10 font-DMSans text-base text-light-gray">
                     {faq.a}
                   </p>
                 </div>

@@ -325,18 +325,34 @@ body:hover .cursor {
 
 .cta-book {
   color: transparent;
+
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: #171717;
+  -webkit-text-stroke: 1.5px #171717;
+
+  text-shadow:
+    5px 5px 0 rgb(23, 23, 23),
+    7px 7px 0 rgba(255, 255, 255, 0.5);
+
   paint-order: stroke fill;
+
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
   transition:
     -webkit-text-stroke-color 0.3s ease,
+    text-shadow 0.3s ease,
     background-color 0.35s ease;
 }
 
 .cta-book:hover {
+  text-shadow: none;
+
+  /* text-shadow: 0px 0px 0 rgb(255, 255, 255); */
+
+  /* text-shadow:
+    3px 3px 0 #fecb2f,
+    8px 8px 0 rgba(255, 255, 255, 0.9); */
+
   -webkit-text-stroke-color: #fecb2f;
 }
 
