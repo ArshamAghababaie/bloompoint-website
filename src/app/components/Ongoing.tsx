@@ -11,20 +11,33 @@ export default function Ongoing() {
   return (
     <section
       id="ongoing"
-      className="relative z-10  h-180 bg-light-gray text-yellow pb-12"
+      className="relative z-10 h-180 bg-light-gray text-yellow pb-12"
     >
       {/* ======= Title ======= */}
-      <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
-        <h1 className="text-[90px] uppercase leading-none text-neutral-950 sm:text-[120px] md:text-[160px] lg:text-[200px]">
-          Latest
-        </h1>
+      <div className="flex-col reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
+        <div className="flex justify-center">
+          <h1 className="text-[90px] uppercase leading-none text-neutral-950 sm:text-[120px] md:text-[160px] lg:text-[200px]">
+            Latest
+          </h1>
 
-        <h1 className="ml-3 text-[90px] uppercase leading-none text-yellow sm:text-[120px] md:text-[160px] lg:text-[200px]">
-          Projects
-        </h1>
+          <h1 className="ml-3 text-[90px] uppercase leading-none text-yellow sm:text-[120px] md:text-[160px] lg:text-[200px]">
+            Projects
+          </h1>
+        </div>
+        <div className="font-DMSans">
+          <p className="reveal reveal-delay-2 font-DMSans text-4xl text-neutral-950">
+            A glance of our some recent projects
+          </p>
+
+          {/* <Link href={"/projects"} className="w-full sm:w-auto">
+            <button className="w-full mt-10 sm:w-auto text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 border border-neutral-950 text-neutral-800 rounded-xl bg-white md:hover:bg-neutral-950 md:hover:text-light-gray md:hover:-translate-y-1 transition duration-300 cursor-none">
+              More Projects
+            </button>
+          </Link> */}
+        </div>
       </div>
       {/* ======= Projects ======= */}
-      <div className="reveal reveal-delay-2 relative mt-28 px-4 sm:px-6 md:px-10 lg:px-12">
+      <div className="reveal reveal-delay-3 relative mt-28 px-4 sm:px-6 md:px-10 lg:px-12">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {latestProjects.map((project) => (
             <Link

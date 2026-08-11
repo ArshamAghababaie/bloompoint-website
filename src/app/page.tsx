@@ -31,8 +31,8 @@ export default function Page() {
         otherNeed={otherNeed}
         setOtherNeed={setOtherNeed}
       />
-      <Ongoing />
       <Solutions />
+      <Ongoing />
       <BPEcosystem />
       <FAQ />
       <BookAMeeting
