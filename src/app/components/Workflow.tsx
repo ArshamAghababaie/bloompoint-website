@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Image from "next/image";
@@ -78,7 +77,7 @@ export default function Workflow() {
       <Navbar />
       <div
         id="workflow"
-        className="relative z-10 h-screen px-10 bg-yellow text-neutral-950"
+        className="relative z-10 h-screen px-4 sm:px-6 md:px-10 lg:px-12 bg-yellow text-neutral-950"
       >
         <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
           <h1 className="text-light-gray uppercase">agentic</h1>

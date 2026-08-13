@@ -11,7 +11,7 @@ export default function Ongoing() {
   return (
     <section
       id="ongoing"
-      className="relative z-10 h-180 bg-light-gray text-yellow pb-12"
+      className="relative z-10 min-h-screen bg-light-gray text-yellow pb-12"
     >
       {/* ======= Title ======= */}
       <div className="flex-col reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
@@ -25,8 +25,11 @@ export default function Ongoing() {
           </h1>
         </div>
         <div className="font-DMSans">
-          <p className="reveal reveal-delay-2 font-DMSans text-4xl text-neutral-950">
-            A glance of our some recent projects
+          <p className="pt-6 font-DMSans text-[28px] text-neutral-950">
+            A glance at the diverse clients and communities we've worked with
+            across <br />
+            industrial manufacturing, education, public institutions, and cities
+            (ecosystems)
           </p>
 
           {/* <Link href={"/projects"} className="w-full sm:w-auto">

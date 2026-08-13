@@ -154,7 +154,7 @@ export const projects: Project[] = [
     category: "SMEs",
     image: "/projects-cover-image/SMEs/aseh.jpg",
     tagline: "efficient-system",
-    state: "latest",
+    state: "old",
     slug: "aseh",
     section1: {
       color: "aseh_gray",
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     category: "SMEs",
     image: "/projects-cover-image/SMEs/dbst.jpg",
     tagline: "dbst-after-School",
-    state: "old",
+    state: "latest",
     slug: "dbst",
     section1: {
       color: "companies_red",

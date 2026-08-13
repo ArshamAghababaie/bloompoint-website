@@ -6,7 +6,8 @@ import { basePath } from "../../../lib/basePath";
 const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "#solutions", label: "Solutions" },
-  { href: "#workflow", label: "Workflow" },
+  { href: "/workflow", label: "Workflow" },
+  { href: "/surveys", label: "Surveys" },
   { href: "/pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
   // { href: '#offer', label: 'What We Offer' },
@@ -20,6 +21,7 @@ const navLinks = [
 const contactLinks = [
   { href: "#", label: "LinkedIn" },
   { href: "#", label: "Instagram" },
+  { href: "mailto:bloompoint.community@gmail.com", label: "Email" },
   { href: "#bookAMeeting", label: "Book A Meeting" },
 ];
 
@@ -52,10 +54,10 @@ export default function Footer() {
             collaboration, and community impact.
           </p>
           <a
-            href="mailto:arsham.aghababaie@gamil.com"
+            href="mailto:bloompoint.community@gmail.com"
             className="footer-email cursor-none"
           >
-            info@bloompoint.com
+            bloompoint.community@gmail.com
           </a>
         </div>
 
@@ -70,7 +72,13 @@ export default function Footer() {
                     onClick={() => {
                       const el = document.getElementById(link.href.slice(1));
                       if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
+                        // adjust this value to control how far from the top the element stops
+                        const offset = 80; // pixels
+                        const top =
+                          window.scrollY +
+                          el.getBoundingClientRect().top -
+                          offset;
+                        window.scrollTo({ top, behavior: "smooth" });
                       } else {
                         window.location.href = `${basePath}/${link.href}`;
                       }
@@ -109,7 +117,15 @@ export default function Footer() {
                     onClick={() => {
                       const el = document.getElementById(link.href.slice(1));
                       if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
+                        // adjust this value to control how far from the top the element stops
+                        const offset = 80; // pixels
+                        const top =
+                          window.scrollY +
+                          el.getBoundingClientRect().top -
+                          offset;
+                        window.scrollTo({ top, behavior: "smooth" });
+
+                        // el.scrollIntoView({ behavior: "smooth" });
                       } else {
                         window.location.href = `${basePath}/${link.href}`;
                       }

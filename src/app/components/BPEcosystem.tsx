@@ -1,4 +1,4 @@
-export default function Solutions() {
+export default function BPEcosystem() {
   return (
     // <div className="relative z-10 px-10 bg-light-gray text-neutral-950">
     <div className="relative z-10 px-10 bg-yellow text-neutral-950">

@@ -8,6 +8,10 @@ const faqs = [
     a: "BloomPoint is a B2B community-led growth platform. We combine structured engagement frameworks with AI-based community-driven agents to help businesses design, activate, and sustain meaningful exchange within their communities. Bridging human, system, and technology.",
   },
   {
+    q: "Who is BloomPoint for?",
+    a: "We work with SMEs, large enterprises, and cities. Any organization that wants to build genuine community belonging-not just marketing-can benefit from our platform. We are a B2B service.",
+  },
+  {
     q: (
       <p>
         What is the difference between the{" "}
@@ -40,10 +44,6 @@ const faqs = [
     a: "Yes. BloomPoint is designed to help businesses address specific challenges or opportunities within their communities. Identifying these needs early on allows us to tailor our solutions effectively and ensure that the engagement strategies we implement are aligned with your business objectives.",
   },
   {
-    q: "Who is BloomPoint for?",
-    a: "We work with SMEs, large enterprises, and cities. Any organization that wants to build genuine community belonging-not just marketing-can benefit from our platform. We are a B2B service.",
-  },
-  {
     q: "How does the agentic AI platform work?",
     a: "Our modular AI workflow runs through four stages: business context analysis, blueprint creation (community planning), progress supervision, and post-analysis conclusions. Each stage is powered by specialized AI agents with human-in-the-loop oversight for quality and nuance.",
   },
@@ -54,7 +54,6 @@ const faqs = [
         <span className="underline underline-offset-2 decoration-neutral-500">
           Path
         </span>{" "}
-        solution before joining the{" "}
         <span className="underline underline-offset-2 decoration-neutral-500">
           Circle
         </span>

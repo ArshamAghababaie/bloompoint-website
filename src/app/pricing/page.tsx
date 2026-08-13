@@ -116,7 +116,7 @@ export default function Pricing() {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className="h-245 px-10 pt-20 bg-light-gray text-yellow">
+      <div className="h-245 pt-20 px-4 sm:px-6 md:px-10 lg:px-12 bg-light-gray text-yellow">
         {/* <div className="reveal flex items-center pt-32">
           <div className="w-6 h-px bg-neutral-950" />
           <span className="pl-2 text-neutral-950 text-xs font-DMSans tracking-widest uppercase">
