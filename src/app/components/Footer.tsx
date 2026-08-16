@@ -21,7 +21,7 @@ const navLinks = [
 const contactLinks = [
   { href: "#", label: "LinkedIn" },
   { href: "#", label: "Instagram" },
-  { href: "mailto:bloompoint.community@gmail.com", label: "Email" },
+  { href: "mailto:info@bloompoint.world", label: "Email" },
   { href: "#bookAMeeting", label: "Book A Meeting" },
 ];
 
@@ -54,10 +54,10 @@ export default function Footer() {
             collaboration, and community impact.
           </p>
           <a
-            href="mailto:bloompoint.community@gmail.com"
+            href="mailto:info@bloompoint.world"
             className="footer-email cursor-none"
           >
-            bloompoint.community@gmail.com
+            info@bloompoint.world
           </a>
         </div>
 

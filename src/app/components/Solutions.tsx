@@ -12,20 +12,20 @@ export default function Solutions() {
     {
       title: (
         <div className="group relative flex flex-col gap-3">
-          <span className="font-DMSans text-5xl text-neutral-700 whitespace-pre-line">
+          <span className="font-DMSans text-4xl lg:text-[40px] xl:text-5xl text-neutral-700 whitespace-pre-line">
             [01]
           </span>
-          <h1 className="font-DMSans text-5xl text-light-gray whitespace-pre-line">
+          <h1 className="font-DMSans text-4xl lg:text-[33px] xl:text-5xl text-light-gray whitespace-pre-line">
             A <span className="text-yellow">Path</span> with Checkpoints
           </h1>
         </div>
       ),
       subtitle: (
-        <div className="group relative flex flex-col gap-1 pt-3">
-          <h1 className="font-DMSans text-2xl text-light-gray  whitespace-pre-line">
+        <div className="group relative flex flex-col lg:gap-1 gap-px pt-3">
+          <h1 className="font-DMSans text-[22px] lg:text-2xl text-light-gray whitespace-pre-line">
             Entry Point → Prototype
           </h1>
-          <h1 className="font-DMSans text-2xl text-yellow whitespace-pre-line">
+          <h1 className="font-DMSans text-[22px] lg:text-2xl text-yellow whitespace-pre-line">
             Outcome |{" "}
             <span className="text-light-gray">Short Term Results</span>
           </h1>
@@ -75,20 +75,20 @@ export default function Solutions() {
     {
       title: (
         <div className="group relative flex flex-col gap-3">
-          <span className="font-DMSans text-5xl text-neutral-700 whitespace-pre-line">
+          <span className="font-DMSans text-4xl lg:text-[40px] xl:text-5xl text-neutral-700 whitespace-pre-line">
             [02]
           </span>
-          <h1 className="font-DMSans text-5xl text-light-gray whitespace-pre-line">
+          <h1 className="font-DMSans text-4xl lg:text-[33px] xl:text-5xl text-light-gray whitespace-pre-line">
             A <span className="text-yellow">Circular</span> System
           </h1>
         </div>
       ),
       subtitle: (
-        <div className="group relative flex flex-col gap-1 pt-3">
-          <h1 className="font-DMSans text-2xl text-light-gray duration-500 whitespace-pre-line">
+        <div className="group relative flex flex-col lg:gap-1 gap-px pt-3">
+          <h1 className="font-DMSans text-[22px] lg:text-2xl text-light-gray duration-500 whitespace-pre-line">
             Ecosystem → Supervision / Coordination
           </h1>
-          <h1 className="font-DMSans text-2xl text-yellow duration-500 delay-200 whitespace-pre-line">
+          <h1 className="font-DMSans text-[22px] lg:text-2xl text-yellow duration-500 delay-200 whitespace-pre-line">
             Outcome | <span className="text-light-gray">Long Term Results</span>
           </h1>
         </div>
@@ -189,11 +189,11 @@ export default function Solutions() {
             </div> */}
 
             <div className="relative z-10 flex flex-col p-12">
-              <h1 className="font-DMSans text-5xl text-yellow duration-500 delay-200 group-hover:text-neutral-950 whitespace-pre-line">
+              <h1 className="font-DMSans text-yellow duration-500 delay-200 group-hover:text-neutral-950 whitespace-pre-line">
                 {s.title}
               </h1>
 
-              <h2 className="pt-2 font-DMSans text-2xl duration-500 delay-200 group-hover:text-neutral-700 whitespace-pre-line">
+              <h2 className="pt-2 font-DMSans duration-500 delay-200 group-hover:text-neutral-700 whitespace-pre-line">
                 {s.subtitle}
               </h2>
 

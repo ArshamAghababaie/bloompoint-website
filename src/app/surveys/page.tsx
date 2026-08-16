@@ -84,7 +84,9 @@ export default function Surveys() {
           </p>
         </div> */}
 
-        <div className="reveal reveal-delay-3 flex flex-col mt-12">
+        <div className="flex flex-col mt-12 text-xl">
+          {/* <div className="relative flex flex-col mt-12"> */}
+          {/* <div className="absolute flex flex-col right-10 text-4xl"> */}
           {SurveysList.map((s, i) => (
             <Link
               key={i}
@@ -97,6 +99,7 @@ export default function Surveys() {
             </Link>
           ))}
         </div>
+        {/* </div> */}
         {/* <Survey01 /> */}
       </div>
       <Footer />

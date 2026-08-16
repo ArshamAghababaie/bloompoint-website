@@ -74,10 +74,15 @@ export default function FAQ() {
   return (
     <div
       id="faq"
-      className="relative z-10 min-h-screen px-10 bg-neutral-950 text-yellow"
+      className="relative z-10 h-screen px-4 sm:px-6 md:px-10 lg:px-12 bg-neutral-950 text-yellow"
     >
+      <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
+        <h1 className="text-light-gray uppercase">common</h1>
+        <h1 className="uppercase">questions</h1>
+      </div>
+
       {/* ======= Title ======= */}
-      <div className="reveal reveal-delay-1 flex justify-center sm:px-12 pt-14 text-center font-bebas tracking-wide">
+      {/* <div className="reveal reveal-delay-1 flex justify-center sm:px-12 pt-14 text-center font-bebas tracking-wide">
         <h1 className="text-[80px] uppercase leading-none text-light-gray sm:text-[100px] md:text-[125px] lg:text-[160px] xl:text-[200px]">
           Common
         </h1>
@@ -85,10 +90,10 @@ export default function FAQ() {
         <h1 className="text-[80px] uppercase leading-none text-yellow sm:text-[100px] md:text-[125px] lg:text-[160px] xl:text-[200px]">
           &nbsp;Questions
         </h1>
-      </div>
+      </div> */}
 
       {/* Right column — accordions */}
-      <div className="mt-6 ml-auto flex w-full flex-col text-lg">
+      <div className="reveal reveal-delay-2 mt-6 ml-auto flex w-full flex-col text-lg">
         {faqs.map((faq, i) => {
           const isOpen = openIndex === i;
           return (

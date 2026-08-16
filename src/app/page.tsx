@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Solutions from "./components/Solutions";
 import ProblemNeed from "./components/ProblemNeed";
 import BPEcosystem from "./components/BPEcosystem";
+import BookAMeetingsss from "./components/BookAMeetingsss";
 import BookAMeeting from "./components/BookAMeeting";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
@@ -35,12 +36,18 @@ export default function Page() {
       <Ongoing />
       <BPEcosystem />
       <FAQ />
-      <BookAMeeting
+      <BookAMeetingsss
         selectedProblems={selectedProblems}
         selectedNeeds={selectedNeeds}
         otherProblem={otherProblem}
         otherNeed={otherNeed}
       />
+      {/* <BookAMeeting
+        selectedProblems={selectedProblems}
+        selectedNeeds={selectedNeeds}
+        otherProblem={otherProblem}
+        otherNeed={otherNeed}
+      /> */}
       <Footer />
     </div>
   );
