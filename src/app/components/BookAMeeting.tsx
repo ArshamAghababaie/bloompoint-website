@@ -97,7 +97,7 @@ export default function BookAMeetingsss({
           <h2 className="mb-6 font-['Bebas_Neue',sans-serif] text-[clamp(4rem,5vw,5.5rem)] leading-[0.94] tracking-[-0.01em] text-neutral-950">
             Book a
             <br />
-            <span className="text-yellow">Meeting</span>
+            <span className="text-yellow">meeting</span>
           </h2>
 
           <p className="mb-9.5 max-w-95 text-[0.95rem] font-light leading-[1.8] text-[rgba(0,0,0,0.55)] max-[767px]:max-w-full">
