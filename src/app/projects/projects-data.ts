@@ -73,12 +73,12 @@ export const projects: Project[] = [
       color: "keune_umber",
       clientName: "Keune Care",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `  Low Retention
-                • Low Basket Confidence
-                • Weak Belonging & Loyalty`,
+      problem: `• Low Retention
+      • Low Basket Confidence
+      • Weak Belonging & Loyalty`,
       communityLedSolution: "Keune Care Ecosystem",
-      prototype: `  B2C Haircare Consultancy (BHC)
-                  • Community Care Club (CCC)`,
+      prototype: `• B2C Haircare Consultancy (BHC)
+      • Community Care Club (CCC)`,
       // designatedGroup: "Keune Care Club Members",
       target: "Community Wellbeing",
     },
@@ -160,10 +160,11 @@ export const projects: Project[] = [
       color: "aseh_gray",
       clientName: "ASEH CO. - Refrigeration Manufacturer",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `Inefficient Installation Practices
-              • Lack of Structured Technical Training`,
+      problem: `• Inefficient Installation Practices
+• Lack of Structured Technical Training`,
 
       communityLedSolution: "Learning by Doing Academy",
+      // communityLedSolution: "Keune Care Ecosystem",
       prototype: `Installers Community (1200 People)`,
 
       // designatedGroup: "Keune Care Club Members",
@@ -212,8 +213,8 @@ export const projects: Project[] = [
       clientName:
         "Deutsche Botschaftsschule Teheran (DBST) | German Embassy School Tehran",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `Low Environmental Awareness
-              • Limited Hands-On Learning`,
+      problem: `• Low Environmental Awareness
+      • Limited Hands-On Learning`,
       communityLedSolution: "After School Academy",
       prototype: `5th-8th Grades (100 Students)`,
       // designatedGroup: "Keune Care Club Members",
@@ -270,8 +271,8 @@ export const projects: Project[] = [
       color: "darasiab_green",
       clientName: "DARASIAB",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `Theoretical Environmental Education
-              • Lack of Experiential Learning`,
+      problem: `• Theoretical Environmental Education
+• Lack of Experiential Learning`,
 
       communityLedSolution: "Experience Garden for Kids",
       prototype: `  International Schools (20 Schools)`,

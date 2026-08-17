@@ -63,7 +63,7 @@ export default function Projects() {
       <Navbar />
 
       {/* Header Section */}
-      <div className="h-fit px-10 md:px-12 bg-neutral-950 text-yellow pt-32">
+      <div className="h-fit px-10 md:px-12 bg-neutral-950 text-yellow pt-24 md:pt-32">
         <div className="reveal flex items-center">
           {/* <div className="w-6 h-px bg-yellow" />
           <span className="pl-2 text-xs font-DMSans tracking-widest uppercase">
@@ -137,7 +137,7 @@ export default function Projects() {
       </div>
 
       {/* Projects Grid */}
-      <div className="hero-reveal hero-reveal-delay-4 px-10 md:px-12 bg-neutral-950 py-16 md:py-24">
+      <div className="hero-reveal hero-reveal-delay-4 px-10 md:px-12 bg-neutral-950 py-10 md:py-12">
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 transition-all duration-200 ${
             isAnimating ? "opacity-0 scale-[0.98]" : "opacity-100 scale-100"

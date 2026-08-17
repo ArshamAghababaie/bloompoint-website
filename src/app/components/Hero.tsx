@@ -71,19 +71,19 @@ type OrbitRing = {
 const ORBIT_RINGS: OrbitRing[] = [
   {
     diameter: "clamp(360px, 52vw, 620px)",
-    duration: 120,
+    duration: 90,
     direction: "cw",
     box: 30,
   },
   {
     diameter: "clamp(440px, 64vw, 780px)",
-    duration: 150,
+    duration: 110,
     direction: "ccw",
     box: 30,
   },
   {
     diameter: "clamp(520px, 76vw, 940px)",
-    duration: 150,
+    duration: 110,
     direction: "cw",
     box: 30,
   },
@@ -226,17 +226,17 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <div className="hero-reveal hero-reveal-delay-2 mb-8 pt-2 font-DMSans flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 text-neutral-500">
+        <div className="hero-reveal hero-reveal-delay-2 mb-8 pt-4 xl:pt-2 font-DMSans flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 text-neutral-500">
           {segments.map((s, i) => (
             <div key={i} className="flex gap-2">
-              <div className="mt-1.5 w-3 h-3 rounded-full bg-yellow" />
+              <div className="mt-1 xl:mt-1.5 w-2.5 h-2.5 xl:w-3 xl:h-3 rounded-full bg-yellow" />
               <span className="text-sm sm:text-[16px] md:text-lg lg:pointer-fine:text-[16px] font-medium text-light-gray/70">
                 {s}
               </span>
             </div>
           ))}
         </div>
-        <div className="hero-reveal hero-reveal-delay-3 mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto font-DMSans pointer-events-auto">
+        <div className="hero-reveal hero-reveal-delay-3 mt-4 xl:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto font-DMSans pointer-events-auto">
           <Link
             href={"/projects"}
             onMouseEnter={() => setExploreHovered(true)}

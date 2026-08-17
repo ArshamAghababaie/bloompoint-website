@@ -84,19 +84,26 @@ export default function Surveys() {
           </p>
         </div> */}
 
-        <div className="flex flex-col mt-12 text-xl">
+        <div className="reveal reveal-delay-2 flex flex-col mt-12 text-xl">
           {/* <div className="relative flex flex-col mt-12"> */}
           {/* <div className="absolute flex flex-col right-10 text-4xl"> */}
+          <h2 className="text-yellow font-semibold text-2xl pb-4">
+            Surveys links
+          </h2>
           {SurveysList.map((s, i) => (
-            <Link
+            <div
               key={i}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-light-gray hover:text-yellow/90 py-2 w-fit transition-colors duration-150 cursor-none"
+              className="flex flex-col border-b border-neutral-700 w-112.5 ml-4"
             >
-              Survey {s.num} - {s.title}
-            </Link>
+              <Link
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-200 hover:text-yellow/90 py-3 w-fit transition-colors duration-150 cursor-none"
+              >
+                Survey {s.num} | {s.title}
+              </Link>
+            </div>
           ))}
         </div>
         {/* </div> */}

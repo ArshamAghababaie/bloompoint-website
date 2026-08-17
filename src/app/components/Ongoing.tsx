@@ -16,16 +16,16 @@ export default function Ongoing() {
       {/* ======= Title ======= */}
       <div className="flex-col flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
         <div className="reveal reveal-delay-1 flex justify-center">
-          <h1 className="text-[90px] uppercase leading-none text-neutral-950 sm:text-[110px] md:text-[150px] lg:text-[170px]">
+          <h1 className="text-[60px] uppercase leading-none text-neutral-950 sm:text-[110px] md:text-[150px] lg:text-[170px]">
             Latest
           </h1>
 
-          <h1 className="ml-3 text-[90px] uppercase leading-none text-yellow sm:text-[110px] md:text-[150px] lg:text-[170px]">
-            Projects
+          <h1 className="xl:ml-3 text-[60px] uppercase leading-none text-yellow sm:text-[110px] md:text-[150px] lg:text-[170px]">
+            &nbsp;Projects
           </h1>
         </div>
         <div className="reveal reveal-delay-2 font-DMSans">
-          <p className="pt-6 px-12 md:px-0 lg:px-0 font-DMSans text-[16px] md:text-[18px] lg:text-[23px] text-neutral-950">
+          <p className="pt-6 px-4 xl:px-12 md:px-0 lg:px-0 font-DMSans text-[16px] md:text-[18px] lg:text-[23px] text-neutral-950">
             A glance at the diverse clients and communities we've worked with
             across <br />
             industrial manufacturing, education, public institutions, and cities
@@ -40,7 +40,7 @@ export default function Ongoing() {
         </div>
       </div>
       {/* ======= Projects ======= */}
-      <div className="reveal reveal-delay-3 relative mt-18 md:mt-20 lg:mt-28 px-4 sm:px-6 md:px-10 lg:px-12">
+      <div className="reveal reveal-delay-3 relative mt-10 sm:mt-18 md:mt-20 lg:mt-28 px-4 sm:px-6 md:px-10 lg:px-12">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {latestProjects.map((project) => (
             <Link

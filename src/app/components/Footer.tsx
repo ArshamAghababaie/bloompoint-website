@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { basePath } from "../../../lib/basePath";
@@ -10,13 +11,7 @@ const navLinks = [
   { href: "/surveys", label: "Surveys" },
   { href: "/pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
-  // { href: '#offer', label: 'What We Offer' },
 ];
-
-// const solutionLinks = [
-//   { href: "#solutions", label: "Path" },
-//   { href: "#solutions", label: "Circle" },
-// ];
 
 const contactLinks = [
   { href: "#", label: "LinkedIn" },
@@ -27,17 +22,18 @@ const contactLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 bg-neutral-950">
-      <div className="footer-top">
+    <footer className="relative z-10 bg-neutral-950 px-15 pt-20 pb-10 border-t border-[rgba(245,245,240,0.08)] max-[767px]:px-6 max-[767px]:pt-15 max-[767px]:pb-7.5">
+      <div className="grid grid-cols-[2fr_1fr] gap-15 pb-15 border-b border-[rgba(245,245,240,0.08)] max-[1023px]:grid-cols-2 max-[1023px]:gap-10 max-[767px]:grid-cols-1 max-[767px]:gap-10 max-[767px]:pb-10">
         {/* Brand */}
         <div>
-          <div className="flex text-2xl font-DMSans font-bold items-center mb-2">
+          <div className="flex items-center mb-2 text-2xl font-DMSans font-bold">
             <Image
               src={`${basePath}/bp-logo-white.png`}
               alt="BloomPoint Logo"
               width={70}
               height={50}
             />
+
             <Image
               src={`${basePath}/bloomPoint-text.png`}
               width={120}
@@ -45,114 +41,125 @@ export default function Footer() {
               alt="BloomPoint logo"
               className="mt-2 ml-1"
             />
-            {/* <p className="text-white pt-0">
-              bloom<span className="text-yellow">Point</span>
-            </p> */}
           </div>
-          <p className="footer-tagline">
+
+          <p className="max-w-65 text-[0.85rem] font-light leading-[1.7] text-[rgba(245,245,240,0.4)]">
             Empowering businesses to grow through social connection, strategic
             collaboration, and community impact.
           </p>
+
           <a
             href="mailto:info@bloompoint.world"
-            className="footer-email cursor-none"
+            className="block mt-3 font-DMSans text-[0.8rem] tracking-[0.06em] text-yellow no-underline cursor-none"
           >
             info@bloompoint.world
           </a>
         </div>
 
-        {/* Navigate */}
-        <div>
-          <div className="footer-col-title">Navigate</div>
-          <ul className="footer-links">
-            {navLinks.map((link) => (
-              <li key={link.href + link.label}>
-                {link.href.startsWith("#") ? (
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById(link.href.slice(1));
-                      if (el) {
-                        // adjust this value to control how far from the top the element stops
-                        const offset = 80; // pixels
-                        const top =
-                          window.scrollY +
-                          el.getBoundingClientRect().top -
-                          offset;
-                        window.scrollTo({ top, behavior: "smooth" });
-                      } else {
-                        window.location.href = `${basePath}/${link.href}`;
-                      }
-                    }}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link href={link.href}>{link.label}</Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Navigate + Contact */}
+        <div className="grid grid-cols-2 gap-15 max-[1023px]:gap-10 max-[767px]:gap-10">
+          {/* Navigate */}
+          <div>
+            <div className="mb-5 font-DMSans text-[0.65rem] tracking-[0.2em] uppercase text-yellow">
+              Navigate
+            </div>
 
-        {/* Solutions */}
-        {/* <div>
-          <div className="footer-col-title">Solutions</div>
-          <ul className="footer-links">
-            {solutionLinks.map((link) => (
-              <li key={link.label}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div> */}
+            <ul className="list-none">
+              {navLinks.map((link) => (
+                <li key={link.href + link.label} className="mb-2.5">
+                  {link.href.startsWith("#") ? (
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById(link.href.slice(1));
 
-        {/* Contact */}
-        <div>
-          <div className="footer-col-title">Contact</div>
-          <ul className="footer-links">
-            {contactLinks.map((link) => (
-              <li key={link.label}>
-                {link.href.startsWith("#") ? (
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById(link.href.slice(1));
-                      if (el) {
-                        // adjust this value to control how far from the top the element stops
-                        const offset = 80; // pixels
-                        const top =
-                          window.scrollY +
-                          el.getBoundingClientRect().top -
-                          offset;
-                        window.scrollTo({ top, behavior: "smooth" });
+                        if (el) {
+                          // adjust this value to control how far from the top the element stops
+                          const offset = 80;
 
-                        // el.scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        window.location.href = `${basePath}/${link.href}`;
-                      }
-                    }}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link href={link.href}>{link.label}</Link>
-                )}
-              </li>
-            ))}
-          </ul>
+                          const top =
+                            window.scrollY +
+                            el.getBoundingClientRect().top -
+                            offset;
+
+                          window.scrollTo({
+                            top,
+                            behavior: "smooth",
+                          });
+                        } else {
+                          window.location.href = `${basePath}/${link.href}`;
+                        }
+                      }}
+                      className="text-[0.85rem] text-[rgba(245,245,240,0.45)] no-underline transition-colors duration-200 cursor-none hover:text-white"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-[0.85rem] text-[rgba(245,245,240,0.45)] no-underline transition-colors duration-200 cursor-none hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <div className="mb-5 font-DMSans text-[0.65rem] tracking-[0.2em] uppercase text-yellow">
+              Contact
+            </div>
+
+            <ul className="list-none">
+              {contactLinks.map((link) => (
+                <li key={link.label} className="mb-2.5">
+                  {link.href.startsWith("#") ? (
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById(link.href.slice(1));
+
+                        if (el) {
+                          // adjust this value to control how far from the top the element stops
+                          const offset = 80;
+
+                          const top =
+                            window.scrollY +
+                            el.getBoundingClientRect().top -
+                            offset;
+
+                          window.scrollTo({
+                            top,
+                            behavior: "smooth",
+                          });
+                        } else {
+                          window.location.href = `${basePath}/${link.href}`;
+                        }
+                      }}
+                      className="text-[0.85rem] text-[rgba(245,245,240,0.45)] no-underline transition-colors duration-200 cursor-none hover:text-white"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-[0.85rem] text-[rgba(245,245,240,0.45)] no-underline transition-colors duration-200 cursor-none hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        {/* <span className="footer-copy"> */}
-        <span className="font-DMSans text-xs text-neutral-600 tracking-wider">
-          © 2026 BloomPoint. All rights reserved.
-          {/* it should be change to dynamic style. */}
+      <div className="flex justify-start max-[767px]:justify-center items-center pt-8 max-[767px]:items-start">
+        <span className="font-DMSans text-xs tracking-wider text-neutral-600">
+          © {new Date().getFullYear()} BloomPoint. All rights reserved.
         </span>
-        {/* <div className="footer-socials">
-          <Link href="#">LinkedIn</Link>
-          <Link href="#">Instagram</Link>
-          <Link href="#">Privacy Policy</Link>
-        </div> */}
       </div>
     </footer>
   );

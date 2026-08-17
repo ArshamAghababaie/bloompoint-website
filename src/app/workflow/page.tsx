@@ -75,29 +75,34 @@ const SPOKE_CYCLE_S = 1.75;
 export default function Workflow() {
   return (
     <div className="overflow-hidden">
+      {" "}
       <Navbar />
       <div
         id="workflow"
-        className="relative z-10 h-screen mt-20 px-10 bg-yellow text-neutral-950 overflow-hidden"
+        className="relative z-10 min-h-screen mt-20 px-10 bg-yellow text-neutral-950 overflow-hidden max-[767px]:mt-0 max-[767px]:px-6 max-[767px]:min-h-screen"
       >
-        <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl">
+        {/* Title + description */}
+        <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl max-[1023px]:pt-16 max-[1023px]:text-6xl max-[767px]:pt-28 max-[767px]:text-6xl">
           <h1 className="text-light-gray uppercase">agentic</h1>
           <h1 className="uppercase">workflow</h1>
-          <p className="pt-4 flex flex-col text-base w-100 font-DMSans text-neutral-800 leading-6">
+
+          <p className="pt-4 flex flex-col text-base w-100 font-DMSans text-neutral-800 leading-6 max-[767px]:w-full max-[767px]:max-w-95 max-[767px]:text-[0.9rem] max-[767px]:leading-6">
             Our AI-based platform runs through four interconnected stages. Each
             is powered by specialized agents working in concert.
-            <span className="pt-3 text-sm text-neutral-700">
+            {/* <span className="pt-3 text-sm text-neutral-700 max-[767px]:text-xs">
               [ Hover over the circles to reach more information. ]
-            </span>
+            </span> */}
           </p>
         </div>
 
-        <div className="reveal reveal-delay-2 absolute right-[-10%] top-[45%] -translate-x-1/2 -translate-y-1/2 w-150 h-150">
+        {/* Animated diagram */}
+        <div className="absolute right-[-10%] top-[45%] -translate-x-1/2 -translate-y-1/2 w-150 h-150 max-[1023px]:right-[-18%] max-[1023px]:scale-90 max-[767px]:relative max-[767px]:right-auto max-[767px]:top-auto max-[767px]:left-1/2 max-[767px]:translate-x-[-50%] max-[767px]:translate-y-0 max-[767px]:mt-27 max-[767px]:w-150 max-[767px]:h-60 max-[767px]:scale-[0.52] max-[767px]:origin-top">
           {/* sequence ring linking the 4 steps — solid circuit trace */}
           <div
             className="circuit-ring absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             style={{ width: RING_RADIUS * 2.9, height: RING_RADIUS * 2.9 }}
           />
+
           <div
             className="circuit-ring-current absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
             style={{ width: RING_RADIUS * 2.9, height: RING_RADIUS * 2.9 }}
@@ -107,6 +112,7 @@ export default function Workflow() {
           {workflow_steps.map((_, i) => {
             const angleDeg = (i - 1) * 90;
             const delay = (i * SPOKE_CYCLE_S) / workflow_steps.length;
+
             return (
               <div
                 key={i}
@@ -117,6 +123,7 @@ export default function Workflow() {
                   className="circuit-spoke"
                   style={{ left: SPOKE_INNER_GAP, width: SPOKE_LENGTH }}
                 />
+
                 <div
                   className="circuit-spoke-current"
                   style={
@@ -133,13 +140,6 @@ export default function Workflow() {
 
           {/* center mark */}
           <div className="bg-neutral-950 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-[0.5px] border-neutral-950/40 shadow-[0_0_18px_4px_rgba(23,23,23,0.15)] overflow-hidden flex items-center justify-center">
-            {/* <Image
-            src={`${basePath}/bp-w-b-logo.png`}
-            width={80}
-            height={80}
-            alt="bloomPoint"
-          /> */}
-
             <div className="relative w-12 h-12 sm:w-13.5 sm:h-13.5 md:w-15 md:h-15 shrink-0">
               <div
                 className="absolute top-0 left-0 w-15 h-15 origin-top-left scale-80 sm:scale-90 md:scale-100"
@@ -155,6 +155,7 @@ export default function Workflow() {
                     animation: "logo-swoosh-pulse 12s ease-in-out infinite",
                   }}
                 />
+
                 <div
                   className="absolute inset-0"
                   style={{
@@ -196,12 +197,10 @@ export default function Workflow() {
                 <div className="relative w-30 h-30 rounded-full border border-neutral-950/40 flex items-center justify-center transition-all duration-300 ease-out group-hover/step:scale-110 group-hover/step:border-neutral-950/70 group-hover/step:shadow-[0_0_18px_4px_rgba(23,23,23,0.2)]">
                   {/* inner filled circle */}
                   <div className="flex flex-col items-center justify-center w-25 h-25 rounded-full bg-neutral-950 px-2 text-center overflow-hidden">
-                    {/* <div className="relative"> */}
-                    {/* <span className="absolute flex justify-center font-DMSans -top-7 right-0 left-0 tracking-widest text-8xl text-light-gray/25"> */}
                     <span className="flex justify-center font-DMSans tracking-widest text-md text-yellow">
                       {step.num}
                     </span>
-                    {/* </div> */}
+
                     <span className="mt-0.5 font-DMSans text-sm z-2 font-semibold leading-tight text-yellow">
                       {step.name}
                     </span>
@@ -210,7 +209,7 @@ export default function Workflow() {
 
                 {/* hover card */}
                 <div
-                  className={`absolute z-20 w-[295] rounded-xl bg-light-gray backdrop-blur-sm shadow-xl p-4 opacity-0 scale-95 translate-y-1 pointer-events-none transition-all duration-300 ease-out group-hover/step:opacity-100 group-hover/step:scale-100 group-hover/step:translate-y-0 ${
+                  className={`absolute z-20 w-[295] rounded-xl bg-light-gray backdrop-blur-sm shadow-xl p-4 opacity-0 scale-95 translate-y-1 pointer-events-none transition-all duration-300 ease-out group-hover/step:opacity-100 group-hover/step:scale-100 group-hover/step:translate-y-0 max-[767px]:hidden ${
                     anchor.vertical === "bottom"
                       ? "bottom-full mb-4"
                       : "top-full mt-4"
@@ -226,6 +225,7 @@ export default function Workflow() {
                     <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-neutral-950" />
                     {step.sub_name}
                   </p>
+
                   <ul className="mt-2 space-y-1.5">
                     {step.sub_steps.map((sub, j) => (
                       <li

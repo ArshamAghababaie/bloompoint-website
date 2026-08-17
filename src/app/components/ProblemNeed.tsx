@@ -92,8 +92,8 @@ export default function ProblemNeed({
   const Checkmark = () => {
     return (
       <svg
-        width="120"
-        height="120"
+        width="60"
+        height="60"
         viewBox="0 0 24 24"
         fill="none"
         className="drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]"
@@ -169,22 +169,22 @@ export default function ProblemNeed({
           onMouseEnter={() => setHovered("need")}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="relative rounded-3xl pl-5 pt-6 pb-4 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="w-[320px] font-DMSans text-3xl sm:text-4xl lg:text-4xl xl:text-5xl text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+          <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
+            <h2 className="w-4/5 font-DMSans text-xl sm:text-4xl lg:text-[34px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               Where do you want to go?
             </h2>
 
-            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-8 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-4 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
               <div>
-                <p className="pb-6 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 w-80">
+                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-800 pointer-fine:group-hover:text-neutral-400">
                   Select the most common needs you want to address.
                 </p>
                 {needs.map((n, i) => (
                   <div key={i} className="font-DMSans pb-1.75">
-                    <label className="pb-16 text-md transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
+                    <label className="pb-16 text-sm transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
-                        className="accent-yellow mr-1 cursor-none"
+                        className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
                         checked={selectedNeeds.includes(n)}
                         onChange={() => toggleItem(setSelectedNeeds, n)}
                       />
@@ -193,7 +193,7 @@ export default function ProblemNeed({
                   </div>
                 ))}
               </div>
-              <div className="font-DMSans pt-2 mt-2 pr-5 lg:pt-0">
+              <div className="font-DMSans pt-2 mt-2 lg:pt-0">
                 {/* <label className="block w-80 text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other needs that aren't listed? <br />
                   Tell us about your challenges in your own words.
@@ -204,12 +204,12 @@ export default function ProblemNeed({
                   onClick={(e) => e.stopPropagation()}
                   rows={14}
                   placeholder="Describe needs that matter to you…"
-                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
+                  className="bg-neutral-50/10 w-full resize-none max-sm:h-20 rounded-xl border border-neutral-950/20  p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-neutral-800/20 pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
                 />
               </div>
             </div>
             <div
-              className="absolute top-2 right-2 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out pointer-fine:group-hover:opacity-20 pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:scale-100 pointer-events-none"
+              className="absolute top-10 right-10 opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-out pointer-fine:group-hover:opacity-20 pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:scale-100 pointer-events-none"
               style={{
                 maskImage: "linear-gradient(135deg, transparent 0%, black 70%)",
                 WebkitMaskImage:
@@ -231,13 +231,13 @@ export default function ProblemNeed({
           onMouseEnter={() => setHovered("problem")}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="relative rounded-3xl pl-5 pt-6 pb-4 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="w-3/4 font-DMSans text-3xl sm:text-4xl lg:text-4xl xl:text-5xl text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+          <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
+            <h2 className="w-4/5 font-DMSans text-xl sm:text-4xl lg:text-[34px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               What's keeping you from getting there?
             </h2>
-            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-8 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-4 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
               <div>
-                <p className="pb-6 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 w-80">
+                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-800 pointer-fine:group-hover:text-neutral-400">
                   Select the most common problems your business is dealing with.
                 </p>
                 {problems.map((p, i) => (
@@ -245,7 +245,7 @@ export default function ProblemNeed({
                     <label className="pb-16 text-md transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
-                        className="accent-yellow mr-1.5 cursor-none"
+                        className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
                         checked={selectedProblems.includes(p)}
                         onChange={() => toggleItem(setSelectedProblems, p)}
                       />
@@ -265,7 +265,7 @@ export default function ProblemNeed({
                   onClick={(e) => e.stopPropagation()}
                   rows={14}
                   placeholder="Describe problems you're facing…"
-                  className="w-full resize-none rounded-xl border border-neutral-950/20 bg-transparent p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-yellow pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
+                  className="bg-neutral-50/10 w-full resize-none max-sm:h-20 rounded-xl border border-neutral-950/20  p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-neutral-800/20 pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
                 />
               </div>
             </div>

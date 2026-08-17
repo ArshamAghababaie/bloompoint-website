@@ -79,49 +79,26 @@ export default async function ProjectPage({
         className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4">
+        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4 max-[767px]:px-6 max-[767px]:pt-40 max-[767px]:pb-10 max-[767px]:gap-y-6">
           {/* Upper section: client logo + project name, pinned to the top */}
           <div>
-            {/* {s2?.clientLogo && (
-              <img
-                src={`${basePath}${s2.clientLogo}`}
-                alt={project.name}
-                className="reveal reveal-delay-1 w-30 h-30 object-contain mb-6 bg-white rounded-3xl"
-              />
-            )} */}
-
-            <h1 className="reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9">
+            <h1 className="reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9 max-[767px]:max-w-full max-[767px]:text-5xl max-[767px]:mb-7">
               {project.name}
             </h1>
           </div>
 
-          {/* Right column: detail rows, pinned to the bottom-right */}
-          {/* {detailRows.length > 0 && (
-            <div className="flex-1 flex flex-col justify-end md:items-end">
-              <div className="reveal reveal-delay-3 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-4 max-w-3xl">
-                {detailRows.map((row) => (
-                  <div key={row.label} className="flex flex-col">
-                    <span className="font-DMSans text-xs uppercase tracking-widest opacity-60 mb-1">
-                      {row.label}
-                    </span>
-                    <span className="font-DMSans text-sm leading-relaxed whitespace-pre-line">
-                      {row.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )} */}
-
-          <div className="flex flex-col mt-20">
-            <div className="reveal reveal-delay-3 max-w-3xl">
+          <div className="flex flex-col mt-20 max-[767px]:mt-10">
+            <div className="reveal reveal-delay-3 max-w-4xl">
               {detailRows.map((row) => (
-                <div key={row.label} className="flex mb-4 gap-x-2 items-center">
-                  <span className="font-DMSans text-sm uppercase tracking-widest font-semibold text-neutral-950">
+                <div
+                  key={row.label}
+                  className="flex mb-4 gap-x-2 items-baseline max-[767px]:gap-x-3 max-[767px]:mb-3 max-[767px]:whitespace-pre-line"
+                >
+                  <span className="font-DMSans text-sm uppercase tracking-widest font-semibold text-neutral-950 max-[767px]:text-[0.65rem] max-[767px]:tracking-[0.12em]">
                     {row.label}
                   </span>
-                  {/* <span className="font-DMSans leading-relaxed whitespace-pre-line"> */}
-                  <span className="font-DMSans leading-relaxed">
+
+                  <span className="font-DMSans leading-relaxed max-[767px]:text-[0.85rem]">
                     {row.value}
                   </span>
                 </div>
@@ -135,10 +112,10 @@ export default async function ProjectPage({
       {s2 && <PathAnimation data={s2} basePath={basePath} />}
 
       {/* ─── SECTION 3 : Image Gallery ─── */}
-      <section className="relative z-10 bg-neutral-950 py-12">
+      <section className="relative z-10 bg-neutral-950 p-0">
         <div className="mx-auto">
-          <div className="mb-8">
-            <h2 className="font-bebas text-light-gray pl-10 text-3xl md:text-4xl uppercase">
+          <div className="mb-4 pt-4">
+            <h2 className="font-bebas text-light-gray pl-5 sm:pl-10 text-3xl md:text-4xl uppercase">
               {s3?.title || "Project Document"}
             </h2>
           </div>
