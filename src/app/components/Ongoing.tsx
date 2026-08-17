@@ -17,11 +17,11 @@ export default function Ongoing() {
       <div className="flex-col flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
         <div className="reveal reveal-delay-1 flex justify-center">
           <h1 className="text-[60px] uppercase leading-none text-neutral-950 sm:text-[110px] md:text-[150px] lg:text-[170px]">
-            Latest
+            latest
           </h1>
 
           <h1 className="xl:ml-3 text-[60px] uppercase leading-none text-yellow sm:text-[110px] md:text-[150px] lg:text-[170px]">
-            &nbsp;Projects
+            &nbsp;projects
           </h1>
         </div>
         <div className="reveal reveal-delay-2 font-DMSans">
