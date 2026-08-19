@@ -1,4 +1,3 @@
-import Script from "next/script";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
@@ -26,88 +25,44 @@ const SurveysList = [
   },
 ];
 
-const Survey01 = () => {
-  return (
-    <div>
-      <div
-        data-aidaform-app="form202405"
-        data-url="https://bloompoints.aidaform.com/s01-industrial-enterprises"
-        data-width="100%"
-        data-height="500px"
-        data-do-resize
-      ></div>
-      <Script
-        id="aidaform-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `(function(){var r,d=document,gt=d.getElementById,cr=d.createElement,tg=d.getElementsByTagName,id="aidaform-app";if(!gt.call(d,id)){r=cr.call(d,"script");r.id=id;r.src="https://widget.aidaform.com/embed.js";(d.head || tg.call(d,"head")[0]).appendChild(r);}})()`,
-        }}
-      />
-    </div>
-  );
-};
-
 export default function Surveys() {
   return (
     <div className="overflow-hidden">
       <Navbar />
       <div
         id="surveys"
-        className="relative z-10 min-h-screen px-4 sm:px-6 md:px-10 lg:px-12 bg-neutral-950 text-yellow"
+        className="relative z-10 min-h-screen bg-neutral-950 text-yellow px-8 lg:px-12"
       >
-        {/* ======= Title ======= */}
-        {/* <div className="reveal reveal-delay-1 flex justify-center sm:px-12 pt-14 text-center font-bebas tracking-wide">
-          <h1 className="text-[80px] uppercase leading-none text-light-gray sm:text-[100px] md:text-[125px] lg:text-[160px] xl:text-[200px]">
-            Our
-          </h1>
-
-          <h1 className="text-[80px] uppercase leading-none text-yellow sm:text-[100px] md:text-[125px] lg:text-[160px] xl:text-[200px]">
-            &nbsp;Surveys
-          </h1>
-        </div> */}
-
-        <div className="reveal reveal-delay-1 mt-0 pt-40 flex-col font-bebas text-7xl">
-          <h1 className="text-light-gray uppercase">Our</h1>
-          <h1 className="uppercase">Surveys</h1>
-          <p className="pt-4 flex flex-col text-base w-100 font-DMSans text-neutral-400 leading-6">
+        {/* Header */}
+        <div className="reveal reveal-delay-1 mt-0 flex-col pt-28 font-bebas text-6xl sm:pt-32 sm:text-7xl md:pt-40 ">
+          <h1 className="text-light-gray uppercase">Our</h1>{" "}
+          <h1 className="uppercase">Surveys</h1>{" "}
+          <p className="text-sm sm:text-base flex w-full max-w-xl flex-col pt-4 font-DMSans leading-6 text-neutral-400 ">
             We provided some surveys for market validation and to understand the
-            needs of our clients and the market. Please fill out the surveys
-            below to help us improve our services and offerings.
+            problems/needs of our clients and the market. Please fill out the
+            surveys below to help us improve our services and offerings.{" "}
           </p>
         </div>
 
-        {/* <div className="font-DMSans">
-          <p className="reveal reveal-delay-2 pt-4 flex flex-col text-base w-100 font-DMSans text-neutral-400 leading-6">
-            We provided some surveys for market validation and to understand the
-            needs of our clients and the market. Please fill out the surveys
-            below to help us improve our services and offerings.
-          </p>
-        </div> */}
-
-        <div className="reveal reveal-delay-2 flex flex-col mt-12 text-xl">
-          {/* <div className="relative flex flex-col mt-12"> */}
-          {/* <div className="absolute flex flex-col right-10 text-4xl"> */}
-          <h2 className="text-yellow font-semibold text-2xl pb-4">
-            Surveys links
-          </h2>
+        {/* Surveys */}
+        <div className="reveal reveal-delay-2 mt-8 flex flex-col text-xl sm:text-2xl sm:mt-12">
+          <h2 className="pb-3 font-semibold text-yellow">Surveys links</h2>
           {SurveysList.map((s, i) => (
             <div
               key={i}
-              className="flex flex-col border-b border-neutral-700 w-112.5 ml-4"
+              className="ml-0 flex w-full max-w-112.5 flex-col border-b border-neutral-700 sm:ml-4 "
             >
               <Link
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-200 hover:text-yellow/90 py-3 w-fit transition-colors duration-150 cursor-none"
+                className="w-fit py-3 text-base sm:text-xl text-neutral-200 transition-colors duration-150 hover:text-yellow/90 cursor-none "
               >
                 Survey {s.num} | {s.title}
               </Link>
             </div>
           ))}
         </div>
-        {/* </div> */}
-        {/* <Survey01 /> */}
       </div>
       <Footer />
     </div>

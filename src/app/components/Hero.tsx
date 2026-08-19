@@ -193,7 +193,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="relative z-10 flex-col px-6 py-20 sm:px-10 md:p-20 lg:p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
+        className="relative z-10 flex-col px-6 pt-0 pb-20 sm:px-10 md:p-20 lg:p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
         style={{ opacity: anyHighlight ? 0.15 : 1 }}
       >
         <div className="font-bebas flex items-center justify-center flex-col">
@@ -209,7 +209,7 @@ export default function Hero() {
               <div className="relative mt-6 mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
                 <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
               </div>
-              <p className="pt-6 text-base sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-500 font-DMSans font-light">
+              <p className="pt-4 sm:pt-6 text-base sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-500 font-DMSans font-light">
                 {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
                 <span className="font-semibold text-base sm:text-xl md:text-2xl lg:pointer-fine:text-xl">
                   Community-Led Solutions
@@ -236,7 +236,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
-        <div className="hero-reveal hero-reveal-delay-3 mt-4 xl:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto font-DMSans pointer-events-auto">
+        <div className="hero-reveal hero-reveal-delay-3 mt-0 xl:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto font-DMSans pointer-events-auto">
           <Link
             href={"/projects"}
             onMouseEnter={() => setExploreHovered(true)}
@@ -255,7 +255,7 @@ export default function Hero() {
             }
             className="w-full sm:w-auto font-medium text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 bg-yellow text-gray-800 rounded-xl md:hover:bg-yellow/70 md:hover:-translate-y-1 transition duration-300 cursor-none"
           >
-            Let’s Get Started
+            Let's Get Started
           </button>
         </div>
       </div>

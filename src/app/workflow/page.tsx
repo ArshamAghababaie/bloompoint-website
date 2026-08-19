@@ -96,7 +96,7 @@ export default function Workflow() {
         </div>
 
         {/* Animated diagram */}
-        <div className="absolute right-[-10%] top-[45%] -translate-x-1/2 -translate-y-1/2 w-150 h-150 max-[1023px]:right-[-18%] max-[1023px]:scale-90 max-[767px]:relative max-[767px]:right-auto max-[767px]:top-auto max-[767px]:left-1/2 max-[767px]:translate-x-[-50%] max-[767px]:translate-y-0 max-[767px]:mt-27 max-[767px]:w-150 max-[767px]:h-60 max-[767px]:scale-[0.52] max-[767px]:origin-top">
+        <div className="absolute right-[-10%] top-[45%] -translate-x-1/2 -translate-y-1/2 w-150 h-150 max-[1023px]:right-[-18%] max-[1023px]:scale-90 max-[767px]:relative max-[767px]:right-auto max-[767px]:top-auto max-[767px]:left-1/2 max-[767px]:translate-x-[-50%] max-[767px]:translate-y-0 max-[767px]:mt-28.75 max-[767px]:w-150 max-[767px]:h-64 max-[767px]:scale-[0.52] max-[767px]:origin-top">
           {/* sequence ring linking the 4 steps — solid circuit trace */}
           <div
             className="circuit-ring absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"

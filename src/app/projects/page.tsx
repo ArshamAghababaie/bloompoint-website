@@ -64,12 +64,12 @@ export default function Projects() {
 
       {/* Header Section */}
       <div className="h-fit px-10 md:px-12 bg-neutral-950 text-yellow pt-24 md:pt-32">
-        <div className="reveal flex items-center">
-          {/* <div className="w-6 h-px bg-yellow" />
+        {/* <div className="reveal flex items-center">
+          <div className="w-6 h-px bg-yellow" />
           <span className="pl-2 text-xs font-DMSans tracking-widest uppercase">
             our Projects
-          </span> */}
-        </div>
+          </span>
+        </div> */}
         {/* <div className="reveal reveal-delay-1 mt-6 pb-6 font-bebas">
           <h1 className="text-white uppercase text-6xl md:text-7xl">Our</h1>
           <h1 className="uppercase text-6xl md:text-7xl">Projects</h1>
@@ -84,7 +84,7 @@ export default function Projects() {
 
       {/* Filter Section */}
       {/* <div className="reveal reveal-delay-3 px-10 md:px-12 bg-neutral-950 pt-8 border-t border-neutral-800"> */}
-      <div className="reveal reveal-delay-3 px-10 md:px-12 bg-neutral-950">
+      <div className="reveal reveal-delay-1 px-10 md:px-12 bg-neutral-950">
         <div className="flex items-center gap-2 mb-5 text-neutral-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ export default function Projects() {
       </div>
 
       {/* Projects Grid */}
-      <div className="hero-reveal hero-reveal-delay-4 px-10 md:px-12 bg-neutral-950 py-10 md:py-12">
+      <div className="hero-reveal hero-reveal-delay-2 px-10 md:px-12 bg-neutral-950 py-10 md:py-12">
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 transition-all duration-200 ${
             isAnimating ? "opacity-0 scale-[0.98]" : "opacity-100 scale-100"

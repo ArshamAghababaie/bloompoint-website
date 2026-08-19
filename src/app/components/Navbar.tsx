@@ -38,7 +38,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="font-DMSans text-sm fixed top-0 text-white w-full border-b border-neutral-800 z-50 h-16 sm:h-20">
+    <div className="font-DMSans text-sm fixed top-0 text-white w-full border-b border-neutral-800 z-50 h-12 sm:h-20">
       <div className="flex items-center h-full px-4 sm:px-6 lg:px-12 bg-neutral-950">
         <button
           onClick={goHome}
@@ -155,7 +155,7 @@ export default function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="justify-center md:hidden absolute top-16 h-42 left-0 w-full bg-neutral-950 border-b border-neutral-800 flex flex-col">
+        <div className="justify-center md:hidden absolute top-12 h-42 left-0 w-full bg-neutral-950 border-b border-neutral-800 flex flex-col">
           {navlinks.map((l, i) =>
             l.url.startsWith("#") ? (
               <button
