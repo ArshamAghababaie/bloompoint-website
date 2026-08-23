@@ -150,23 +150,24 @@ export default function Projects() {
               className="group relative overflow-hidden aspect-square bg-neutral-900 cursor-none rounded-2xl"
             >
               {/* Placeholder Image */}
-              <div className="absolute inset-0 bg-linear-to-br from-neutral-800 to-neutral-900 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                 <div className="text-center text-neutral-600">
                   <Image
-                    src={`${basePath}/bp-logo-white.png`}
-                    width={60}
-                    height={60}
+                    src={`${basePath}${project.image}`}
+                    fill
+                    // width={60}
+                    // height={60}
                     alt="Project placeholder"
-                    className="mx-auto mb-2 opacity-20"
+                    className="mx-auto mb-2 opacity-100"
                   />
-                  <p className="text-xs">Project Image</p>
+                  {/* <p className="text-xs">{project.name}</p> */}
                 </div>
               </div>
 
               {/* Hover Overlay with Name */}
-              <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div className="flex items-center justify-between w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bebas text-white text-xl md:text-2xl uppercase">
+                  <h3 className="font-bebas text-white text-xl md:text-4xl uppercase">
                     {project.name}
                   </h3>
                   <svg

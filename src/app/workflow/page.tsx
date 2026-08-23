@@ -89,9 +89,6 @@ export default function Workflow() {
           <p className="pt-4 flex flex-col text-base w-100 font-DMSans text-neutral-800 leading-6 max-[767px]:w-full max-[767px]:max-w-95 max-[767px]:text-[0.9rem] max-[767px]:leading-6">
             Our AI-based platform runs through four interconnected stages. Each
             is powered by specialized agents working in concert.
-            {/* <span className="pt-3 text-sm text-neutral-700 max-[767px]:text-xs">
-              [ Hover over the circles to reach more information. ]
-            </span> */}
           </p>
         </div>
 
@@ -209,7 +206,7 @@ export default function Workflow() {
 
                 {/* hover card */}
                 <div
-                  className={`absolute z-20 w-[295] rounded-xl bg-light-gray backdrop-blur-sm shadow-xl p-4 opacity-0 scale-95 translate-y-1 pointer-events-none transition-all duration-300 ease-out group-hover/step:opacity-100 group-hover/step:scale-100 group-hover/step:translate-y-0 max-[767px]:hidden ${
+                  className={`absolute z-20 w-[295] rounded-xl bg-light-gray backdrop-blur-sm shadow-xl p-4 opacity-0 scale-95 translate-y-1 pointer-events-none transition-all duration-300 ease-out group-hover/step:opacity-100 group-hover/step:scale-100 group-hover/step:translate-y-0 max-[1023px]:opacity-0 max-[1023px]:scale-95 max-[1023px]:translate-y-1 workflow-card-auto ${
                     anchor.vertical === "bottom"
                       ? "bottom-full mb-4"
                       : "top-full mt-4"
@@ -220,6 +217,28 @@ export default function Workflow() {
                         ? "left-1/2 -translate-x-1/2"
                         : "left-1/2 -translate-x-1/2"
                   }`}
+                  style={
+                    {
+                      animationDelay: `${-(4 - i) * 3}s`,
+                      "--mobile-card-x":
+                        i === 0
+                          ? "0px" // Stage 01
+                          : i === 1
+                            ? "-80px" // Stage 02
+                            : i === 2
+                              ? "0px" // Stage 03
+                              : "80px", // Stage 04
+
+                      "--mobile-card-y":
+                        i === 0
+                          ? "7px" // Stage 01
+                          : i === 1
+                            ? "0px" // Stage 02
+                            : i === 2
+                              ? "0px" // Stage 03
+                              : "0px", // Stage 04
+                    } as React.CSSProperties
+                  }
                 >
                   <p className="flex border-b-[0.5px] border-neutral-300 pb-2 items-center gap-2 font-DMSans text-sm font-semibold leading-snug text-neutral-950">
                     <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-neutral-950" />

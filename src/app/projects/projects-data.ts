@@ -65,7 +65,7 @@ export const projects: Project[] = [
     id: "1",
     name: `Keune Care`,
     category: "SMEs",
-    image: "/projects-cover-image/SMEs/eune-care.jpg",
+    image: "/projects-cover-image/SMEs/keune-care.jpg",
     tagline: "community-wellbeing",
     state: "latest",
     slug: "keune-care",

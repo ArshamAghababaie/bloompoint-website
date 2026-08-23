@@ -44,8 +44,9 @@ export default function Footer() {
           </div>
 
           <p className="max-w-65 text-[0.85rem] font-light leading-[1.7] text-[rgba(245,245,240,0.4)]">
-            Empowering businesses to grow through social connection, strategic
-            collaboration, and community impact.
+            BloomPoint is a B2B platform that enables businesses, schools, third
+            places snd cities to design, regenerate, and manage communities for
+            new outcomes.
           </p>
 
           <a

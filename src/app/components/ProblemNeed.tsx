@@ -45,48 +45,16 @@ export default function ProblemNeed({
     "Slow Business Growth",
     "Lack of Local Presence",
     "Unclear Community Strategy",
-
-    // "Low Customer Retention",
-    // "Weak Community Engagement",
-    // "Limited Brand Differentiation",
-    // "Low Employee Motivation",
-    // "Inefficient Internal Processes",
-    // "Disconnected Teams",
-    // "Difficulty Building Partnerships",
-    // "Weak Professional Network",
-    // "Lack of Strategic Collaborations",
-    // "Slow Business Growth",
-    // "Lack of Local Presence",
-    // "Unclear Community Strategy",
-    // "Missed Business Opportunities",
-    // "Limited Customer Insights",
-    // "Difficulty Measuring Impact",
   ];
   const needs = [
-    "Grow Customer Belonging & Loyalty",
-    "Increase Customer Retention",
-    "Build a Stronger Community",
-    "Strengthen Brand Reputation",
-    "Create Meaningful Partnerships",
-    "Achieve Sustainable Growth",
-    "Improve Employee Engagement",
-    "Drive Innovation",
-
-    // "Grow Customer Belonging & Loyalty",
-    // "Increase Customer Retention",
-    // "Build a Stronger Community",
-    // "Strengthen Brand Reputation",
-    // "Improve Operational Efficiency",
-    // "Build Better Business Systems",
-    // "Create Meaningful Partnerships",
-    // "Expand Professional Networks",
-    // "Join a Collaborative Business Circle",
-    // "Improve Employee Engagement",
-    // "Drive Innovation",
-    // "Achieve Sustainable Growth",
-    // "Generate New Business Opportunities",
-    // "Increase Cross-Organization Collaboration",
-    // "Measure Community & Business Impact",
+    "Growing Customer Belonging & Loyalty",
+    "Increasing Customer Retention",
+    "Building a Stronger Community",
+    "Strengthening Brand Reputation",
+    "Creating Meaningful Partnerships",
+    "Achieving Sustainable Growth",
+    "Improving Employee Engagement",
+    "Driving Innovation",
   ];
 
   const Checkmark = () => {
@@ -122,7 +90,7 @@ export default function ProblemNeed({
   return (
     <div
       id="problem-need"
-      className="relative z-10 px-10 bg-yellow text-neutral-950"
+      className="relative z-10 pb-6 px-10 bg-yellow text-neutral-950"
     >
       {/* Context */}
       {/* <div className="reveal flex items-center pt-20">
@@ -133,13 +101,13 @@ export default function ProblemNeed({
       </div> */}
 
       {/* Headings & Cards */}
-      <div className="mt-6 pt-20 grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center">
+      <div className="mt-6 pt-12 md:pt-20 grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center">
         {/* Top separator */}
         <div className="hidden lg:block order-10 lg:order-30 lg:col-span-2 h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" />
 
         {/* Need heading */}
         <h1
-          className={`order-20 lg:order-10 pt-6 lg:pt-0 font-bebas text-6xl sm:text-7xl lg:text-8xl transition-colors duration-300 text-neutral-950 ${
+          className={`order-20 lg:order-10 font-bebas text-6xl sm:text-7xl lg:text-8xl transition-colors duration-300 text-neutral-950 ${
             hovered === "need"
               ? "pointer-fine:text-white"
               : hovered === "problem"
@@ -169,19 +137,19 @@ export default function ProblemNeed({
           onMouseEnter={() => setHovered("need")}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="w-4/5 font-DMSans text-xl sm:text-4xl lg:text-[34px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+          <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-8 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
+            <h2 className="sm:w-4/5 w-65 font-DMSans text-[20px] sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               Where do you want to go?
             </h2>
 
-            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="w-65 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
               <div>
-                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-800 pointer-fine:group-hover:text-neutral-400">
+                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
                   Select the most common needs you want to address.
                 </p>
                 {needs.map((n, i) => (
                   <div key={i} className="font-DMSans pb-1.75">
-                    <label className="pb-16 text-sm transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
+                    <label className="pb-16 text-[15px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
                         className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
@@ -204,7 +172,7 @@ export default function ProblemNeed({
                   onClick={(e) => e.stopPropagation()}
                   rows={14}
                   placeholder="Describe needs that matter to you…"
-                  className="bg-neutral-50/10 w-full resize-none max-sm:h-20 rounded-xl border border-neutral-950/20  p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-neutral-800/20 pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
+                  className="md:bg-neutral-50/10 bg-neutral-700/20 text-white md:text-neutral-950 w-full resize-none max-sm:h-20 rounded-xl border border-neutral-950/20 p-3 mb-3 text-sm placeholder:text-neutral-900/35 md:placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-neutral-800/20 pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
                 />
               </div>
             </div>
@@ -216,7 +184,7 @@ export default function ProblemNeed({
                   "linear-gradient(135deg, transparent 0%, black 35%)",
               }}
             >
-              <Checkmark />
+              {/* <Checkmark /> */}
             </div>
           </div>
         </div>
@@ -231,18 +199,18 @@ export default function ProblemNeed({
           onMouseEnter={() => setHovered("problem")}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-0 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="w-4/5 font-DMSans text-xl sm:text-4xl lg:text-[34px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+          <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-8 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
+            <h2 className="sm:w-4/5 w-65 font-DMSans text-xl sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               What's keeping you from getting there?
             </h2>
-            <div className="translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="w-65 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
               <div>
-                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-800 pointer-fine:group-hover:text-neutral-400">
+                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
                   Select the most common problems your business is dealing with.
                 </p>
                 {problems.map((p, i) => (
                   <div key={i} className="font-DMSans pb-1.75">
-                    <label className="pb-16 text-md transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
+                    <label className="pb-16 text-[15px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
                         className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
@@ -254,7 +222,7 @@ export default function ProblemNeed({
                   </div>
                 ))}
               </div>
-              <div className="font-DMSans pt-2 mt-2 pr-5 lg:pt-0">
+              <div className="font-DMSans pt-2 mt-2 pr-0 lg:pt-0">
                 {/* <label className="block text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other problems that aren't listed? <br />
                   Tell us about your challenges in your own words.
@@ -265,7 +233,7 @@ export default function ProblemNeed({
                   onClick={(e) => e.stopPropagation()}
                   rows={14}
                   placeholder="Describe problems you're facing…"
-                  className="bg-neutral-50/10 w-full resize-none max-sm:h-20 rounded-xl border border-neutral-950/20  p-3 mb-3 text-sm text-neutral-950 placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-neutral-800/20 pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
+                  className="md:bg-neutral-50/10 bg-neutral-700/20 text-white md:text-neutral-950 w-full resize-none max-sm:h-20 rounded-xl border border-neutral-950/20 p-3 mb-3 text-sm placeholder:text-neutral-900/35 md:placeholder:text-neutral-950/40 transition-colors duration-300 focus:outline-none focus:border-neutral-800/20 pointer-fine:group-hover:border-white/30 pointer-fine:group-hover:text-white pointer-fine:group-hover:placeholder:text-white/40"
                 />
               </div>
             </div>
@@ -277,39 +245,75 @@ export default function ProblemNeed({
                   "linear-gradient(135deg, transparent 0%, black 35%)",
               }}
             >
-              <Checkmark />
+              {/* <Checkmark /> */}
             </div>
           </div>
         </div>
 
         {/* Bottom separator */}
-        <div className="order-60 lg:col-span-2 h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" />
+        {/* <div className="order-60 lg:col-span-2 h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" /> */}
       </div>
 
-      {/* <div className="flex-col items-center reveal reveal-delay-3 mt-7.5 mb-20 flex justify-center"> */}
-      {/* <div className="reveal reveal-delay-3 flex-col -mx-10 items-center flex justify-center"> */}
-      <div className="flex-col leading-none items-center -mx-10 flex justify-center">
-        {/* <p className="text-neutral-950 font-semibold font-DMSans text-2xl w-125 text-center">
-          After selecting your desired items, you can click below to book a
-          meeting with ease.
-        </p> */}
-        <button
-          onClick={scrollToForm}
-          // className="cta-book w-full font-bebas p-0 text-[20vw] shadow-2xl shad shadow-amber-900 hover:bg-neutral-950 transition-all duration-300 cursor-none"
-          className="cta-book w-full font-bebas p-0 text-[20vw] shadow-[0_0_18px_4px_rgba(23,23,23,0.15)] hover:bg-neutral-950 transition-all duration-300 cursor-none"
-        >
-          {/* <div className="flex w-full px-3 justify-around translate-y-[0.04em]">
-            {"Book a meeting".split("").map((char, i) => (
-              <span key={i}>{char === " " ? "  " : char}</span>
-            ))}
-          </div> */}
-          <div className="flex w-full px-3 justify-around tracking-[-5px] translate-y-[0.04em]">
-            BOOK A MEETING
-            {/* {"Book a meeting".split("").map((char, i) => (
-              <span key={i}>{char === " " ? "  " : char}</span>
-            ))} */}
-          </div>
-        </button>
+      {/* BOOK A MEETING Button */}
+      <div className="flex w-full justify-center px-0 pt-0 sm:pt-4 md:pt-5">
+        <div className="relative w-full rounded-2xl shadow-[6px_6px_0_#171717] sm:rounded-3xl sm:shadow-[8px_8px_0_#171717] lg:rounded-4xl lg:shadow-[10px_10px_0_#171717]">
+          <button
+            onClick={scrollToForm}
+            className="
+        cta-book
+        relative
+        w-full
+        overflow-visible
+        rounded-2xl
+        border-2
+        border-neutral-950
+        bg-transparent
+        p-0
+        font-bebas
+        leading-none
+        text-[16vw]
+        transition-all
+        duration-200
+        ease-out
+        sm:rounded-3xl
+        sm:text-[17vw]
+        md:rounded-3xl
+        md:text-[16vw]
+        lg:rounded-4xl
+        lg:text-[16vw]
+        md:hover:bg-neutral-950
+        md:active:translate-x-2
+        md:active:translate-y-2
+        max-md:active:translate-x-1
+        max-md:active:translate-y-1
+        md:cursor-none
+      "
+          >
+            <div
+              className="
+          flex
+          w-full
+          items-center
+          justify-around
+          px-2
+          pt-2
+          pb-0.5
+          tracking-[-1.75px]
+          sm:px-3
+          sm:py-3
+          sm:tracking-[-4px]
+          md:px-0
+          md:pt-0
+          md:-mb-7
+          md:tracking-[-1px]
+          lg:-mb-8
+          xl:-mb-9
+        "
+            >
+              BOOK A MEETING
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );

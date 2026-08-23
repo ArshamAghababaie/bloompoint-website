@@ -325,35 +325,19 @@ body:hover .cursor {
 
 .cta-book {
   color: transparent;
-
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px #171717;
-
-  text-shadow:
-    5px 5px 0 rgb(23, 23, 23),
-    7px 7px 0 rgba(255, 255, 255, 0.5);
-
-  paint-order: stroke fill;
-
+  -webkit-text-stroke: 2px #171717;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-
-  transition:
-    -webkit-text-stroke-color 0.3s ease,
-    text-shadow 0.3s ease,
-    background-color 0.35s ease;
+  paint-order: stroke fill;
 }
 
-.cta-book:hover {
-  text-shadow: none;
-
-  /* text-shadow: 0px 0px 0 rgb(255, 255, 255); */
-
-  /* text-shadow:
-    3px 3px 0 #fecb2f,
-    8px 8px 0 rgba(255, 255, 255, 0.9); */
-
-  -webkit-text-stroke-color: #fecb2f;
+@media (hover: hover) and (pointer: fine) {
+  .cta-book:hover {
+    color: #fecb2f;
+    -webkit-text-fill-color: #fecb2f;
+    -webkit-text-stroke-color: #fecb2f;
+  }
 }
 
 /* ── BookACall form fields ── */
@@ -626,4 +610,39 @@ body:hover .cursor {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0) scale(1);
+}
+
+@keyframes workflow-card-cycle {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(4px);
+  }
+
+  4.17% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  20.83% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  25% {
+    opacity: 0;
+    transform: scale(0.95) translateY(4px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(4px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .workflow-card-auto {
+    margin-left: var(--mobile-card-x, 0px);
+    margin-top: var(--mobile-card-y, 0px);
+    animation: workflow-card-cycle 12s ease-in-out infinite;
+  }
 }

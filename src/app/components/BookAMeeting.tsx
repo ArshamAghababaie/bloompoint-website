@@ -8,6 +8,24 @@ const PURPOSES = ["Path", "Circle", "General Inquiry", "Partnership"];
 
 const SEGMENTS = ["SME", "Large Enterprise", "City / Ecosystem"];
 
+const bulletPoints = [
+  {
+    icon: "→",
+    label: "Discovery meeting",
+    desc: "30 min - no commitment",
+  },
+  {
+    icon: "→",
+    label: "Tailored proposal",
+    desc: "Based on your context & segment",
+  },
+  {
+    icon: "→",
+    label: "Clear next steps",
+    desc: "A blueprint you can act on immediately",
+  },
+];
+
 type Props = {
   selectedProblems: string[];
   selectedNeeds: string[];
@@ -108,35 +126,19 @@ export default function BookAMeetingsss({
 
           {/* Expectation bullets */}
           <div className="reveal reveal-delay-2 flex flex-col gap-5 text-neutral-950">
-            {[
-              {
-                icon: "→",
-                label: "Discovery meeting",
-                desc: "45 min - no commitment",
-              },
-              {
-                icon: "→",
-                label: "Tailored proposal",
-                desc: "Based on your context & segment",
-              },
-              {
-                icon: "→",
-                label: "Clear next steps",
-                desc: "A blueprint you can act on immediately",
-              },
-            ].map((item) => (
-              <div key={item.label} className="flex items-start gap-px">
+            {bulletPoints.map((b, i) => (
+              <div key={i} className="flex items-start gap-px">
                 <span className="flex h-9 w-9 shrink-0 items-start justify-center font-['DM_Sans',sans-serif] text-[1rem] text-yellow">
-                  {item.icon}
+                  {b.icon}
                 </span>
 
                 <div>
                   <div className="mb-0.5 font-['DM_Sans',sans-serif] text-[0.9rem] font-medium text-neutral-950">
-                    {item.label}
+                    {b.label}
                   </div>
 
                   <div className="font-['DM_Sans',sans-serif] text-[0.82rem] font-light text-[rgba(0,0,0,0.5)]">
-                    {item.desc}
+                    {b.desc}
                   </div>
                 </div>
               </div>
