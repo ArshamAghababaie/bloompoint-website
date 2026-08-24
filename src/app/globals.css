@@ -21,11 +21,14 @@
   --color-yellow: var(--yellow);
   --color-light-gray: var(--light-gray);
   --color-keune-umber: var(--keune-umber);
+  --color-palletabad-orange: var(--palletabad-orange);
   --color-crouse-blue: var(--crouse-blue);
+  --color-avh-blue: var(--avh-blue);
   --color-raad-green: var(--raad-green);
   --color-companies-red: var(--companies-red);
   --color-aseh-gray: var(--aseh-gray);
   --color-darasiab-green: var(--darasiab-green);
+  --color-nikan-yellow: var(--nikan-yellow);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

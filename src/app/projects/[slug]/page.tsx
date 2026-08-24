@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { projects, getProjectBySlug } from "../projects-data";
@@ -7,11 +8,14 @@ import PathAnimation from "./PathAnimation";
 
 const colorMap: Record<string, string> = {
   keune_umber: "oklch(0.6353 0.041 70.89)",
+  palletabad_orange: "oklch(0.6253 0.0989 60.77)",
   crouse_blue: "oklch(0.367 0.0493 249.3)",
+  avh_blue: "oklch(0.6917 0.0482 248.53)",
   raad_green: "oklch(0.4263 0.1001 147.1)",
   companies_red: "oklch(0.5195 0.1825 23.91)",
   aseh_gray: "oklch(0.5522 0.0179 216.79)",
   darasiab_green: "oklch(0.4586 0.1014 150.23)",
+  nikan_yellow: "oklch(0.8372 0.1494 85)",
   yellow: "oklch(0.8634 0.1657 88.82)",
   green: "#22c55e",
   red: "#ef4444",
@@ -26,11 +30,14 @@ const textColorMap: Record<string, string> = {
   blue: "text-white",
   gray: "text-white",
   keune_umber: "text-white",
+  palletabad_orange: "text-white",
   crouse_blue: "text-white",
+  avh_blue: "text-white",
   raad_green: "text-white",
   companies_red: "text-white",
   aseh_gray: "text-white",
   darasiab_green: "text-white",
+  nikan_yellow: "text-white",
 };
 
 export function generateStaticParams() {
@@ -67,6 +74,7 @@ export default async function ProjectPage({
         { label: "Prototype", value: s1.prototype },
         // { label: "Designated Group", value: s1.designatedGroup },
         { label: "Target", value: s1.target },
+        ...(s1.link ? [{ label: "Website", value: s1.link }] : []),
       ]
     : [];
 
@@ -97,10 +105,20 @@ export default async function ProjectPage({
                   <span className="font-DMSans text-sm uppercase tracking-widest font-semibold text-neutral-950 max-[767px]:text-[0.65rem] max-[767px]:tracking-[0.12em]">
                     {row.label}
                   </span>
-
-                  <span className="font-DMSans leading-relaxed max-[767px]:text-[0.85rem]">
-                    {row.value}
-                  </span>
+                  {row.label === "Website" && row.value ? (
+                    <Link
+                      href={row.value}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline cursor-none lg:hover:text-neutral-300 transition-colors duration-150"
+                    >
+                      Visit website
+                    </Link>
+                  ) : (
+                    <span className="font-DMSans leading-relaxed max-[767px]:text-[0.85rem]">
+                      {row.value}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

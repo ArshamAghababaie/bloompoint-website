@@ -7,51 +7,55 @@ export type ProjectColor =
   | "blue"
   | "gray"
   | "keune_umber"
+  | "palletabad_orange"
   | "crouse_blue"
+  | "avh_blue"
   | "raad_green"
   | "companies_red"
   | "aseh_gray"
-  | "darasiab_green";
+  | "darasiab_green"
+  | "nikan_yellow";
 
 export interface ProjectSection1 {
   color: ProjectColor;
-  clientName: string;
+  clientName?: string;
   // clientDescription: string;
-  problem: string;
-  communityLedSolution: string;
-  prototype: string;
+  problem?: string;
+  communityLedSolution?: string;
+  prototype?: string;
   // designatedGroup: string;
-  target: string;
+  target?: string;
+  link?: string;
 }
 
 export interface ProjectSection2 {
-  clientName: string;
-  clientLogo: string;
-  clientDepartment: string;
-  clientDepartmentLogo: string;
-  bloompointLogo: string;
-  bloompointDepartment: string;
-  bloompointClsTitle: string;
-  blueprintLogo: string;
-  blueprintTitle: string;
-  blueprintDescription: string[];
-  goalTitle: string;
-  goalDescription: string[];
+  clientName?: string;
+  clientLogo?: string;
+  clientDepartment?: string;
+  clientDepartmentLogo?: string;
+  bloompointLogo?: string;
+  bloompointDepartment?: string;
+  bloompointClsTitle?: string;
+  blueprintLogo?: string;
+  blueprintTitle?: string;
+  blueprintDescription?: string[];
+  goalTitle?: string;
+  goalDescription?: string[];
 }
 
 export interface ProjectSection3 {
-  title: string;
-  images: string[];
+  title?: string;
+  images?: string[];
 }
 
 export interface Project {
-  id: string;
-  name: string;
-  category: Category;
-  image: string;
-  tagline: string;
-  state: "latest" | "old";
-  slug: string;
+  id?: string;
+  name?: string;
+  category?: Category;
+  image?: string;
+  tagline?: string;
+  state?: "latest" | "old";
+  slug?: string;
   section1?: ProjectSection1;
   section2?: ProjectSection2;
   section3?: ProjectSection3;
@@ -81,6 +85,7 @@ export const projects: Project[] = [
       • Community Care Club (CCC)`,
       // designatedGroup: "Keune Care Club Members",
       target: "Community Wellbeing",
+      link: "https://keunecare.com/",
     },
     section2: {
       clientName: "Keune Care",
@@ -121,24 +126,86 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    id: "2",
+    name: "PalletAbad",
+    category: "SMEs",
+    image: "/projects-cover-image/SMEs/palletabad.jpg",
+    tagline: "coworking-spaces-communities",
+    state: "old",
+    slug: "palletabad",
 
-  // {
-  //   id: "2",
-  //   name: "PalletAbad Community",
-  //   category: "SMEs",
-  //   image: "/projects/sme-1.jpg",
-  //   tagline: "coworking-spaces-communities",
-  //   slug: "palletabad-community",
-  // },
-  // {
-  //   id: "3",
-  //   name: "BAHAMAN",
-  //   category: "SMEs",
-  //   image: "/projects/sme-3.jpg",
-  //   tagline: "private-business-club",
-  // state: "old",
-  //   slug: "bahaman",
-  // },
+    section1: {
+      color: "palletabad_orange",
+      clientName: "Haft-o-Hasht",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `Lack of Coworking Among the Existence Businesses`,
+      communityLedSolution: "Community Events",
+      prototype: `• Events
+      • Talks
+      • Civic Visits`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Empathy Sharing",
+      link: "http://patogh.my.canva.site/haftohasht-palletabad-community",
+    },
+    // section2: {
+    //   clientName: "Keune Care",
+    //   clientLogo: "/project-path/keune-care/section2/keune-logo.png",
+    //   clientDepartment: "Keune Care-Iran | B2C Dept.",
+    //   clientDepartmentLogo:
+    //     "/project-path/keune-care/section2/keune-care-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "Perspective",
+    //   blueprintLogo:
+    //     "/project-path/keune-care/section2/keune-care-blueprint-logo.png",
+    //   blueprintTitle: "Digital Dynamic System",
+    //   blueprintDescription: [
+    //     "B2C Online Haircare Consultancy (BHC)",
+    //     "Care Community Club (CCC)",
+    //   ],
+    //   goalTitle: "Keune Care Ecosystem",
+    //   goalDescription: [
+    //     "Prototype | KeuneCare-Iran Community",
+    //     "4000 Costumers & 6000 Salons",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
+    // section3: {
+    //   title: "Keune Care Project Report",
+    //   images: [
+    //     "/project-path/palletabad/section3/palletabad_01.jpg",
+    //     "/project-path/palletabad/section3/palletabad_02.jpg",
+    //     "/project-path/palletabad/section3/palletabad_03.jpg",
+    //     "/project-path/palletabad/section3/palletabad_04.jpg",
+    //     "/project-path/palletabad/section3/palletabad_05.jpg",
+    //     "/project-path/palletabad/section3/palletabad_06.jpg",
+    //   ],
+    // },
+  },
+  {
+    id: "3",
+    name: "BAHAMAN",
+    category: "SMEs",
+    image: "/projects-cover-image/SMEs/bahaman.jpg",
+    tagline: "private-business-club",
+    state: "old",
+    slug: "bahaman",
+
+    section1: {
+      color: "darasiab_green",
+      clientName: "BAHAMAN",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `Not Existing A Private Club for C-Levels`,
+      communityLedSolution: "Private Clubworking Space",
+      prototype: `BAHAMAN Clubworking Space (BCS)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Providing a Clubworking Space for C-Levels",
+      // link: "https://thebahaman.com/",
+    },
+  },
+
   // {
   //   id: "4",
   //   name: "MAKOKO",
@@ -319,7 +386,7 @@ export const projects: Project[] = [
     image: "/projects-cover-image/LEs/crouse.jpg",
     tagline: "food-waste-management",
     state: "latest",
-    slug: "cfw",
+    slug: "crouse",
     section1: {
       color: "crouse_blue",
       clientName: "CROUSE CO. - Manifacturing Industries (15,000 People)",
@@ -437,7 +504,7 @@ export const projects: Project[] = [
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mahram.jpg",
     tagline: "culinary-learning",
-    slug: "mahram-co",
+    slug: "mahram",
     state: "old",
     section1: {
       color: "companies_red",
@@ -483,30 +550,65 @@ export const projects: Project[] = [
   },
 
   // Cities (6)
-  // {
-  //   id: "11",
-  //   name: "People With Disabilities (PWD)",
-  //   category: "Cities",
-  //   image: "/projects/city-1.jpg",
-  //   tagline: "accessibility-&-adjustment (A&A)",
-  //   slug: "pwd",
-  // },
-  // {
-  //   id: "12",
-  //   name: "? (PCC)",
-  //   category: "Cities",
-  //   image: "/projects/city-2.jpg",
-  //   tagline: "community-health-wellbeing",
-  //   slug: "pcc",
-  // },
-  // {
-  //   id: "13",
-  //   name: "EKBATANA",
-  //   category: "Cities",
-  //   image: "/projects/city-3.jpg",
-  //   tagline: "complex-community",
-  //   slug: "ekbatana",
-  // },
+  {
+    id: "11",
+    name: "Raad", //People With Disabilities (PWD)
+    category: "Cities",
+    image: "/projects-cover-image/Cities/raad.jpg",
+    tagline: "accessibility-&-adjustment (A&A)",
+    slug: "raad",
+    section1: {
+      color: "raad_green",
+      clientName: "RAAD Educational Institute",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `Inadequacy of Spaces For People With Dsabilities`,
+      communityLedSolution: "Adapting Dpaces For People  With Disabilities",
+      prototype: `People With Disabilities (PWD)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Increasing People Awareness & Space Functionality",
+      // link: "https://thebahaman.com/",
+    },
+  },
+  {
+    id: "12",
+    name: "Nikan",
+    category: "Cities",
+    image: "/projects-cover-image/Cities/nikan.jpg",
+    tagline: "community-health-wellbeing",
+    slug: "nikan",
+    section1: {
+      color: "nikan_yellow",
+      clientName: "Nikan Chain Hospitals",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `• Increasing Awareness
+• Disease Prevention
+• A Deeper Connection Between Nikan Hospital & the Public`,
+      communityLedSolution: "Building Health Through Community",
+      prototype: `Prevention | Community | Care (PCC)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Deepr Relation & Increasing People Awareness",
+      // link: "?",
+    },
+  },
+  {
+    id: "13",
+    name: "EKBATANA",
+    category: "Cities",
+    image: "/projects-cover-image/Cities/ekbatana.jpg",
+    tagline: "complex-community",
+    slug: "ekbatana",
+    section1: {
+      color: "darasiab_green",
+      clientName: "EKBATANA Management Complex ",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `?`,
+      communityLedSolution: "?",
+      prototype: `?`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "?",
+      // link: "https://thebahaman.com/",
+    },
+  },
   // {
   //   id: "14",
   //   name: "RESTROOMS",
@@ -523,14 +625,27 @@ export const projects: Project[] = [
   //   tagline: "coffee-grounds-upcycle-products",
   //   slug: "kia",
   // },
-  // {
-  //   id: "16",
-  //   name: "Aviation Hub (AVH)",
-  //   category: "Cities",
-  //   image: "/projects/city-3.jpg",
-  //   tagline: "engagement-&-experience-center",
-  //   slug: "avh",
-  // },
+  {
+    id: "16",
+    name: "Aviation Hub",
+    category: "Cities",
+    image: "/projects-cover-image/Cities/avh.jpg",
+    tagline: "engagement-&-experience-center",
+    slug: "avh",
+
+    section1: {
+      color: "avh_blue",
+      clientName: "Iranian Aviation Community",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `• Not Existing An Iranian Aviation Community
+      • Lack of A Shared Place To Learn & Engagement`,
+      communityLedSolution: "Aviation Experience and Engagement Center",
+      prototype: `Aviation Hub (AVH)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Engaging People To Aviation Industry",
+      link: "http://avh.center/",
+    },
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
