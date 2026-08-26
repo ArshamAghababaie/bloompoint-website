@@ -5,7 +5,7 @@ export default function Pricing() {
   const hybridPlans = [
     {
       tier: "Segment",
-      name: "SME",
+      name: "Medium-Sized Businesses",
       duration: "3 - 6 Months",
       amount: "€7,000 - €10,000",
       amountSub: "/ Design",

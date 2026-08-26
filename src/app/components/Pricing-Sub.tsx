@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 
 export default function Pricing() {
   type Tab = "hybrid" | "subscription";
@@ -15,11 +14,11 @@ export default function Pricing() {
   const hybridPlans = [
     {
       tier: "Segment",
-      name: "SME",
-      duration: "3 – 6 Months",
-      amount: "€7,000 – €10,000",
+      name: "Medium-Sized Businesses",
+      duration: "3 - 6 Months",
+      amount: "€7,000 - €10,000",
       amountSub: "/ Design",
-      amount2: "+ €1,500 – €2,000 / Supervision",
+      amount2: "+ €1,500 - €2,000 / Supervision",
       features: [
         "Strategy Planning (Design)",
         "Supervision & Coordination",
@@ -32,10 +31,10 @@ export default function Pricing() {
     {
       tier: "Segment",
       name: "Large Enterprise",
-      duration: "6 – 12 Months",
-      amount: "€10,000 – €15,000",
+      duration: "6 - 12 Months",
+      amount: "€10,000 - €15,000",
       amountSub: "/ Design",
-      amount2: "+ €2,500 – €4,000 / Supervision",
+      amount2: "+ €2,500 - €4,000 / Supervision",
       features: [
         "Strategy Planning (Design)",
         "Supervision & Coordination",
@@ -49,10 +48,10 @@ export default function Pricing() {
     {
       tier: "Segment",
       name: "Ecosystem / City",
-      duration: "12 – 24 Months",
-      amount: "€25,000 – €30,000",
+      duration: "12 - 24 Months",
+      amount: "€25,000 - €30,000",
       amountSub: "/ Design",
-      amount2: "+ €4,500 – €6,000 / Supervision",
+      amount2: "+ €4,500 - €6,000 / Supervision",
       features: [
         "Full ecosystem design",
         "City-scale community planning",

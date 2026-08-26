@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "Who is BloomPoint for?",
-    a: "We work with SMEs, large enterprises, and cities. Any organization that wants to build genuine community belonging-not just marketing-can benefit from our platform. We are a B2B service.",
+    a: "We work with medium-sized businesses, large enterprises, and cities. Any organization that wants to build genuine community belonging-not just marketing-can benefit from our platform. We are a B2B service.",
   },
   {
     q: (

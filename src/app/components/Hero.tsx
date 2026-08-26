@@ -57,6 +57,9 @@ const LOGOS: LogoItem[] = [
   { file: "Mahram-white.png", name: "Mahram", ring: 2 },
   { file: "Mammut-white.png", name: "Mammut", ring: 2 },
   { file: "Raad-white.png", name: "Raad", ring: 2 },
+  { file: "Raad-white.png", name: "Ekbatana", ring: 0 }, //mikham
+  { file: "Raad-white.png", name: "Palletabad", ring: 1 }, //mikham
+  { file: "Raad-white.png", name: "Nikan", ring: 2 }, //mikham
 ];
 
 type OrbitRing = {
@@ -136,7 +139,7 @@ function OrbitRingLayer({
                 >
                   <div
                     style={{ width: box, height: box }}
-                    className={`rounded-full border border-neutral-600/30 bg-neutral-700/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 lg:pointer-fine:group-hover/logo:scale-[2] lg:pointer-fine:group-hover/logo:shadow-[0_0_18px_4px_rgba(255,255,255,0.15)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(255,255,255,0.15)]" : ""}`} // Without border - white shadow
+                    className={`rounded-full border border-neutral-600/30 bg-neutral-600/90 overflow-hidden flex items-center justify-center cursor-none transition-all duration-300 lg:pointer-fine:group-hover/logo:scale-[2] lg:pointer-fine:group-hover/logo:shadow-[0_0_18px_4px_rgba(255,255,255,0.15)] ${allHighlighted ? "scale-[2] shadow-[0_0_18px_4px_rgba(255,255,255,0.15)]" : ""}`} // Without border - white shadow
                   >
                     <Image
                       src={`${basePath}/logo-hero-new/mains/${logo.file}`}
@@ -170,7 +173,7 @@ export default function Hero() {
   const [logoHovered, setLogoHovered] = useState(false);
   const [exploreHovered, setExploreHovered] = useState(false);
   const anyHighlight = logoHovered || exploreHovered;
-  const segments = ["SMEs", "LARGE ENTERPRISES", "CITIES"];
+  const segments = ["MEDIUM-SIZED BUSINESSES", "LARGE ENTERPRISES", "CITIES"];
 
   return (
     <div

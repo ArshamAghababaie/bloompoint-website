@@ -6,7 +6,11 @@ type FormState = "idle" | "sending" | "success" | "error";
 
 const PURPOSES = ["Path", "Circle", "General Inquiry", "Partnership"];
 
-const SEGMENTS = ["SME", "Large Enterprise", "City / Ecosystem"];
+const SEGMENTS = [
+  "Medium-Sized Business",
+  "Large Enterprise",
+  "City / Ecosystem",
+];
 
 const bulletPoints = [
   {

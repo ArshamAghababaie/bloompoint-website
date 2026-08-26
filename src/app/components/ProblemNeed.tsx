@@ -90,7 +90,7 @@ export default function ProblemNeed({
   return (
     <div
       id="problem-need"
-      className="relative z-10 pb-6 px-10 bg-yellow text-neutral-950"
+      className="relative z-10 pb-12 px-10 bg-yellow text-neutral-950"
     >
       {/* Context */}
       {/* <div className="reveal flex items-center pt-20">
@@ -280,7 +280,7 @@ export default function ProblemNeed({
         md:rounded-3xl
         md:text-[16vw]
         lg:rounded-4xl
-        lg:text-[16vw]
+        lg:text-[13.5vw]
         md:hover:bg-neutral-950
         md:active:translate-x-2
         md:active:translate-y-2

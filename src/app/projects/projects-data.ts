@@ -1,4 +1,7 @@
-export type Category = "SMEs" | "Large Enterprises" | "Cities";
+export type Category =
+  | "Medium-Sized Businesses"
+  | "Large Enterprises"
+  | "Cities";
 
 export type ProjectColor =
   | "yellow"
@@ -49,26 +52,30 @@ export interface ProjectSection3 {
 }
 
 export interface Project {
-  id?: string;
-  name?: string;
-  category?: Category;
+  id: string;
+  name: string;
+  category: Category;
   image?: string;
   tagline?: string;
-  state?: "latest" | "old";
-  slug?: string;
+  state: "latest" | "old";
+  slug: string;
   section1?: ProjectSection1;
   section2?: ProjectSection2;
   section3?: ProjectSection3;
 }
 
-export const categories: Category[] = ["SMEs", "Large Enterprises", "Cities"];
+export const categories: Category[] = [
+  "Medium-Sized Businesses",
+  "Large Enterprises",
+  "Cities",
+];
 
 export const projects: Project[] = [
   // SMEs (7)
   {
     id: "1",
-    name: `Keune Care`,
-    category: "SMEs",
+    name: `KEUNE CARE ECOSYSTEM`,
+    category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/keune-care.jpg",
     tagline: "community-wellbeing",
     state: "latest",
@@ -112,7 +119,7 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "Keune Care Project Report",
+      title: "Keune Care Project",
       images: [
         "/project-path/keune-care/section3/keune_02.jpg",
         "/project-path/keune-care/section3/keune_03.jpg",
@@ -128,12 +135,12 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    name: "PalletAbad",
-    category: "SMEs",
+    name: "HAFTOHASHT PALLET ABAD COMMUNITY",
+    category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/palletabad.jpg",
     tagline: "coworking-spaces-communities",
     state: "old",
-    slug: "palletabad",
+    slug: "pallet-abad",
 
     section1: {
       color: "palletabad_orange",
@@ -173,7 +180,7 @@ export const projects: Project[] = [
     //   ],
     // },
     // section3: {
-    //   title: "Keune Care Project Report",
+    //   title: "Keune Care Project",
     //   images: [
     //     "/project-path/palletabad/section3/palletabad_01.jpg",
     //     "/project-path/palletabad/section3/palletabad_02.jpg",
@@ -186,8 +193,8 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    name: "BAHAMAN",
-    category: "SMEs",
+    name: "BAHAMAN PRIVATE BUSINESS CLUB",
+    category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/bahaman.jpg",
     tagline: "private-business-club",
     state: "old",
@@ -217,8 +224,8 @@ export const projects: Project[] = [
   // },
   {
     id: "5",
-    name: "ASEH CO.",
-    category: "SMEs",
+    name: "ASEH ACADEMY",
+    category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/aseh.jpg",
     tagline: "efficient-system",
     state: "old",
@@ -256,21 +263,20 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "ASEH Project Report",
+      title: "ASEH Project",
       images: [
         "/project-path/aseh/section3/aseh_02.jpg",
         "/project-path/aseh/section3/aseh_03.jpg",
         "/project-path/aseh/section3/aseh_04.jpg",
         "/project-path/aseh/section3/aseh_05.jpg",
         "/project-path/aseh/section3/aseh_06.jpg",
-        "/project-path/aseh/section3/aseh_07.jpg",
       ],
     },
   },
   {
     id: "6",
-    name: `DBST`,
-    category: "SMEs",
+    name: `DBST KIDSTADT AFTER SCHOOL`,
+    category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/dbst.jpg",
     tagline: "dbst-after-School",
     state: "latest",
@@ -310,7 +316,7 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "DBST Project Report",
+      title: "DBST Project",
       images: [
         "/project-path/dbst/section3/dbst_01.jpg",
         "/project-path/dbst/section3/dbst_02.jpg",
@@ -328,8 +334,8 @@ export const projects: Project[] = [
 
   {
     id: "7",
-    name: `DARASIAB`,
-    category: "SMEs",
+    name: `DARASIAB EXPERIENCE GARDEN`,
+    category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/darasiab.jpg",
     tagline: "experience-garden",
     state: "old",
@@ -366,7 +372,7 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "DARASIAB Project Report",
+      title: "DARASIAB Project",
       images: [
         "/project-path/darasiab/section3/darasiab_02.jpg",
         "/project-path/darasiab/section3/darasiab_03.jpg",
@@ -381,7 +387,7 @@ export const projects: Project[] = [
   // Large Enterprises (3)
   {
     id: "8",
-    name: "CROUSE CO.",
+    name: "CROUSE FOOD WASTE MANAGEMENT",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/crouse.jpg",
     tagline: "food-waste-management",
@@ -420,7 +426,7 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "CROUSE-CFW Project Report",
+      title: "CROUSE-CFW Project",
       images: [
         "/project-path/crouse/section3/cfw_02.jpg",
         "/project-path/crouse/section3/cfw_03.jpg",
@@ -440,7 +446,7 @@ export const projects: Project[] = [
 
   {
     id: "9",
-    name: "MAMMUT CO.",
+    name: "MAMMUT GREEN INDUSTRIES",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mammut.jpg",
     tagline: "industrial-sustainability",
@@ -479,7 +485,7 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "MAMMUT Project Report",
+      title: "MAMMUT Project",
       images: [
         "/project-path/mammut/section3/mammut_02.jpg",
         "/project-path/mammut/section3/mammut_03.jpg",
@@ -500,7 +506,7 @@ export const projects: Project[] = [
 
   {
     id: "10",
-    name: "MAHRAM CO.",
+    name: "MAHRAM CULINARY ACADEMY",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mahram.jpg",
     tagline: "culinary-learning",
@@ -536,7 +542,7 @@ export const projects: Project[] = [
       ],
     },
     section3: {
-      title: "MAHRAM CO. Project Report",
+      title: "MAHRAM CO. Project",
       images: [
         "/project-path/mahram/section3/mahram_02.jpg",
         "/project-path/mahram/section3/mahram_03.jpg",
@@ -552,11 +558,13 @@ export const projects: Project[] = [
   // Cities (6)
   {
     id: "11",
-    name: "Raad", //People With Disabilities (PWD)
+    name: "PWD-ACCESSIBILITY & ADJUSTMENT",
     category: "Cities",
     image: "/projects-cover-image/Cities/raad.jpg",
     tagline: "accessibility-&-adjustment (A&A)",
-    slug: "raad",
+    state: "old",
+    slug: "pwd",
+
     section1: {
       color: "raad_green",
       clientName: "RAAD Educational Institute",
@@ -568,14 +576,30 @@ export const projects: Project[] = [
       target: "Increasing People Awareness & Space Functionality",
       // link: "https://thebahaman.com/",
     },
+
+    section3: {
+      title: "Raad's PWD Project",
+      images: [
+        "/project-path/pwd/section3/pwd_02.jpg",
+        "/project-path/pwd/section3/pwd_03.jpg",
+        "/project-path/pwd/section3/pwd_04.jpg",
+        "/project-path/pwd/section3/pwd_05.jpg",
+        "/project-path/pwd/section3/pwd_06.jpg",
+        "/project-path/pwd/section3/pwd_07.jpg",
+        "/project-path/pwd/section3/pwd_08.jpg",
+        "/project-path/pwd/section3/pwd_09.jpg",
+      ],
+    },
   },
   {
     id: "12",
-    name: "Nikan",
+    name: "NIKAN COMMUNITY HEALTH & WELL-BEING",
     category: "Cities",
     image: "/projects-cover-image/Cities/nikan.jpg",
     tagline: "community-health-wellbeing",
+    state: "old",
     slug: "nikan",
+
     section1: {
       color: "nikan_yellow",
       clientName: "Nikan Chain Hospitals",
@@ -592,11 +616,13 @@ export const projects: Project[] = [
   },
   {
     id: "13",
-    name: "EKBATANA",
+    name: "EKBATANA COMPLEX SERVICES",
     category: "Cities",
     image: "/projects-cover-image/Cities/ekbatana.jpg",
     tagline: "complex-community",
+    state: "old",
     slug: "ekbatana",
+
     section1: {
       color: "darasiab_green",
       clientName: "EKBATANA Management Complex ",
@@ -606,7 +632,7 @@ export const projects: Project[] = [
       prototype: `?`,
       // designatedGroup: "Keune Care Club Members",
       target: "?",
-      // link: "https://thebahaman.com/",
+      // link: "?",
     },
   },
   // {
@@ -627,10 +653,11 @@ export const projects: Project[] = [
   // },
   {
     id: "16",
-    name: "Aviation Hub",
+    name: "AVH-Aviation Hub",
     category: "Cities",
     image: "/projects-cover-image/Cities/avh.jpg",
     tagline: "engagement-&-experience-center",
+    state: "old",
     slug: "avh",
 
     section1: {
