@@ -52,7 +52,7 @@ export default function Ongoing() {
               <div className="relative h-full w-full overflow-hidden bg-neutral-950">
                 <Image
                   src={
-                    basePath + (project.section3?.images[1] || project.image)
+                    basePath + (project.section3?.images?.[1] || project.image)
                   }
                   alt={project.name}
                   // fill

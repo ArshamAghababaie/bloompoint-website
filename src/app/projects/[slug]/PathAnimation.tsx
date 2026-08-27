@@ -196,7 +196,7 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
               <h3 className="font-bebas text-neutral-900 text-base uppercase tracking-wide">
                 {data.blueprintTitle}
               </h3>
-              {data.blueprintDescription.map((item, i) => (
+              {(data?.blueprintDescription || []).map((item, i) => (
                 <p
                   key={i}
                   className="font-DMSans text-xs text-neutral-600 leading-relaxed"
@@ -227,7 +227,7 @@ export default function PathAnimation({ data, basePath }: PathAnimationProps) {
               className="absolute top-full mt-7 flex flex-col items-center gap-1 text-center"
               style={{ minWidth: "240px" }}
             >
-              {data.goalDescription.map((item, i) => (
+              {(data?.blueprintDescription || []).map((item, i) => (
                 <p
                   key={i}
                   className="font-DMSans text-xs text-neutral-600 leading-relaxed"
