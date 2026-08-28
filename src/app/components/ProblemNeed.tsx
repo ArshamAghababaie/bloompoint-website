@@ -90,7 +90,7 @@ export default function ProblemNeed({
   return (
     <div
       id="problem-need"
-      className="relative z-10 pb-12 px-10 bg-yellow text-neutral-950"
+      className="relative z-10 pb-12 md:pb-18 px-10 bg-yellow text-neutral-950"
     >
       {/* Context */}
       {/* <div className="reveal flex items-center pt-20">
@@ -142,14 +142,14 @@ export default function ProblemNeed({
               Where do you want to go?
             </h2>
 
-            <div className="w-65 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
-              <div>
-                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
+            <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
+              <div className="pt-2">
+                {/* <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
                   Select the most common needs you want to address.
-                </p>
+                </p> */}
                 {needs.map((n, i) => (
-                  <div key={i} className="font-DMSans pb-1.75">
-                    <label className="pb-16 text-[15px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
+                  <div key={i} className="font-DMSans pb-4">
+                    <label className="pb-14 text-[15px] md:text-[16px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
                         className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
@@ -203,14 +203,14 @@ export default function ProblemNeed({
             <h2 className="sm:w-4/5 w-65 font-DMSans text-xl sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               What's keeping you from getting there?
             </h2>
-            <div className="w-65 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
-              <div>
-                <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
+            <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
+              <div className="pt-2">
+                {/* <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
                   Select the most common problems your business is dealing with.
-                </p>
+                </p> */}
                 {problems.map((p, i) => (
-                  <div key={i} className="font-DMSans pb-1.75">
-                    <label className="pb-16 text-[15px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
+                  <div key={i} className="font-DMSans pb-4">
+                    <label className="pb-14 text-[15px] md:text-[16px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
                         className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
@@ -255,14 +255,15 @@ export default function ProblemNeed({
       </div>
 
       {/* BOOK A MEETING Button */}
-      <div className="flex w-full justify-center px-0 pt-0 sm:pt-4 md:pt-5">
-        <div className="relative w-full rounded-2xl shadow-[6px_6px_0_#171717] sm:rounded-3xl sm:shadow-[8px_8px_0_#171717] lg:rounded-4xl lg:shadow-[10px_10px_0_#171717]">
+      <div className="flex w-full justify-center px-0 pt-0 sm:pt-4 md:pt-9">
+        <div className="relative w-full lg:w-220 rounded-2xl shadow-[6px_6px_0_#171717] sm:rounded-3xl sm:shadow-[8px_8px_0_#171717] lg:rounded-4xl lg:shadow-[10px_10px_0_#171717]">
           <button
             onClick={scrollToForm}
             className="
         cta-book
         relative
         w-full
+        lg:w-220
         overflow-visible
         rounded-2xl
         border-2
@@ -279,8 +280,8 @@ export default function ProblemNeed({
         sm:text-[17vw]
         md:rounded-3xl
         md:text-[16vw]
+        lg:text-[10vw]
         lg:rounded-4xl
-        lg:text-[13.5vw]
         md:hover:bg-neutral-950
         md:active:translate-x-2
         md:active:translate-y-2
@@ -307,7 +308,6 @@ export default function ProblemNeed({
           md:-mb-7
           md:tracking-[-1px]
           lg:-mb-8
-          xl:-mb-9
         "
             >
               BOOK A MEETING

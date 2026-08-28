@@ -32,16 +32,35 @@ export default function Ongoing() {
             (ecosystems)
           </p>
 
-          {/* <Link href={"/projects"} className="w-full sm:w-auto">
-            <button className="w-full mt-10 sm:w-auto text-sm md:text-base lg:pointer-fine:text-sm px-6 py-3 sm:px-9 sm:py-4 md:px-11 md:py-5 lg:pointer-fine:px-9 lg:pointer-fine:py-4 border border-neutral-950 text-neutral-800 rounded-xl bg-white md:hover:bg-neutral-950 md:hover:text-light-gray md:hover:-translate-y-1 transition duration-300 cursor-none">
-              More Projects
-            </button>
-          </Link> */}
+          <div className="flex justify-center items-center pt-6">
+            <Link href={"/projects"} className="">
+              <button className="group flex items-center w-fullsm:w-auto text-sm md:text-base lg:pointer-fine:text-sm lg:pointer-fine:px-1 lg:pointer-fine:py-1 text-neutral-950 md:hover:text-neutral-500 md:hover:-translate-y-1 transition duration-300 underline cursor-none">
+                More Projects
+                <span className="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={0.8}
+                    className="ml-3  h-6 w-6 shrink-0 -translate-x-1.5 text-neutral-950 md:group-hover:text-neutral-500 transition-all delay-0 duration-300 group-hover:translate-x-0 md:h-7 md:w-7"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+                {/* Arrow */}
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
       {/* ======= Projects ======= */}
-      <div className="reveal reveal-delay-3 relative mt-10 sm:mt-18 md:mt-20 lg:mt-28 px-4 sm:px-6 md:px-10 lg:px-12">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+      <div className="reveal reveal-delay-3 relative mt-10 sm:mt-18 md:mt-20 lg:mt-18 px-10 sm:px-12 md:px-10 lg:px-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {latestProjects.map((project) => (
             <Link
               key={project.id}
@@ -52,7 +71,8 @@ export default function Ongoing() {
               <div className="relative h-full w-full overflow-hidden bg-neutral-950">
                 <Image
                   src={
-                    basePath + (project.section3?.images?.[1] || project.image)
+                    // basePath + (project.section3?.images?.[1] || project.image)
+                    basePath + project.image
                   }
                   alt={project.name}
                   // fill
@@ -67,12 +87,17 @@ export default function Ongoing() {
                 </span>
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 flex items-end bg-black/80 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:p-8">
+                <div className="absolute inset-0 flex items-end bg-black/50 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:pl-6 md:pb-4">
                   <div className="flex w-full translate-y-8 items-center justify-between transition-transform duration-300 group-hover:translate-y-0">
                     {/* Project Name */}
-                    <h3 className="font-bebas text-xl uppercase text-white sm:text-2xl md:text-3xl">
-                      {project.name}
-                    </h3>
+                    <div>
+                      <h3 className="font-bebas text-xl uppercase text-white sm:text-2xl md:text-4xl">
+                        {project.name}
+                      </h3>
+                      <h3 className="font-bebas text-xl uppercase text-white sm:text-2xl md:text-[28px]">
+                        {project.subName}
+                      </h3>
+                    </div>
 
                     {/* Arrow */}
                     <svg

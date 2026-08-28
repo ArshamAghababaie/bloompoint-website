@@ -165,11 +165,16 @@ export default function Projects() {
               </div>
 
               {/* Hover Overlay with Name */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end md:pl-6 md:pb-4">
                 <div className="flex items-center justify-between w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bebas text-white text-xl md:text-4xl uppercase">
-                    {project.name}
-                  </h3>
+                  <div className="flex flex-col">
+                    <h3 className="font-bebas text-white text-xl md:text-4xl uppercase">
+                      {project.name}
+                    </h3>
+                    <h3 className="font-bebas text-white text-xl md:text-[26px] uppercase">
+                      {project.subName}
+                    </h3>
+                  </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

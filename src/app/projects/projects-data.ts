@@ -54,6 +54,7 @@ export interface ProjectSection3 {
 export interface Project {
   id: string;
   name: string;
+  subName: string;
   category: Category;
   image?: string;
   tagline?: string;
@@ -74,7 +75,8 @@ export const projects: Project[] = [
   // SMEs (7)
   {
     id: "1",
-    name: `KEUNE CARE ECOSYSTEM`,
+    name: `KEUNE`,
+    subName: `CARE ECOSYSTEM`,
     category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/keune-care.jpg",
     tagline: "community-wellbeing",
@@ -133,85 +135,6 @@ export const projects: Project[] = [
       ],
     },
   },
-  {
-    id: "2",
-    name: "HAFTOHASHT PALLET ABAD COMMUNITY",
-    category: "Medium-Sized Businesses",
-    image: "/projects-cover-image/SMEs/palletabad.jpg",
-    tagline: "coworking-spaces-communities",
-    state: "old",
-    slug: "pallet-abad",
-
-    section1: {
-      color: "palletabad_orange",
-      clientName: "Haft-o-Hasht",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `Lack of Coworking Among the Existence Businesses`,
-      communityLedSolution: "Community Events",
-      prototype: `• Events
-      • Talks
-      • Civic Visits`,
-      // designatedGroup: "Keune Care Club Members",
-      target: "Empathy Sharing",
-      link: "http://patogh.my.canva.site/haftohasht-palletabad-community",
-    },
-    // section2: {
-    //   clientName: "Keune Care",
-    //   clientLogo: "/project-path/keune-care/section2/keune-logo.png",
-    //   clientDepartment: "Keune Care-Iran | B2C Dept.",
-    //   clientDepartmentLogo:
-    //     "/project-path/keune-care/section2/keune-care-logo.png",
-    //   bloompointLogo: "/bp-logo-yellow.png",
-    //   bloompointDepartment: "BloomPoint",
-    //   bloompointClsTitle: "Perspective",
-    //   blueprintLogo:
-    //     "/project-path/keune-care/section2/keune-care-blueprint-logo.png",
-    //   blueprintTitle: "Digital Dynamic System",
-    //   blueprintDescription: [
-    //     "B2C Online Haircare Consultancy (BHC)",
-    //     "Care Community Club (CCC)",
-    //   ],
-    //   goalTitle: "Keune Care Ecosystem",
-    //   goalDescription: [
-    //     "Prototype | KeuneCare-Iran Community",
-    //     "4000 Costumers & 6000 Salons",
-    //     // "Viable Community Health & Wellbeing",
-    //     // "Increased Retention & Loyalty",
-    //   ],
-    // },
-    // section3: {
-    //   title: "Keune Care Project",
-    //   images: [
-    //     "/project-path/palletabad/section3/palletabad_01.jpg",
-    //     "/project-path/palletabad/section3/palletabad_02.jpg",
-    //     "/project-path/palletabad/section3/palletabad_03.jpg",
-    //     "/project-path/palletabad/section3/palletabad_04.jpg",
-    //     "/project-path/palletabad/section3/palletabad_05.jpg",
-    //     "/project-path/palletabad/section3/palletabad_06.jpg",
-    //   ],
-    // },
-  },
-  {
-    id: "3",
-    name: "BAHAMAN PRIVATE BUSINESS CLUB",
-    category: "Medium-Sized Businesses",
-    image: "/projects-cover-image/SMEs/bahaman.jpg",
-    tagline: "private-business-club",
-    state: "old",
-    slug: "bahaman",
-
-    section1: {
-      color: "darasiab_green",
-      clientName: "BAHAMAN",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `Not Existing A Private Club for C-Levels`,
-      communityLedSolution: "Private Clubworking Space",
-      prototype: `BAHAMAN Clubworking Space (BCS)`,
-      // designatedGroup: "Keune Care Club Members",
-      target: "Providing a Clubworking Space for C-Levels",
-      // link: "https://thebahaman.com/",
-    },
-  },
 
   // {
   //   id: "4",
@@ -223,8 +146,9 @@ export const projects: Project[] = [
   //   slug: "makoko",
   // },
   {
-    id: "5",
-    name: "ASEH ACADEMY",
+    id: "2",
+    name: "ASEH",
+    subName: "ACADEMY",
     category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/aseh.jpg",
     tagline: "efficient-system",
@@ -274,8 +198,9 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "6",
-    name: `DBST KIDSTADT AFTER SCHOOL`,
+    id: "3",
+    name: `DBST`,
+    subName: `KIDSTADT AFTER SCHOOL`,
     category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/dbst.jpg",
     tagline: "dbst-after-School",
@@ -333,8 +258,9 @@ export const projects: Project[] = [
   },
 
   {
-    id: "7",
-    name: `DARASIAB EXPERIENCE GARDEN`,
+    id: "4",
+    name: `DARASIAB`,
+    subName: `EXPERIENCE GARDEN`,
     category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/darasiab.jpg",
     tagline: "experience-garden",
@@ -384,10 +310,10 @@ export const projects: Project[] = [
     },
   },
 
-  // Large Enterprises (3)
   {
-    id: "8",
-    name: "CROUSE FOOD WASTE MANAGEMENT",
+    id: "5",
+    name: "CROUSE",
+    subName: "FOOD WASTE MANAGEMENT",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/crouse.jpg",
     tagline: "food-waste-management",
@@ -445,8 +371,9 @@ export const projects: Project[] = [
   },
 
   {
-    id: "9",
-    name: "MAMMUT GREEN INDUSTRIES",
+    id: "6",
+    name: "MAMMUT",
+    subName: "GREEN INDUSTRIES",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mammut.jpg",
     tagline: "industrial-sustainability",
@@ -505,8 +432,9 @@ export const projects: Project[] = [
   },
 
   {
-    id: "10",
-    name: "MAHRAM CULINARY ACADEMY",
+    id: "7",
+    name: "MAHRAM",
+    subName: "CULINARY ACADEMY",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mahram.jpg",
     tagline: "culinary-learning",
@@ -554,11 +482,34 @@ export const projects: Project[] = [
       ],
     },
   },
-
-  // Cities (6)
   {
-    id: "11",
-    name: "PWD-ACCESSIBILITY & ADJUSTMENT",
+    id: "8",
+    name: "AVH",
+    subName: "Aviation Hub",
+    category: "Cities",
+    image: "/projects-cover-image/Cities/avh.jpg",
+    tagline: "engagement-&-experience-center",
+    state: "latest",
+    slug: "avh",
+
+    section1: {
+      color: "avh_blue",
+      clientName: "Iranian Aviation Community",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `• Not Existing An Iranian Aviation Community
+      • Lack of A Shared Place To Learn & Engagement`,
+      communityLedSolution: "Aviation Experience and Engagement Center",
+      prototype: `Aviation Hub (AVH)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Engaging People To Aviation Industry",
+      link: "http://avh.center/",
+    },
+  },
+
+  {
+    id: "9",
+    name: "PWD",
+    subName: "ACCESSIBILITY & ADJUSTMENT",
     category: "Cities",
     image: "/projects-cover-image/Cities/raad.jpg",
     tagline: "accessibility-&-adjustment (A&A)",
@@ -592,8 +543,9 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "12",
-    name: "NIKAN COMMUNITY HEALTH & WELL-BEING",
+    id: "10",
+    name: "NIKAN",
+    subName: "COMMUNITY HEALTH & WELL-BEING",
     category: "Cities",
     image: "/projects-cover-image/Cities/nikan.jpg",
     tagline: "community-health-wellbeing",
@@ -615,26 +567,86 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "11",
+    name: "HAFTOHASHT",
+    subName: "PALLET ABAD COMMUNITY",
+    category: "Medium-Sized Businesses",
+    image: "/projects-cover-image/SMEs/palletabad.jpg",
+    tagline: "coworking-spaces-communities",
+    state: "old",
+    slug: "pallet-abad",
+
+    section1: {
+      color: "palletabad_orange",
+      clientName: "Haft-o-Hasht",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `Lack of Coworking Among the Existence Businesses`,
+      communityLedSolution: "Community Events",
+      prototype: `• Events
+      • Talks
+      • Civic Visits`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Empathy Sharing",
+      link: "http://patogh.my.canva.site/haftohasht-palletabad-community",
+    },
+
+    // section3: {
+    //   title: "Keune Care Project",
+    //   images: [
+    //     "/project-path/palletabad/section3/palletabad_01.jpg",
+    //     "/project-path/palletabad/section3/palletabad_02.jpg",
+    //     "/project-path/palletabad/section3/palletabad_03.jpg",
+    //     "/project-path/palletabad/section3/palletabad_04.jpg",
+    //     "/project-path/palletabad/section3/palletabad_05.jpg",
+    //     "/project-path/palletabad/section3/palletabad_06.jpg",
+    //   ],
+    // },
+  },
+  {
+    id: "12",
+    name: "BAHAMAN",
+    subName: "PRIVATE BUSINESS CLUB",
+    category: "Medium-Sized Businesses",
+    image: "/projects-cover-image/SMEs/bahaman.jpg",
+    tagline: "private-business-club",
+    state: "old",
+    slug: "bahaman",
+
+    section1: {
+      color: "darasiab_green",
+      clientName: "BAHAMAN",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      problem: `Not Existing A Private Club for C-Levels`,
+      communityLedSolution: "Private Clubworking Space",
+      prototype: `BAHAMAN Clubworking Space (BCS)`,
+      // designatedGroup: "Keune Care Club Members",
+      target: "Providing a Clubworking Space for C-Levels",
+      // link: "https://thebahaman.com/",
+    },
+  },
+  {
     id: "13",
-    name: "EKBATANA COMPLEX SERVICES",
+    name: "EKBATANA",
+    subName: "COMPLEX SERVICES",
     category: "Cities",
     image: "/projects-cover-image/Cities/ekbatana.jpg",
-    tagline: "complex-community",
+    tagline: "",
     state: "old",
     slug: "ekbatana",
 
     section1: {
       color: "darasiab_green",
-      clientName: "EKBATANA Management Complex ",
+      clientName: "EKBATANA COMPLEX",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `?`,
-      communityLedSolution: "?",
-      prototype: `?`,
+      problem: `-`,
+      communityLedSolution: "-",
+      prototype: `-`,
       // designatedGroup: "Keune Care Club Members",
-      target: "?",
-      // link: "?",
+      target: "-",
+      // link: "https://thebahaman.com/",
     },
   },
+
   // {
   //   id: "14",
   //   name: "RESTROOMS",
@@ -651,28 +663,6 @@ export const projects: Project[] = [
   //   tagline: "coffee-grounds-upcycle-products",
   //   slug: "kia",
   // },
-  {
-    id: "16",
-    name: "AVH-Aviation Hub",
-    category: "Cities",
-    image: "/projects-cover-image/Cities/avh.jpg",
-    tagline: "engagement-&-experience-center",
-    state: "old",
-    slug: "avh",
-
-    section1: {
-      color: "avh_blue",
-      clientName: "Iranian Aviation Community",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `• Not Existing An Iranian Aviation Community
-      • Lack of A Shared Place To Learn & Engagement`,
-      communityLedSolution: "Aviation Experience and Engagement Center",
-      prototype: `Aviation Hub (AVH)`,
-      // designatedGroup: "Keune Care Club Members",
-      target: "Engaging People To Aviation Industry",
-      link: "http://avh.center/",
-    },
-  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

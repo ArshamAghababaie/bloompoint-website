@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { projects, getProjectBySlug } from "../projects-data";
 import { basePath } from "../../../../lib/basePath";
-import PathAnimation from "./PathAnimation";
+// import PathAnimation from "./PathAnimation";
 
 const colorMap: Record<string, string> = {
   keune_umber: "oklch(0.6353 0.041 70.89)",
@@ -89,10 +89,9 @@ export default async function ProjectPage({
       >
         <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4 max-[767px]:px-6 max-[767px]:pt-32 max-[767px]:pb-10 max-[767px]:gap-y-6">
           {/* Upper section: client logo + project name, pinned to the top */}
-          <div>
-            <h1 className="reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9 max-[767px]:max-w-full max-[767px]:text-5xl max-[767px]:mb-7">
-              {project.name}
-            </h1>
+          <div className="flex flex-col reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9 max-[767px]:max-w-full max-[767px]:text-5xl max-[767px]:mb-7">
+            <h1 className="">{project.name}</h1>
+            <h1 className="">{project.subName}</h1>
           </div>
 
           <div className="flex flex-col mt-20 max-[767px]:mt-10">
@@ -127,11 +126,11 @@ export default async function ProjectPage({
       </section>
 
       {/* ─── SECTION 2 : Path Animation ─── */}
-      {s2 && (
+      {/* {s2 && (
         <div className="hidden md:block">
           <PathAnimation data={s2} basePath={basePath} />
         </div>
-      )}
+      )} */}
 
       {/* ─── SECTION 3 : Image Gallery ─── */}
       <section className="relative z-10 bg-neutral-950 p-0">
