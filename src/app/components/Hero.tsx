@@ -57,9 +57,14 @@ const LOGOS: LogoItem[] = [
   { file: "Mahram-white.png", name: "Mahram", ring: 2 },
   { file: "Mammut-white.png", name: "Mammut", ring: 2 },
   { file: "Raad-white.png", name: "Raad", ring: 2 },
-  { file: "Ekbatana-white.png", name: "Ekbatana", ring: 0 }, //mikham
-  { file: "Palletabad-white.png", name: "Palletabad", ring: 1 }, //mikham
-  { file: "Nikan-white.png", name: "Nikan", ring: 2 }, //mikham
+
+  { file: "Raad-white.png", name: "Ekbatana", ring: 0 }, //mikham
+  { file: "Raad-white.png", name: "Palletabad", ring: 1 }, //mikham
+  { file: "Raad-white.png", name: "Nikan", ring: 2 }, //mikham
+
+  // { file: "Ekbatana-white.png", name: "Ekbatana", ring: 0 }, //mikham
+  // { file: "Palletabad-white.png", name: "Palletabad", ring: 1 }, //mikham
+  // { file: "Nikan-white.png", name: "Nikan", ring: 2 }, //mikham
 ];
 
 type OrbitRing = {
