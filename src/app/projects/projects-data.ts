@@ -1,6 +1,7 @@
 export type Category =
   | "Medium-Sized Businesses"
   | "Large Enterprises"
+  | "Educational Institutions"
   | "Cities";
 
 export type ProjectColor =
@@ -201,7 +202,7 @@ export const projects: Project[] = [
     id: "3",
     name: `DBST`,
     subName: `KIDSTADT AFTER SCHOOL`,
-    category: "Medium-Sized Businesses",
+    category: "Educational Institutions",
     image: "/projects-cover-image/SMEs/dbst.jpg",
     tagline: "dbst-after-School",
     state: "latest",

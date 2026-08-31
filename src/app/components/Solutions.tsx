@@ -134,10 +134,10 @@ export default function Solutions() {
   return (
     <div id="solutions" className="relative z-10 min-h-screen bg-neutral-950">
       <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
-        <h1 className="text-[65px] uppercase leading-none text-light-gray sm:text-[120px] md:text-[160px] lg:text-[200px]">
+        <h1 className="text-[65px] uppercase leading-none text-light-gray sm:text-[120px] md:text-[120px] lg:text-[200px]">
           our
         </h1>
-        <h1 className="xl:ml-3 text-[65px] uppercase leading-none text-yellow sm:text-[120px] md:text-[160px] lg:text-[200px]">
+        <h1 className="xl:ml-3 text-[65px] uppercase leading-none text-yellow sm:text-[120px] md:text-[120px] lg:text-[200px]">
           &nbsp;solutions
         </h1>
       </div>

@@ -94,7 +94,7 @@ export default async function ProjectPage({
             <h1 className="">{project.subName}</h1>
           </div>
 
-          <div className="flex flex-col mt-20 max-[767px]:mt-10">
+          <div className="flex flex-col mt-20 max-[767px]:mt-4">
             <div className="reveal reveal-delay-3 max-w-4xl">
               {detailRows.map((row) => (
                 <div

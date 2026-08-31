@@ -201,7 +201,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="relative z-10 flex-col px-6 pt-0 pb-20 sm:px-10 md:p-20 lg:p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
+        className="relative z-10 flex-col px-6 pt-3 pb-20 sm:px-10 md:p-20 lg:p-32 text-center justify-center items-center flex transition-opacity duration-500 pointer-events-none"
         style={{ opacity: anyHighlight ? 0.15 : 1 }}
       >
         <div className="font-bebas flex items-center justify-center flex-col">

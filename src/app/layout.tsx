@@ -43,11 +43,11 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "BloomPoint",
-  description: "A Community-Based Growth Platform for Businesses",
+  description: "A Community-Led Growth Platform for Businesses & Cities",
 
   openGraph: {
     title: "Bloompoint",
-    description: "A Community-Based Growth Platform for Businesses",
+    description: "A Community-Led Growth Platform for Businesses & Cities",
     url: "https://bloompoint.world",
     siteName: "Bloompoint",
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bloompoint",
-    description: "A Community-Based Growth Platform for Businesses",
+    description: "A Community-Led Growth Platform for Businesses & Cities",
     images: ["https://bloompoint.world/og-image.jpg"],
   },
 };
