@@ -83,7 +83,7 @@ export default function Workflow() {
       >
         {/* Title + description */}
         <div className="reveal reveal-delay-1 mt-0 pt-20 flex-col font-bebas text-7xl max-[1023px]:pt-16 max-[1023px]:text-6xl max-[767px]:pt-28 max-[767px]:text-6xl">
-          <h1 className="text-light-gray uppercase">Agentic</h1>
+          <h1 className="text-light-gray uppercase">AI Agentic</h1>
           <h1 className="uppercase">Workflow</h1>
 
           <p className="pt-4 flex flex-col text-base w-100 font-DMSans text-neutral-800 leading-6 max-[767px]:w-full max-[767px]:max-w-95 max-[767px]:text-[0.9rem] max-[767px]:leading-6">

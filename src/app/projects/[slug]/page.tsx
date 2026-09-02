@@ -87,7 +87,7 @@ export default async function ProjectPage({
         className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4 max-[767px]:px-6 max-[767px]:pt-32 max-[767px]:pb-10 max-[767px]:gap-y-6">
+        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4 max-[767px]:px-6 max-[767px]:pt-24 max-[767px]:pb-10 max-[767px]:gap-y-6">
           {/* Upper section: client logo + project name, pinned to the top */}
           <div className="flex flex-col reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9 max-[767px]:max-w-full max-[767px]:text-5xl max-[767px]:mb-7">
             <h1 className="">{project.name}</h1>

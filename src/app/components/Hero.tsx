@@ -13,36 +13,6 @@ type LogoItem = {
   imgScale?: number;
 };
 
-// NORMAL COLORIZED LOGOS
-
-// const LOGOS: LogoItem[] = [
-//   { file: "Aseh.png", name: "Aseh" },
-//   { file: "Bahaman.png", name: "Bahaman" },
-//   { file: "Crouse.png", name: "Crouse", imgScale: 1.5 },
-//   { file: "DBST.png", name: "DBST", imgScale: 1.6 },
-//   { file: "Darasiab.jpg", name: "Darasiab" },
-//   { file: "Keunee.png", name: "Keune" },
-//   { file: "Mahram.png", name: "Mahram" },
-//   { file: "Mammut.jpg", name: "Mammut" },
-//   { file: "Talashim.png", name: "Talashim", imgScale: 1.1 },
-// ];
-
-// NEGATIVE LOGOS
-
-// const LOGOS: LogoItem[] = [
-//   { file: "Aseh-negative.jpg", name: "Aseh" },
-//   { file: "BAHAMAN-negative.jpg", name: "Bahaman" },
-//   { file: "Crouse-negative.jpg", name: "Crouse" },
-//   { file: "DBST-negative.jpg", name: "DBST", imgScale: 1.6 },
-//   { file: "Darasiab-negative.jpg", name: "Darasiab" },
-//   { file: "Keunee-negative.jpg", name: "Keune" },
-//   { file: "Mahram-negative.jpg", name: "Mahram" },
-//   { file: "Mammut-negative.jpg", name: "Mammut" },
-//   { file: "Talashim-negative.jpg", name: "Talashim", imgScale: 0.5 },
-// ];
-
-// WHITE LOGOS
-
 // `ring` is the index into ORBIT_RINGS this logo orbits on. Assigning it
 // explicitly (instead of inferring it from array position + ring.count)
 // means adding/removing a logo never reshuffles the angle of any other logo.
@@ -57,14 +27,9 @@ const LOGOS: LogoItem[] = [
   { file: "Mahram-white.png", name: "Mahram", ring: 2 },
   { file: "Mammut-white.png", name: "Mammut", ring: 2 },
   { file: "Raad-white.png", name: "Raad", ring: 2 },
-
-  { file: "Raad-white.png", name: "Ekbatana", ring: 0 }, //mikham
-  { file: "Raad-white.png", name: "Palletabad", ring: 1 }, //mikham
-  { file: "Raad-white.png", name: "Nikan", ring: 2 }, //mikham
-
-  // { file: "Ekbatana-white.png", name: "Ekbatana", ring: 0 }, //mikham
-  // { file: "Palletabad-white.png", name: "Palletabad", ring: 1 }, //mikham
-  // { file: "Nikan-white.png", name: "Nikan", ring: 2 }, //mikham
+  { file: "Ekbatana-white.png", name: "Ekbatana", ring: 0 },
+  { file: "Palletabad-white.png", name: "Palletabad", ring: 1 },
+  { file: "Nikan-white.png", name: "Nikan", ring: 2 },
 ];
 
 type OrbitRing = {

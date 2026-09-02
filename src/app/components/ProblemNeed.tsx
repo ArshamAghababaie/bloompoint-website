@@ -161,7 +161,7 @@ export default function ProblemNeed({
                   </div>
                 ))}
               </div>
-              <div className="font-DMSans pt-2 mt-2 lg:pt-0">
+              <div className="font-DMSans pt-2 mt-2 lg:pt-0 max-sm:pr-6">
                 {/* <label className="block w-80 text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other needs that aren't listed? <br />
                   Tell us about your challenges in your own words.
@@ -222,7 +222,7 @@ export default function ProblemNeed({
                   </div>
                 ))}
               </div>
-              <div className="font-DMSans pt-2 mt-2 pr-0 lg:pt-0">
+              <div className="font-DMSans pt-2 mt-2 max-sm:pr-6 lg:pt-0">
                 {/* <label className="block text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other problems that aren't listed? <br />
                   Tell us about your challenges in your own words.

@@ -112,10 +112,12 @@ body {
 }
 
 /* ---- HERO LOGO ORBITS ---- */
+
 @keyframes orbit-cw {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -125,8 +127,29 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(-360deg);
+  }
+}
+
+@keyframes logo-cw {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes logo-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 

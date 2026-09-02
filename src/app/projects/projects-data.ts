@@ -68,6 +68,7 @@ export interface Project {
 
 export const categories: Category[] = [
   "Medium-Sized Businesses",
+  "Educational Institutions",
   "Large Enterprises",
   "Cities",
 ];
@@ -150,7 +151,7 @@ export const projects: Project[] = [
     id: "2",
     name: "ASEH",
     subName: "ACADEMY",
-    category: "Medium-Sized Businesses",
+    category: "Educational Institutions",
     image: "/projects-cover-image/SMEs/aseh.jpg",
     tagline: "efficient-system",
     state: "old",
@@ -262,7 +263,7 @@ export const projects: Project[] = [
     id: "4",
     name: `DARASIAB`,
     subName: `EXPERIENCE GARDEN`,
-    category: "Medium-Sized Businesses",
+    category: "Educational Institutions",
     image: "/projects-cover-image/SMEs/darasiab.jpg",
     tagline: "experience-garden",
     state: "old",
@@ -436,7 +437,7 @@ export const projects: Project[] = [
     id: "7",
     name: "MAHRAM",
     subName: "CULINARY ACADEMY",
-    category: "Large Enterprises",
+    category: "Educational Institutions",
     image: "/projects-cover-image/LEs/mahram.jpg",
     tagline: "culinary-learning",
     slug: "mahram",
