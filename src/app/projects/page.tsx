@@ -8,82 +8,88 @@ import { categories, projects, type Category } from "./projects-data";
 import { basePath } from "../../../lib/basePath";
 import Footer from "../components/Footer";
 
+type Filter = Category | "Ongoing";
+
 export default function Projects() {
-  const [selectedCategories, setSelectedCategories] = useState<Set<Category>>(
-    new Set(categories),
+  const [selectedFilters, setSelectedFilters] = useState<Set<Filter>>(
+    new Set([...categories, "Ongoing"]),
   );
+
+  const [displayedProjects, setDisplayedProjects] = useState(projects);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const categoryCounts = useMemo(() => {
     const counts = new Map<Category, number>();
+
     for (const category of categories) {
       counts.set(
         category,
         projects.filter((p) => p.category === category).length,
       );
     }
+
     return counts;
   }, []);
 
-  const isAllSelected = selectedCategories.size === categories.length;
+  const isAllSelected =
+    selectedFilters.size === categories.length + 1 &&
+    selectedFilters.has("Ongoing");
 
-  const toggleCategory = (category: Category) => {
-    const newSelection = new Set(selectedCategories);
-    if (newSelection.has(category)) {
-      newSelection.delete(category);
-    } else {
-      newSelection.add(category);
+  const filteredProjects = useMemo(() => {
+    return projects.filter((project) => {
+      const matchesCategory = Array.isArray(project.category)
+        ? project.category.some((category) => selectedFilters.has(category))
+        : selectedFilters.has(project.category);
+
+      const matchesOngoing =
+        selectedFilters.has("Ongoing") && project.ongoing === true;
+
+      return matchesCategory || matchesOngoing;
+    });
+  }, [selectedFilters]);
+
+  useEffect(() => {
+    if (
+      displayedProjects.length === filteredProjects.length &&
+      displayedProjects.every(
+        (project, index) => project.id === filteredProjects[index]?.id,
+      )
+    ) {
+      return;
     }
-    if (newSelection.size > 0) {
-      setSelectedCategories(newSelection);
-      setIsAnimating(true);
-    }
+
+    setIsAnimating(true);
+
+    const timeout = setTimeout(() => {
+      setDisplayedProjects(filteredProjects);
+      setIsAnimating(false);
+    }, 200);
+
+    return () => clearTimeout(timeout);
+  }, [filteredProjects, displayedProjects]);
+
+  const toggleFilter = (filter: Filter) => {
+    setSelectedFilters((currentSelection) => {
+      if (currentSelection.size === 1 && currentSelection.has(filter)) {
+        return new Set(categories);
+      }
+
+      return new Set([filter]);
+    });
   };
 
   const selectAll = () => {
-    setSelectedCategories(new Set(categories));
-    setIsAnimating(true);
+    setSelectedFilters(new Set([...categories, "Ongoing"]));
   };
-
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) =>
-      selectedCategories.has(project.category),
-    );
-  }, [selectedCategories]);
-
-  // Soft fade/scale pulse on the grid right after the active filters change.
-  useEffect(() => {
-    if (!isAnimating) return;
-    const timeout = setTimeout(() => setIsAnimating(false), 200);
-    return () => clearTimeout(timeout);
-  }, [isAnimating]);
 
   return (
     <div className="overflow-hidden bg-neutral-950">
       <Navbar />
 
       {/* Header Section */}
-      <div className="h-fit px-10 md:px-12 bg-neutral-950 text-yellow pt-24 md:pt-32">
-        {/* <div className="reveal flex items-center">
-          <div className="w-6 h-px bg-yellow" />
-          <span className="pl-2 text-xs font-DMSans tracking-widest uppercase">
-            our Projects
-          </span>
-        </div> */}
-        {/* <div className="reveal reveal-delay-1 mt-6 pb-6 font-bebas">
-          <h1 className="text-white uppercase text-6xl md:text-7xl">Our</h1>
-          <h1 className="uppercase text-6xl md:text-7xl">Projects</h1>
-        </div>
-        <div className="reveal reveal-delay-2 text-neutral-500 font-DMSans pb-12">
-          <p className="w-80 md:w-100 text-sm md:text-base">
-            You can explore our projects with their specific, extensive scales
-            and subjects.
-          </p>
-        </div> */}
-      </div>
+      <div className="h-fit px-10 md:px-12 bg-neutral-950 text-yellow pt-24 md:pt-32"></div>
 
       {/* Filter Section */}
-      {/* <div className="reveal reveal-delay-3 px-10 md:px-12 bg-neutral-950 pt-8 border-t border-neutral-800"> */}
       <div className="reveal reveal-delay-1 px-10 md:px-12 bg-neutral-950">
         <div className="flex items-center gap-2 mb-5 text-neutral-400">
           <svg
@@ -100,29 +106,32 @@ export default function Projects() {
               d="M3 4.5h18M6.75 12h10.5M10.5 19.5h3"
             />
           </svg>
+
           <span className="text-xs font-DMSans tracking-widest uppercase text-neutral-500">
             Filter by category
           </span>
         </div>
 
         <div className="flex flex-wrap gap-3 md:gap-4 pb-10 border-b border-neutral-800">
+          {/* ALL */}
           <button
             onClick={selectAll}
-            className={`px-4 md:px-6 py-2 md:py-3 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
+            className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
               isAllSelected
                 ? "bg-yellow text-neutral-950 border-yellow hover:bg-yellow/70 hover:border-yellow/10"
-                : "bg-transparent text-yellow border-yellow  hover:text-yellow/60"
+                : "bg-transparent text-yellow border-yellow hover:text-yellow/60"
             }`}
           >
-            All <span className="opacity-60">({projects.length})</span>
+            ALL <span className="opacity-60">({projects.length})</span>
           </button>
 
+          {/* Regular Categories */}
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => toggleCategory(category)}
+              onClick={() => toggleFilter(category)}
               className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
-                selectedCategories.has(category)
+                selectedFilters.has(category)
                   ? "bg-yellow text-neutral-950 border-yellow hover:bg-yellow/70 hover:border-yellow/10"
                   : "bg-transparent text-yellow border-yellow hover:text-yellow/60"
               }`}
@@ -133,6 +142,21 @@ export default function Projects() {
               </span>
             </button>
           ))}
+
+          {/* Ongoing */}
+          <button
+            onClick={() => toggleFilter("Ongoing")}
+            className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
+              selectedFilters.has("Ongoing")
+                ? "bg-red-500 text-white border-red-500 hover:bg-red-500/70 hover:border-red-500/10"
+                : "bg-transparent text-red-500 border-red-500 hover:text-red-500/60"
+            }`}
+          >
+            Ongoing{" "}
+            <span className="opacity-60">
+              ({projects.filter((project) => project.ongoing === true).length})
+            </span>
+          </button>
         </div>
       </div>
 
@@ -143,7 +167,7 @@ export default function Projects() {
             isAnimating ? "opacity-0 scale-[0.98]" : "opacity-100 scale-100"
           }`}
         >
-          {filteredProjects.map((project) => (
+          {displayedProjects.map((project) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
@@ -155,12 +179,9 @@ export default function Projects() {
                   <Image
                     src={`${basePath}${project.image}`}
                     fill
-                    // width={60}
-                    // height={60}
-                    alt="Project placeholder"
+                    alt={project.name}
                     className="mx-auto mb-2 opacity-100"
                   />
-                  {/* <p className="text-xs">{project.name}</p> */}
                 </div>
               </div>
 
@@ -171,10 +192,12 @@ export default function Projects() {
                     <h3 className="font-bebas text-white text-xl md:text-4xl uppercase">
                       {project.name}
                     </h3>
+
                     <h3 className="font-bebas text-white text-xl md:text-[26px] uppercase">
                       {project.subName}
                     </h3>
                   </div>
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -193,14 +216,26 @@ export default function Projects() {
               </div>
 
               {/* Category Badge */}
-              <div className="absolute top-4 right-4 bg-yellow text-neutral-950 px-2 py-1 rounded-lg text-[11px] font-DMSans font-medium tracking-wider">
-                {project.category}
+              {/* Category Badge */}
+              <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
+                <div className="bg-yellow text-neutral-950 px-2 py-1 rounded-lg text-[11px] font-DMSans font-medium tracking-wider">
+                  {Array.isArray(project.category)
+                    ? project.category.join(" / ")
+                    : project.category}
+                </div>
+
+                {project.ongoing === true && (
+                  <div
+                    className="w-3 h-3 rounded-full bg-red-500"
+                    title="Ongoing"
+                  />
+                )}
               </div>
             </Link>
           ))}
         </div>
 
-        {filteredProjects.length === 0 && (
+        {displayedProjects.length === 0 && (
           <div className="flex items-center justify-center py-20 text-center">
             <p className="text-neutral-500 font-DMSans text-lg">
               No projects found. Please select at least one category.
@@ -208,6 +243,7 @@ export default function Projects() {
           </div>
         )}
       </div>
+
       <Footer />
     </div>
   );

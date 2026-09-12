@@ -4,6 +4,43 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { basePath } from "../../../lib/basePath";
+import Typewriter from "typewriter-effect";
+// import { Typewriter } from "react-simple-typewriter";
+
+// const TypewriterEffect = () => {
+//   return (
+//     <div className="">
+//       <h1 className="">
+//         <span className="">
+//           <Typewriter
+//             words={["ommunity", "ommunication", "o-creation", "ollaboration"]}
+//             loop={0}
+//             cursor
+//             cursorStyle="|"
+//             typeSpeed={100}
+//             deleteSpeed={90}
+//             delaySpeed={1500}
+//           />
+//         </span>
+//       </h1>
+//     </div>
+//   );
+// };
+
+const TypewriterEffect = () => {
+  return (
+    <Typewriter
+      options={{
+        strings: ["ommunity", "ommunication", "o-creation", "ollaboration"],
+        autoStart: true,
+        loop: true,
+        cursor: "|",
+        delay: "natural",
+        deleteSpeed: "natural",
+      }}
+    />
+  );
+};
 
 type LogoItem = {
   file: string;
@@ -175,14 +212,16 @@ export default function Hero() {
             <br />
             Through
             <br />
-            <span className="text-yellow">Community</span>
+            <span className="ml-12 flex text-yellow">
+              C<TypewriterEffect />
+            </span>
           </h1>
           <div className="hero-reveal hero-reveal-delay-1">
             <div className="flex items-center justify-center">
               <div className="relative mt-6 mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
                 <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
               </div>
-              <p className="pt-4 sm:pt-6 text-base sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-500 font-DMSans font-light">
+              <p className="pt-4 sm:pt-6 text-base sm:text-lg md:text-xl lg:pointer-fine:text-lg text-lihght-gray font-DMSans font-light">
                 {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
                 <span className="font-semibold text-base sm:text-xl md:text-2xl lg:pointer-fine:text-xl">
                   Community-Led Solutions

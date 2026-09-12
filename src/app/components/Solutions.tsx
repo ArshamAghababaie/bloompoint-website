@@ -142,7 +142,20 @@ export default function Solutions() {
         </h1>
       </div>
 
-      <div className="flex reveal reveal-delay-2 px-10 md:px-12 pt-4 font-DMSans">
+      <div className="reveal reveal-delay-2 flex items-center justify-center">
+        <div className="relative mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+          <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
+        </div>
+        <p className="text-base uppercase tracking-wider sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-200 font-DMSans font-light">
+          {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
+          the growth intelligence loop
+        </p>
+        <div className="relative ml-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+          <div className="absolute inset-0 bg-yellow animate-underline-rtl"></div>
+        </div>
+      </div>
+
+      <div className="flex reveal reveal-delay-3 px-10 md:px-12 pt-4 font-DMSans">
         {/* <span className="text-sm text-neutral-600">
           [ Hover over the circles to reach more information. ]
         </span> */}

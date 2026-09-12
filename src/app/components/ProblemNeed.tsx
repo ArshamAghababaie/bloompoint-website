@@ -47,7 +47,6 @@ export default function ProblemNeed({
     "Unclear Community Strategy",
   ];
   const needs = [
-    "Growing Customer Belonging & Loyalty",
     "Increasing Customer Retention",
     "Building a Stronger Community",
     "Strengthening Brand Reputation",
@@ -55,6 +54,7 @@ export default function ProblemNeed({
     "Achieving Sustainable Growth",
     "Improving Employee Engagement",
     "Driving Innovation",
+    "Growing Customer Belonging & Loyalty",
   ];
 
   const Checkmark = () => {
@@ -90,7 +90,7 @@ export default function ProblemNeed({
   return (
     <div
       id="problem-need"
-      className="relative z-10 pb-12 md:pb-18 px-10 bg-yellow text-neutral-950"
+      className="relative z-10 pb-12 md:pb-12 px-10 bg-yellow text-neutral-950"
     >
       {/* Context */}
       {/* <div className="reveal flex items-center pt-20">
@@ -138,11 +138,11 @@ export default function ProblemNeed({
           onMouseLeave={() => setHovered(null)}
         >
           <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-8 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="sm:w-4/5 w-65 font-DMSans text-[20px] sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+            <h2 className="sm:w-4/5 w-65 font-DMSans font-semibold text-[20px] sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-light-gray transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               Where do you want to go?
             </h2>
 
-            <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="pt-2">
                 {/* <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
                   Select the most common needs you want to address.
@@ -152,16 +152,18 @@ export default function ProblemNeed({
                     <label className="pb-14 text-[15px] md:text-[16px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
-                        className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
+                        className="accent-neutral-950 xl:accent-yellow mr-1.5 pointer-fine:opacity-80 pointer-fine:group-hover:opacity-100 cursor-none"
                         checked={selectedNeeds.includes(n)}
                         onChange={() => toggleItem(setSelectedNeeds, n)}
                       />
-                      {n}
+                      <span className="pointer-fine:opacity-30 pointer-fine:group-hover:opacity-100">
+                        {n}
+                      </span>
                     </label>
                   </div>
                 ))}
               </div>
-              <div className="font-DMSans pt-2 mt-2 lg:pt-0 max-sm:pr-6">
+              <div className="font-DMSans pt-2 mt-2 lg:pt-0 max-sm:pr-6 pointer-fine:opacity-40 pointer-fine:group-hover:opacity-100">
                 {/* <label className="block w-80 text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other needs that aren't listed? <br />
                   Tell us about your challenges in your own words.
@@ -200,29 +202,31 @@ export default function ProblemNeed({
           onMouseLeave={() => setHovered(null)}
         >
           <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-8 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="sm:w-4/5 w-65 font-DMSans text-xl sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-neutral-950/60 transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+            <h2 className="sm:w-4/5 w-65 font-DMSans font-semibold text-xl sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-light-gray transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               What's keeping you from getting there?
             </h2>
-            <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 pointer-fine:opacity-30 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="pt-2">
                 {/* <p className="w-full text-sm xl:pb-6 pb-4 pt-2 transition-colors duration-300 text-neutral-700 pointer-fine:group-hover:text-neutral-400">
-                  Select the most common problems your business is dealing with.
+                  Select the most common needs you want to address.
                 </p> */}
                 {problems.map((p, i) => (
                   <div key={i} className="font-DMSans pb-4">
                     <label className="pb-14 text-[15px] md:text-[16px] transition-colors duration-300 pointer-fine:group-hover:text-white cursor-none select-none">
                       <input
                         type="checkbox"
-                        className="accent-neutral-950 xl:accent-yellow mr-1.5 cursor-none"
+                        className="accent-neutral-950 xl:accent-yellow mr-1.5 pointer-fine:opacity-80 pointer-fine:group-hover:opacity-100 cursor-none"
                         checked={selectedProblems.includes(p)}
                         onChange={() => toggleItem(setSelectedProblems, p)}
                       />
-                      {p}
+                      <span className="pointer-fine:opacity-30 pointer-fine:group-hover:opacity-100">
+                        {p}
+                      </span>
                     </label>
                   </div>
                 ))}
               </div>
-              <div className="font-DMSans pt-2 mt-2 max-sm:pr-6 lg:pt-0">
+              <div className="font-DMSans pt-2 mt-2 max-sm:pr-6 lg:pt-0 pointer-fine:opacity-40 pointer-fine:group-hover:opacity-100">
                 {/* <label className="block text-neutral-950 pointer-fine:text-neutral-950/70 transition-colors duration-300 pointer-fine:group-hover:text-neutral-400 cursor-none select-none pb-2">
                   Have other problems that aren't listed? <br />
                   Tell us about your challenges in your own words.
@@ -254,8 +258,8 @@ export default function ProblemNeed({
         {/* <div className="order-60 lg:col-span-2 h-px bg-[repeating-linear-gradient(to_right,rgba(10,10,10,0.25)_0,rgba(10,10,10,0.25)_6px,transparent_6px,transparent_14px)]" /> */}
       </div>
 
-      {/* BOOK A MEETING Button */}
-      <div className="flex w-full justify-center px-0 pt-0 sm:pt-4 md:pt-9">
+      {/* BOOK A MEETING Button (Neobrutalism) */}
+      {/* <div className="flex w-full justify-center px-0 pt-0 sm:pt-4 md:pt-9">
         <div className="relative w-full lg:w-220 rounded-2xl shadow-[6px_6px_0_#171717] sm:rounded-3xl sm:shadow-[8px_8px_0_#171717] lg:rounded-4xl lg:shadow-[10px_10px_0_#171717]">
           <button
             onClick={scrollToForm}
@@ -313,6 +317,27 @@ export default function ProblemNeed({
               BOOK A MEETING
             </div>
           </button>
+        </div>
+      </div> */}
+
+      {/* BOOK A MEETING Button (Hero Style) */}
+      <div>
+        <div className="flex items-center justify-center pt-6">
+          <div className="relative mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+            <div className="absolute inset-0 bg-light-gray animate-underline-ltr"></div>
+          </div>
+          <p className="text-base sm:text-lg md:text-xl lg:pointer-fine:text-lg text-lihght-gray font-DMSans font-light">
+            {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
+            <button
+              onClick={scrollToForm}
+              className=" font-bebas tracking-wider border pt-1 rounded-xl px-4 text-neutral-800 hover:text-light-gray text-base sm:text-xl md:text-2xl lg:pointer-fine:text-5xl transition-colors duration-200 cursor-none"
+            >
+              BOOK A MEETING / DEMO
+            </button>
+          </p>
+          <div className="relative ml-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
+            <div className="absolute inset-0 bg-light-gray animate-underline-rtl"></div>
+          </div>
         </div>
       </div>
     </div>

@@ -11,10 +11,10 @@ export default function Ongoing() {
   return (
     <section
       id="ongoing"
-      className="relative z-10 min-h-screen bg-light-gray text-yellow pb-12"
+      className="relative z-10 min-h-screen bg-light-gray pb-12 text-yellow"
     >
-      {/* ======= Title ======= */}
-      <div className="flex-col flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
+      {/* Title */}
+      <div className="flex flex-col justify-center px-4 pt-14 text-center font-bebas tracking-wide">
         <div className="reveal reveal-delay-1 flex justify-center">
           <h1 className="text-[60px] uppercase leading-none text-neutral-950 sm:text-[110px] md:text-[120px] lg:text-[170px]">
             latest
@@ -24,17 +24,18 @@ export default function Ongoing() {
             &nbsp;projects
           </h1>
         </div>
+
         <div className="reveal reveal-delay-2 font-DMSans">
-          <p className="pt-6 px-4 xl:px-12 md:px-0 lg:px-0 font-DMSans text-[16px] md:text-[18px] lg:text-[23px] text-neutral-950">
+          <p className="px-4 pt-6 font-DMSans text-[16px] text-neutral-950 md:px-0 md:text-[18px] lg:px-0 lg:text-[23px] xl:px-12">
             A glance at the diverse clients and communities we've worked with
             across <br />
             industrial manufacturing, education, public institutions, and cities
             (ecosystems)
           </p>
 
-          <div className="flex justify-center items-center pt-6">
-            <Link href={"/projects"} className="">
-              <button className="group flex items-center w-fullsm:w-auto text-sm md:text-base lg:pointer-fine:text-sm lg:pointer-fine:px-1 lg:pointer-fine:py-1 text-neutral-950 md:hover:text-neutral-500 md:hover:-translate-y-1 transition duration-300 underline cursor-none">
+          <div className="flex items-center justify-center pt-6">
+            <Link href="/projects">
+              <button className="group flex w-fullsm:w-auto cursor-none items-center text-sm text-neutral-950 underline transition duration-300 md:text-base md:hover:-translate-y-1 md:hover:text-neutral-500 lg:pointer-fine:px-1 lg:pointer-fine:py-1 lg:pointer-fine:text-sm">
                 More Projects
                 <span className="flex">
                   <svg
@@ -43,7 +44,7 @@ export default function Ongoing() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={0.8}
-                    className="ml-3  h-6 w-6 shrink-0 -translate-x-1.5 text-neutral-950 md:group-hover:text-neutral-500 transition-all delay-0 duration-300 group-hover:translate-x-0 md:h-7 md:w-7"
+                    className="ml-3 h-6 w-6 shrink-0 -translate-x-1.5 text-neutral-950 transition-all delay-0 duration-300 group-hover:translate-x-0 md:h-7 md:w-7 md:group-hover:text-neutral-500"
                   >
                     <path
                       strokeLinecap="round"
@@ -52,80 +53,122 @@ export default function Ongoing() {
                     />
                   </svg>
                 </span>
-                {/* Arrow */}
               </button>
             </Link>
           </div>
         </div>
       </div>
-      {/* ======= Projects ======= */}
-      <div className="reveal reveal-delay-3 relative mt-10 sm:mt-18 md:mt-20 lg:mt-18 px-10 sm:px-12 md:px-10 lg:px-12">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          {latestProjects.map((project) => (
-            <div key={project.id}>
-              <Link
-                href={`/projects/${project.slug}`}
-                className="group relative block aspect-auto overflow-hidden rounded-3xl border border-neutral-800 transition-all duration-300 shadow-xl shadow-neutral-950/15"
-              >
-                {/* IMAGE */}
-                <div className="relative h-full w-full overflow-hidden bg-neutral-950">
-                  <Image
-                    src={basePath + project.image}
-                    alt={project.name}
-                    width={500}
-                    height={500}
-                    className="object-cover transition-transform duration-500 lg:group-hover:scale-105"
-                  />
 
-                  {/* Category Badge */}
+      {/* Projects */}
+      <div className="reveal reveal-delay-3 relative mt-10 px-10 sm:mt-18 sm:px-12 md:mt-20 md:px-10 lg:mt-18 lg:px-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          {latestProjects.map((project) => {
+            const s1 = project.section1;
+            const detailRows = s1
+              ? [
+                  { label: "Client", value: s1.clientName },
+                  { label: "Problem or Need", value: s1.problem },
+                  {
+                    label: "Community-led Solution",
+                    value: s1.communityLedSolution,
+                  },
+                  { label: "Prototype", value: s1.prototype },
+                  { label: "Ecosystem", value: s1.ecosystem },
+                  { label: "Result or Target", value: s1.target },
+                ].filter((row) => row.value)
+              : [];
+
+            return (
+              <div key={project.id}>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="group relative block aspect-square overflow-hidden rounded-3xl border border-neutral-800 shadow-xl shadow-neutral-950/15 transition-all duration-300"
+                >
+                  {/* IMAGE */}
+                  <div className="absolute inset-0 overflow-hidden bg-neutral-950">
+                    <Image
+                      src={basePath + project.image}
+                      alt={project.name}
+                      fill
+                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 lg:group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* CATEGORY BADGE */}
                   <span className="absolute right-5 top-5 z-10 rounded-lg bg-yellow px-2 py-1 font-DMSans text-[11px] uppercase tracking-wider text-neutral-950">
                     {project.category}
                   </span>
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 flex items-end bg-black/50 p-6 opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100 md:pl-6 md:pb-4">
-                    <div className="flex w-full translate-y-8 items-center justify-between transition-transform duration-300 lg:group-hover:translate-y-0">
-                      {/* Project Name */}
-                      <div>
-                        <h3 className="font-bebas text-xl uppercase text-white sm:text-2xl md:text-4xl">
-                          {project.name}
-                        </h3>
-                        <h3 className="font-bebas text-xl uppercase text-white sm:text-2xl md:text-[28px]">
-                          {project.subName}
-                        </h3>
-                      </div>
+                  {/* HOVER OVERLAY */}
+                  <div className="absolute inset-0 z-20 overflow-hidden bg-black/65 opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
+                    {/* TOP: PROJECT NAME */}
+                    <div className="absolute left-6 right-6 top-6 translate-y-[-150%] transition-transform duration-500 ease-out lg:group-hover:translate-y-0">
+                      <h3 className="font-bebas text-xl uppercase leading-none text-white sm:text-2xl md:text-4xl">
+                        {project.name}
+                      </h3>
 
-                      {/* Arrow */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                        className="ml-3 h-6 w-6 shrink-0 -translate-x-2 text-yellow opacity-0 transition-all delay-75 duration-300 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 md:h-7 md:w-7"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
+                      <h3 className="mt-1 font-bebas text-lg uppercase leading-none text-white sm:text-xl md:text-[28px]">
+                        {project.subName}
+                      </h3>
+                    </div>
+
+                    {/* BOTTOM CONTENT */}
+                    <div className="absolute inset-x-0 bottom-0 translate-y-full transition-transform duration-500 ease-out lg:group-hover:translate-y-0">
+                      <div className="flex w-full items-end gap-4 px-6 pb-5">
+                        {/* Section 1 */}
+                        {detailRows.length > 0 && (
+                          <div className="min-w-0 flex-1">
+                            {detailRows.map((row) => (
+                              <div
+                                key={row.label}
+                                className="mb-2 flex items-baseline gap-x-2 whitespace-pre-line last:mb-0"
+                              >
+                                <span className="shrink-0 font-DMSans text-[9px] font-semibold uppercase tracking-[0.12em] text-yellow md:text-[10px]">
+                                  {row.label}
+                                </span>
+
+                                <span className="min-w-0 font-DMSans text-[11px] leading-relaxed text-white md:text-xs">
+                                  {row.value}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Arrow */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                          className="ml-2 h-6 w-6 shrink-0 -translate-x-2 text-yellow opacity-0 transition-all delay-75 duration-300 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 md:h-7 md:w-7"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
 
-              {/* Project Name - Mobile/Tablet */}
-              <div className="flex flex-col pt-3 lg:hidden items-center">
-                <h3 className="font-bebas text-3xl uppercase text-neutral-950 sm:text-4xl">
-                  {project.name}
-                </h3>
-                <h3 className="font-MDSans text-base uppercase text-neutral-950 sm:text-xl">
-                  {project.subName}
-                </h3>
+                {/* MOBILE / TABLET NAME */}
+                <div className="flex flex-col items-center pt-3 lg:hidden">
+                  <h3 className="font-bebas text-3xl uppercase text-neutral-950 sm:text-4xl">
+                    {project.name}
+                  </h3>
+
+                  <h3 className="font-MDSans text-base uppercase text-neutral-950 sm:text-xl">
+                    {project.subName}
+                  </h3>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

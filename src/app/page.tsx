@@ -10,6 +10,7 @@ import BookAMeeting from "./components/BookAMeeting";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
 import Ongoing from "./components/Ongoing";
+import PathCircle from "./components/PathCircle";
 
 export default function Page() {
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
@@ -32,6 +33,7 @@ export default function Page() {
         setOtherNeed={setOtherNeed}
       />
       <Solutions />
+      <PathCircle />
       <Ongoing />
       <BPEcosystem />
       <FAQ />

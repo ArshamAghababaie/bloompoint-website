@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#solutions", label: "Solutions" },
   { href: "/workflow", label: "AI Workflow" },
   { href: "/surveys", label: "Surveys" },
+  { href: "/best-practices", label: "Best Practices" },
   { href: "/pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
 ];
