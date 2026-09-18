@@ -52,16 +52,53 @@ export interface ProjectSection3 {
   title?: string;
   images?: string[];
 }
-
-export interface ProjectSection4 {
+export type ProjectSection4 = {
   title?: string;
-  images?: string[];
-}
+  subtitle?: string;
+  text?: string;
+  cards?: {
+    title: string;
+    text?: string;
+    data?: string;
+    image?: string[];
+  }[];
+};
 
-export interface ProjectSection5 {
+export type ProjectSection5 = {
   title?: string;
-  images?: string[];
-}
+  subtitle?: string;
+  text?: string;
+  cards?: {
+    title: string;
+    text?: string;
+    data?: string;
+    image?: string[];
+  }[];
+};
+
+export type ProjectSection6 = {
+  title?: string;
+  subtitle?: string;
+  text?: string;
+  cards?: {
+    title: string;
+    text?: string;
+    data?: string;
+    image?: string[];
+  }[];
+};
+
+export type ProjectSection7 = {
+  title?: string;
+  subtitle?: string;
+  text?: string;
+  cards?: {
+    title: string;
+    text?: string;
+    data?: string;
+    image?: string[];
+  }[];
+};
 
 export interface Project {
   id: string;
@@ -80,6 +117,8 @@ export interface Project {
   section3?: ProjectSection3;
   section4?: ProjectSection4;
   section5?: ProjectSection5;
+  section6?: ProjectSection6;
+  section7?: ProjectSection7;
 }
 
 export const categories: Category[] = [
@@ -151,6 +190,8 @@ export const projects: Project[] = [
     },
     section4: {},
     section5: {},
+    section6: {},
+    section7: {},
   },
 
   {
