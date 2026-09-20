@@ -138,7 +138,7 @@ export default function ProblemNeed({
           onMouseLeave={() => setHovered(null)}
         >
           <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-8 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="sm:w-4/5 w-65 font-DMSans font-semibold text-[20px] sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-light-gray transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+            <h2 className="sm:w-4/5 w-65 font-DMSans font-bold text-[20px] sm:text-4xl lg:text-[27px] text-light-gray pointer-fine:text-light-gray transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               Where do you want to go?
             </h2>
 
@@ -202,7 +202,7 @@ export default function ProblemNeed({
           onMouseLeave={() => setHovered(null)}
         >
           <div className="relative rounded-3xl p-4 xl:p-12 pointer-fine:pb-8 transition-all duration-300 pointer-fine:hover:bg-neutral-950 overflow-hidden">
-            <h2 className="sm:w-4/5 w-65 font-DMSans font-semibold text-xl sm:text-4xl lg:text-[27px] text-neutral-950 pointer-fine:text-light-gray transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
+            <h2 className="sm:w-4/5 w-65 font-DMSans font-bold text-[20px] sm:text-4xl lg:text-[27px] text-light-gray pointer-fine:text-light-gray transition-all duration-500 pointer-fine:group-hover:-translate-y-2 pointer-fine:group-hover:text-yellow">
               What's keeping you from getting there?
             </h2>
             <div className="w-72.5 sm:w-full translate-y-0 opacity-100 pointer-fine:translate-y-6 transition-all duration-500 ease-in-out pointer-fine:group-hover:translate-y-0 pointer-fine:group-hover:opacity-100 pt-2 lg:grid lg:grid-cols-2 lg:gap-8">
@@ -330,7 +330,7 @@ export default function ProblemNeed({
             {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
             <button
               onClick={scrollToForm}
-              className=" font-bebas tracking-wider border pt-1 rounded-xl px-4 text-neutral-800 hover:text-light-gray text-base sm:text-xl md:text-2xl lg:pointer-fine:text-5xl transition-colors duration-200 cursor-none"
+              className=" font-bebas tracking-wider border pt-0.5 sm:pt-1 rounded-lg sm:rounded-xl px-9 sm:px-18 text-neutral-800 hover:text-light-gray text-lg sm:text-xl md:text-2xl lg:pointer-fine:text-[36px] transition-colors duration-200 cursor-none"
             >
               BOOK A MEETING / DEMO
             </button>

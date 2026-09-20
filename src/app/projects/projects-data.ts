@@ -52,53 +52,38 @@ export interface ProjectSection3 {
   title?: string;
   images?: string[];
 }
-export type ProjectSection4 = {
-  title?: string;
-  subtitle?: string;
-  text?: string;
-  cards?: {
-    title: string;
-    text?: string;
-    data?: string;
-    image?: string[];
-  }[];
-};
 
-export type ProjectSection5 = {
+export interface ProjectSection4Item {
+  //problem / need
+  image?: string;
   title?: string;
-  subtitle?: string;
   text?: string;
-  cards?: {
-    title: string;
-    text?: string;
-    data?: string;
-    image?: string[];
-  }[];
-};
+}
+export type ProjectSection4 = ProjectSection4Item[];
 
-export type ProjectSection6 = {
+export interface ProjectSection5Item {
+  //community led solution
+  image?: string;
   title?: string;
-  subtitle?: string;
   text?: string;
-  cards?: {
-    title: string;
-    text?: string;
-    data?: string;
-    image?: string[];
-  }[];
-};
+}
+export type ProjectSection5 = ProjectSection5Item[];
 
-export type ProjectSection7 = {
+export interface ProjectSection6Item {
+  //prototype / ecosystem
+  image?: string;
   title?: string;
-  subtitle?: string;
   text?: string;
-  cards?: {
-    title: string;
-    text?: string;
-    data?: string;
-    image?: string[];
-  }[];
-};
+}
+export type ProjectSection6 = ProjectSection6Item[];
+
+export interface ProjectSection7Item {
+  //result / target
+  title?: string;
+  text?: string;
+  image?: string;
+}
+export type ProjectSection7 = ProjectSection7Item[];
 
 export interface Project {
   id: string;
@@ -188,10 +173,70 @@ export const projects: Project[] = [
         "/project-path/crouse/section3/cfw_14.jpg",
       ],
     },
-    section4: {},
-    section5: {},
-    section6: {},
-    section7: {},
+
+    section4: [
+      {
+        image: "/projects/crouse/problem-1.jpg",
+        title: "High Food Waste",
+        text: "12,000 portions of food were wasted every day.",
+      },
+      {
+        image: "/projects/crouse/problem-2.jpg",
+        title: "Lack of Awareness",
+        text: "Employees had limited awareness of food waste.",
+      },
+    ],
+    section5: [
+      {
+        image: "/projects/crouse/problem-1.jpg",
+        title: "High Food Waste",
+        text: "12,000 portions of food were wasted every day.",
+      },
+      {
+        image: "/projects/crouse/problem-2.jpg",
+        title: "Lack of Awareness",
+        text: "Employees had limited awareness of food waste.",
+      },
+      {
+        image: "/projects/crouse/problem-3.jpg",
+        title: "No Measurement",
+        text: "There was no systematic process for measuring waste.",
+      },
+    ],
+    section6: [
+      {
+        image: "/projects/crouse/problem-1.jpg",
+        title: "High Food Waste",
+        text: "12,000 portions of food were wasted every day.",
+      },
+      {
+        image: "/projects/crouse/problem-2.jpg",
+        title: "Lack of Awareness",
+        text: "Employees had limited awareness of food waste.",
+      },
+      {
+        image: "/projects/crouse/problem-3.jpg",
+        title: "No Measurement",
+        text: "There was no systematic process for measuring waste.",
+      },
+    ],
+    section7: [
+      {
+        image: "/projects/crouse/problem-1.jpg",
+        title: "High Food Waste",
+        text: "12,000 portions of food were wasted every day.",
+      },
+      {
+        image: "/projects/crouse/problem-2.jpg",
+        title: "Lack of Awareness",
+        text: "Employees had limited awareness of food waste.",
+      },
+      {
+        image: "/projects/crouse/problem-3.jpg",
+        title: "No Measurement",
+        text: "There was no systematic process for measuring waste.",
+      },
+    ],
   },
 
   {
@@ -209,7 +254,7 @@ export const projects: Project[] = [
       color: "keune_umber",
       clientName: "Keune Care",
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `• Low Retentionhttp://localhost:3000/projects/keune-care
+      problem: `• Low Retention
       • Low Basket Confidence
       • Weak Belonging & Loyalty`,
       communityLedSolution: "Keune Care Ecosystem",
@@ -701,28 +746,28 @@ export const projects: Project[] = [
     },
   },
 
-  {
-    id: "14",
-    name: "KIA",
-    subName: "COFFEE INDUSTRY PROVIDER",
-    category: "Medium-Sized Businesses",
-    image: "/projects-cover-image/SMEs/kia.jpg",
-    tagline: "coffee-grounds-upcycle-products",
-    state: "old",
-    slug: "kia",
+  // {
+  //   id: "14",
+  //   name: "KIA",
+  //   subName: "COFFEE INDUSTRY PROVIDER",
+  //   category: "Medium-Sized Businesses",
+  //   image: "/projects-cover-image/SMEs/kia.jpg",
+  //   tagline: "coffee-grounds-upcycle-products",
+  //   state: "old",
+  //   slug: "kia",
 
-    section1: {
-      color: "keune_umber",
-      clientName: "KIA",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `-`,
-      communityLedSolution: "-",
-      prototype: `-`,
-      // designatedGroup: "Keune Care Club Members",
-      // target: "-",
-      // link: "https://thebahaman.com/",
-    },
-  },
+  //   section1: {
+  //     color: "keune_umber",
+  //     clientName: "KIA",
+  //     // clientDescription: "Community-Driven Wellbeing Perspective",
+  //     problem: `-`,
+  //     communityLedSolution: "-",
+  //     prototype: `-`,
+  //     // designatedGroup: "Keune Care Club Members",
+  //     // target: "-",
+  //     // link: "https://thebahaman.com/",
+  //   },
+  // },
 
   {
     id: "15",
@@ -747,16 +792,16 @@ export const projects: Project[] = [
     },
   },
 
-  {
-    id: "16",
-    name: "MAKOKO",
-    subName: "SUSTAINABLE SCHOOL",
-    category: "Educational Institutions",
-    image: "/projects-cover-image/SMEs/makoko.jpg",
-    tagline: "floating-center",
-    state: "old",
-    slug: "makoko",
-  },
+  // {
+  //   id: "16",
+  //   name: "MAKOKO",
+  //   subName: "SUSTAINABLE SCHOOL",
+  //   category: "Educational Institutions",
+  //   image: "/projects-cover-image/SMEs/makoko.jpg",
+  //   tagline: "floating-center",
+  //   state: "old",
+  //   slug: "makoko",
+  // },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

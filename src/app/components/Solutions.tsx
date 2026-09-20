@@ -134,19 +134,19 @@ export default function Solutions() {
   return (
     <div id="solutions" className="relative z-10 min-h-screen bg-neutral-950">
       <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
-        <h1 className="text-[65px] uppercase leading-none text-light-gray sm:text-[120px] md:text-[120px] lg:text-[200px]">
-          our
+        <h1 className="text-[50px] uppercase leading-none text-light-gray sm:text-[120px] md:text-[120px] lg:text-[160px]">
+          solution
         </h1>
-        <h1 className="xl:ml-3 text-[65px] uppercase leading-none text-yellow sm:text-[120px] md:text-[120px] lg:text-[200px]">
-          &nbsp;solutions
+        <h1 className="xl:ml-3 text-[50px] uppercase leading-none text-yellow sm:text-[120px] md:text-[120px] lg:text-[160px]">
+          &nbsp;formats
         </h1>
       </div>
 
-      <div className="reveal reveal-delay-2 flex items-center justify-center">
+      <div className="reveal reveal-delay-2 mt-2 flex items-center justify-center">
         <div className="relative mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
           <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
         </div>
-        <p className="text-base uppercase tracking-wider sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-200 font-DMSans font-light">
+        <p className="uppercase tracking-wider text-[14px] sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-200 font-DMSans font-light">
           {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
           the growth intelligence loop
         </p>

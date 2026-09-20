@@ -4,6 +4,11 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { projects, getProjectBySlug } from "../projects-data";
 import { basePath } from "../../../../lib/basePath";
+import Image from "next/image";
+import type { ProjectSection4 } from "../projects-data";
+import type { ProjectSection5 } from "../projects-data";
+import type { ProjectSection6 } from "../projects-data";
+import type { ProjectSection7 } from "../projects-data";
 // import PathAnimation from "./PathAnimation";
 
 const colorMap: Record<string, string> = {
@@ -83,7 +88,7 @@ export default async function ProjectPage({
     <div className="bg-neutral-950 overflow-x-clip">
       <Navbar />
 
-      {/* ─── SECTION 1 : Hero ─── */}
+      {/* ─── SECTION 1 : Overview ─── */}
       <section
         className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
@@ -127,7 +132,7 @@ export default async function ProjectPage({
       </section>
 
       {/* ─── SECTION 2 : Path Animation ─── */}
-      {/* {s2 && (
+      {/* {1s2 && (
         <div className="hidden md:block">
           <PathAnimation data={s2} basePath={basePath} />
         </div>
@@ -165,6 +170,154 @@ export default async function ProjectPage({
           )}
         </div>
       </section>
+
+      {/* ─── SECTION 4 : Problem or Need ─── */}
+      {/* <section className="relative z-10 px-12 pt-24 bg-neutral-950"> */}
+      {/* <div className="flex justify-center items-center">
+          <h1 className="text-8xl pb-12 font-bebas">Project Details</h1>
+        </div> */}
+
+      {/* <div className="flex justify-center items-center">
+          <div className="flex flex-col">
+            <h1 className="text-4xl pb-4 font-DMSans font-bold">
+              Problem or Need
+            </h1>
+
+            <div className="grid grid-cols-3 gap-6">
+              {project.section4?.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col bg-light-gray font-DMSans rounded-xl overflow-hidden"
+                >
+                  <div>
+                    <Image
+                      src={basePath + item.image}
+                      alt={item.title || "Project Image"}
+                      width={300}
+                      height={300}
+                      className="object-cover transition-transform duration-500 lg:group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <p className="text-2xl text-neutral-950">{item.title}</p>
+
+                    <p className="text-base text-neutral-950">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* ─── SECTION 5 : Community Led Solution ─── */}
+      {/* <section className="relative z-10 px-12 pt-24 bg-neutral-950">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col">
+            <h1 className="text-4xl pb-4 font-DMSans font-bold">
+              Community Led Solution
+            </h1>
+
+            <div className="grid grid-cols-2 gap-6">
+              {project.section5?.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col bg-light-gray font-DMSans rounded-xl overflow-hidden"
+                >
+                  <div>
+                    <Image
+                      src={basePath + item.image}
+                      alt={item.title || "Project Image"}
+                      width={300}
+                      height={300}
+                      className="object-cover transition-transform duration-500 lg:group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <p className="text-2xl text-neutral-950">{item.title}</p>
+
+                    <p className="text-base text-neutral-950">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* ─── SECTION 6 : Prototype or Ecosystem ─── */}
+      {/* <section className="relative min-h-screen z-10 px-12 pt-24 bg-neutral-950">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col">
+            <h1 className="text-4xl pb-4 font-DMSans font-bold">
+              Prototype or Ecosystem
+            </h1>
+
+            <div className="grid grid-cols-2 gap-6">
+              {project.section6?.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col bg-light-gray font-DMSans rounded-xl overflow-hidden"
+                >
+                  <div>
+                    <Image
+                      src={basePath + item.image}
+                      alt={item.title || "Project Image"}
+                      width={300}
+                      height={300}
+                      className="object-cover transition-transform duration-500 lg:group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <p className="text-2xl text-neutral-950">{item.title}</p>
+
+                    <p className="text-base text-neutral-950">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* ─── SECTION 7 : Result or Target ─── */}
+      {/* <section className="relative z-10 px-12 pt-24 bg-neutral-950">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col">
+            <h1 className="text-4xl pb-4 font-DMSans font-bold">
+              Result or Target
+            </h1>
+
+            <div className="grid grid-cols-3 gap-6">
+              {project.section7?.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col bg-light-gray font-DMSans rounded-xl overflow-hidden"
+                >
+                  <div>
+                    <Image
+                      src={basePath + item.image}
+                      alt={item.title || "Project Image"}
+                      width={300}
+                      height={300}
+                      className="object-cover transition-transform duration-500 lg:group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <p className="text-2xl text-neutral-950">{item.title}</p>
+
+                    <p className="text-base text-neutral-950">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
 
       <Footer />
     </div>

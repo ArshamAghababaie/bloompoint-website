@@ -30,9 +30,25 @@ import Typewriter from "typewriter-effect";
 const TypewriterEffect = () => {
   return (
     <Typewriter
+      onInit={(typewriter) => {
+        typewriter
+          .typeString("ommunity")
+          .pauseFor(1800)
+          .typeString("ommunity")
+          .pauseFor(1800)
+          .deleteAll()
+          .typeString("ommunication")
+          .pauseFor(1800)
+          .deleteAll()
+          .typeString("o-creation")
+          .pauseFor(1800)
+          .deleteAll()
+          .typeString("ollaboration")
+          .pauseFor(1800)
+          .deleteAll()
+          .start();
+      }}
       options={{
-        strings: ["ommunity", "ommunication", "o-creation", "ollaboration"],
-        autoStart: true,
         loop: true,
         cursor: "|",
         delay: "natural",
@@ -207,13 +223,14 @@ export default function Hero() {
         style={{ opacity: anyHighlight ? 0.15 : 1 }}
       >
         <div className="font-bebas flex items-center justify-center flex-col">
-          <h1 className="hero-reveal text-[clamp(4.5rem,10vw,6.875rem)] leading-[0.95] md:leading-[0.9]">
-            Grow
+          <h1 className="hero-reveal text-[clamp(3.35rem,10vw,6.875rem)] leading-[0.95] md:leading-[0.9]">
+            Growth
             <br />
             Through
             <br />
-            <span className="ml-12 flex text-yellow">
-              C<TypewriterEffect />
+            <span className="ml-6 sm:ml-12 flex text-yellow">
+              C
+              <TypewriterEffect />
             </span>
           </h1>
           <div className="hero-reveal hero-reveal-delay-1">

@@ -1,9 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import { basePath } from "../../../lib/basePath";
 import Link from "next/dist/client/link";
-
 export default function PathCircle() {
   const projects = [
     {
@@ -15,38 +13,30 @@ export default function PathCircle() {
     {
       id: "02",
       name: "Keune",
-      imageSrc: "/validated-projects/crouse.jpg",
+      imageSrc: "/validated-projects/keune.jpg",
       slug: "keune",
     },
   ];
-
   return (
-    <div id="solutions" className="relative z-10 min-h-screen bg-yellow pb-8">
-      <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
-        <h1 className="text-[60px] uppercase leading-none text-light-gray sm:text-[110px] md:text-[120px] lg:text-[170px]">
-          validated
-        </h1>
-
-        <h1 className="xl:ml-3 text-[60px] uppercase leading-none text-neutral-950 sm:text-[110px] md:text-[120px] lg:text-[170px]">
-          &nbsp;projects
-        </h1>
+    <div id="solutions" className="relative z-10 bg-light-gray pb-8">
+      <div className="reveal reveal-delay-1 flex justify-center text-center font-bebas tracking-wide">
+        {/* <h1 className="text-[60px] uppercase leading-none text-neutral-950 sm:text-[110px] md:text-[120px] lg:text-[170px]"> validated </h1> <h1 className="xl:ml-3 text-[60px] uppercase leading-none text-yellow sm:text-[110px] md:text-[120px] lg:text-[170px]"> &nbsp;projects </h1> */}{" "}
       </div>
-
-      <div className="flex justify-center items-center reveal reveal-delay-2 px-10 md:px-12 pt-4 font-DMSans">
-        <div className="flex flex-col gap-8 overflow-hidden">
+      <div className="flex justify-center items-center reveal reveal-delay-2 font-DMSans">
+        <div className="flex flex-col w-full">
           {projects.map((p, i) => (
-            <div key={i}>
+            <div key={i} className="w-full">
               <Image
                 src={basePath + p.imageSrc}
-                alt="path"
-                width={1250}
-                height={1250}
-                className="object-cover overflow-clip border border-neutral-950 rounded-3xl"
+                alt={basePath + p.name}
+                width={1600}
+                height={900}
+                className="w-full h-auto border-b border-neutral-400"
               />
-
-              <div className="flex items-center justify-center pt-3">
+              {/* ─── PROJECT LINK BUTTONS ─── */}
+              {/* <div className="flex items-center justify-center pt-3">
                 <Link href="/projects/[slug]" as={`/projects/${p.slug}`}>
-                  <button className="group flex w-fullsm:w-auto cursor-none items-center text-sm text-neutral-950 underline transition duration-300 md:text-base md:hover:-translate-y-1 md:hover:text-neutral-600 lg:pointer-fine:px-1 lg:pointer-fine:py-1 lg:pointer-fine:text-lg">
+                  <button className="group flex w-full sm:w-auto cursor-none items-center text-sm text-neutral-950 underline transition duration-300 md:text-base md:hover:-translate-y-1 md:hover:text-neutral-600 lg:pointer-fine:px-1 lg:pointer-fine:py-1 lg:pointer-fine:text-lg">
                     {p.name} Project
                     <span className="flex">
                       <svg
@@ -66,7 +56,7 @@ export default function PathCircle() {
                     </span>
                   </button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

@@ -4,7 +4,12 @@ import { useState } from "react";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
-const PURPOSES = ["Path", "Circle", "General Inquiry", "Partnership"];
+const PURPOSES = [
+  "Prototype Path",
+  "Circular System",
+  "General Inquiry",
+  "Partnership",
+];
 
 const SEGMENTS = [
   "Medium-Sized Business",
