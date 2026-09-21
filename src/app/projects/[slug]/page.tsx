@@ -64,7 +64,7 @@ export default async function ProjectPage({
   }
 
   const s1 = project.section1;
-  const s2 = project.section2;
+  // const s2 = project.section2;
   const s3 = project.section3;
 
   const bgColor = s1 ? colorMap[s1.color] || "#262626" : "#262626";
