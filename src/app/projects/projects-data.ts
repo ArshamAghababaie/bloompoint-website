@@ -23,30 +23,34 @@ export type ProjectColor =
 export interface ProjectSection1 {
   color: ProjectColor;
   clientName?: string;
-  // clientDescription: string;
   problem?: string;
   communityLedSolution?: string;
-  prototype?: string;
-  // designatedGroup: string;
+
+  prototypeOrEcosystem?: {
+    label: "Prototype" | "Ecosystem";
+    value: string;
+  };
+
   target?: string;
-  ecosystem?: string;
+  // clientDescription: string;
+  // designatedGroup: string;
   // link?: string;
 }
 
-export interface ProjectSection2 {
-  clientName?: string;
-  clientLogo?: string;
-  clientDepartment?: string;
-  clientDepartmentLogo?: string;
-  bloompointLogo?: string;
-  bloompointDepartment?: string;
-  bloompointClsTitle?: string;
-  blueprintLogo?: string;
-  blueprintTitle?: string;
-  blueprintDescription?: string[];
-  goalTitle?: string;
-  goalDescription?: string[];
-}
+// export interface ProjectSection2 {
+//   clientName?: string;
+//   clientLogo?: string;
+//   clientDepartment?: string;
+//   clientDepartmentLogo?: string;
+//   bloompointLogo?: string;
+//   bloompointDepartment?: string;
+//   bloompointClsTitle?: string;
+//   blueprintLogo?: string;
+//   blueprintTitle?: string;
+//   blueprintDescription?: string[];
+//   goalTitle?: string;
+//   goalDescription?: string[];
+// }
 
 export interface ProjectSection3 {
   title?: string;
@@ -98,7 +102,7 @@ export interface Project {
   overview?: string; // badan nabayad optional bashe, chon hame daran
 
   section1?: ProjectSection1;
-  section2?: ProjectSection2;
+  // section2?: ProjectSection2;
   section3?: ProjectSection3;
   section4?: ProjectSection4;
   section5?: ProjectSection5;
@@ -127,35 +131,42 @@ export const projects: Project[] = [
     section1: {
       color: "crouse_blue",
       clientName: "CROUSE CO. - Manifacturing Industries (15,000 People)",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `Daily Food Waste (12,000 Portion per Day)`,
       communityLedSolution: "Food Waste Management Program",
-      prototype: `Consumption | Food | Waste (CFW)`,
-      // designatedGroup: "Keune Care Club Members",
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: "Consumption | Food | Waste (CFW)",
+      },
+
       target: "Food Waste Reduction",
     },
-    section2: {
-      clientName: "CROUSE CO.",
-      clientLogo: "/project-path/crouse/section2/crouse-logo.png",
-      clientDepartment: "Crouse Co. | CSR Dept.",
-      clientDepartmentLogo: "/project-path/crouse/section2/crouse-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "Program",
-      blueprintLogo: "/project-path/crouse/section2/crouse-blueprint-logo.png",
-      blueprintTitle: "Consumption | Food | Waste",
-      blueprintDescription: [
-        "Food Waste Management Program",
-        "Waste Reduction",
-      ],
-      goalTitle: "Optimizaition of Food Waste",
-      goalDescription: [
-        "Prototype | R&I & IT Teams (300 People)",
-        "R&I Dining Hall Users (300-400 People)",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // clientDescription: "Community-Driven Wellbeing Perspective",
+    // designatedGroup: "Keune Care Club Members",
+
+    // section2: {
+    //   clientName: "CROUSE CO.",
+    //   clientLogo: "/project-path/crouse/section2/crouse-logo.png",
+    //   clientDepartment: "Crouse Co. | CSR Dept.",
+    //   clientDepartmentLogo: "/project-path/crouse/section2/crouse-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "Program",
+    //   blueprintLogo: "/project-path/crouse/section2/crouse-blueprint-logo.png",
+    //   blueprintTitle: "Consumption | Food | Waste",
+    //   blueprintDescription: [
+    //     "Food Waste Management Program",
+    //     "Waste Reduction",
+    //   ],
+    //   goalTitle: "Optimizaition of Food Waste",
+    //   goalDescription: [
+    //     "Prototype | R&I & IT Teams (300 People)",
+    //     "R&I Dining Hall Users (300-400 People)",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
+
     section3: {
       title: "CROUSE-CFW Project",
       images: [
@@ -253,41 +264,46 @@ export const projects: Project[] = [
     section1: {
       color: "keune_umber",
       clientName: "Keune Care",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `• Low Retention
-      • Low Basket Confidence
-      • Weak Belonging & Loyalty`,
+
+      problem: `• Consultant Overload`,
+
       communityLedSolution: "Keune Care Ecosystem",
-      ecosystem: `• B2C Haircare Consultancy (BHC)
-      • Community Care Club (CCC)`,
+
+      prototypeOrEcosystem: {
+        label: "Ecosystem",
+        value: `• Online Haircare Consultancy (OHC)
+        • Community Care Club (CCC)`,
+      },
+
+      target: "Community Wellbeing",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Community Wellbeing",
       // link: "https://keunecare.com/",
     },
-    section2: {
-      clientName: "Keune Care",
-      clientLogo: "/project-path/keune-care/section2/keune-logo.png",
-      clientDepartment: "Keune Care-Iran | B2C Dept.",
-      clientDepartmentLogo:
-        "/project-path/keune-care/section2/keune-care-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "Perspective",
-      blueprintLogo:
-        "/project-path/keune-care/section2/keune-care-blueprint-logo.png",
-      blueprintTitle: "Digital Dynamic System",
-      blueprintDescription: [
-        "B2C Online Haircare Consultancy (BHC)",
-        "Care Community Club (CCC)",
-      ],
-      goalTitle: "Keune Care Ecosystem",
-      goalDescription: [
-        "Prototype | KeuneCare-Iran Community",
-        "4000 Costumers & 6000 Salons",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // section2: {
+    //   clientName: "Keune Care",
+    //   clientLogo: "/project-path/keune-care/section2/keune-logo.png",
+    //   clientDepartment: "Keune Care-Iran | B2C Dept.",
+    //   clientDepartmentLogo:
+    //     "/project-path/keune-care/section2/keune-care-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "Perspective",
+    //   blueprintLogo:
+    //     "/project-path/keune-care/section2/keune-care-blueprint-logo.png",
+    //   blueprintTitle: "Digital Dynamic System",
+    //   blueprintDescription: [
+    //     "B2C Online Haircare Consultancy (BHC)",
+    //     "Care Community Club (CCC)",
+    //   ],
+    //   goalTitle: "Keune Care Ecosystem",
+    //   goalDescription: [
+    //     "Ecosystem | KeuneCare-Iran Community",
+    //     "4000 Costumers & 6000 Salons",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
     section3: {
       title: "Keune Care Project",
       images: [
@@ -316,32 +332,38 @@ export const projects: Project[] = [
     section1: {
       color: "companies_red",
       clientName: "MAHRAM CO. - Food Industries (Since 1970)",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `Cooking with Mahram Products`,
       communityLedSolution: "Culinary Academy",
-      prototype: `Culinary Master Classes - Online | In-Person`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `Culinary Master Classes - Online | In-Person`,
+      },
+
+      target: "Regenerating Culinary Learning",
+
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Regenerating Culinary Learning",
     },
-    section2: {
-      clientName: "MAHRAM CO.",
-      clientLogo: "/project-path/mahram/section2/mahram-logo.png",
-      clientDepartment: "Mahram | Horeca Dept.",
-      clientDepartmentLogo: "/project-path/mahram/section2/mahram-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "Academy",
-      blueprintLogo: "/project-path/mahram/section2/mahram-logo.png",
-      blueprintTitle: "Culinary Academy",
-      blueprintDescription: ["Cooking Master Classes", "Online | In person"],
-      goalTitle: "Regenerating Culinary Learning",
-      goalDescription: [
-        "Prototype | Mahram Horeca Community",
-        "1200 Restaurants",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // section2: {
+    //   clientName: "MAHRAM CO.",
+    //   clientLogo: "/project-path/mahram/section2/mahram-logo.png",
+    //   clientDepartment: "Mahram | Horeca Dept.",
+    //   clientDepartmentLogo: "/project-path/mahram/section2/mahram-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "Academy",
+    //   blueprintLogo: "/project-path/mahram/section2/mahram-logo.png",
+    //   blueprintTitle: "Culinary Academy",
+    //   blueprintDescription: ["Cooking Master Classes", "Online | In person"],
+    //   goalTitle: "Regenerating Culinary Learning",
+    //   goalDescription: [
+    //     "Prototype | Mahram Horeca Community",
+    //     "1200 Restaurants",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
     section3: {
       title: "MAHRAM CO. Project",
       images: [
@@ -370,13 +392,20 @@ export const projects: Project[] = [
     section1: {
       color: "avh_blue",
       clientName: "Iranian Aviation Community",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
-      problem: `• Not Existing An Iranian Aviation Community
-      • Lack of A Shared Place To Learn & Engagement`,
+
+      problem: `• Not Existing An Iranian Aviation Community`,
+
       communityLedSolution: "Aviation Experience and Engagement Center",
-      prototype: `Aviation Hub (AVH)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `Aviation Hub (AVH)`,
+      },
+
+      target: "Engaging People To Aviation Industry",
+
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Engaging People To Aviation Industry",
       // link: "http://avh.center/",
     },
   },
@@ -406,35 +435,40 @@ export const projects: Project[] = [
     section1: {
       color: "companies_red",
       clientName: "MAMMUT CO. - Manifacturing Industries (20,000 People)",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `Daily Food Waste (4800-5700 Portion per Day)`,
       communityLedSolution: "Energy Efficiency Perspective (ECS)",
-      prototype: `Consumption | Food | Waste (CFW)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `Consumption | Food | Waste (CFW)`,
+      },
+
+      target: " Industrial Green Management",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: " Industrial Green Management",
     },
-    section2: {
-      clientName: "MAMMUT",
-      clientLogo: "/project-path/mammut/section2/mammut-logo.png",
-      clientDepartment: "MAMMUT | Energy Dept.",
-      clientDepartmentLogo: "/project-path/mammut/section2/talashim-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "Perspective",
-      blueprintLogo: "/project-path/mammut/section2/mammut-blueprint-logo.png",
-      blueprintTitle: "Consumption | Food | Waste (CFW)",
-      blueprintDescription: [
-        "Energy | Community | Sustainability (ECS) Perspective",
-      ],
-      goalTitle: "ECS Perspective Prototype",
-      goalDescription: [
-        "Prototype | Mammut World Complex (5000 People)",
-        "4800 Meal Portions per Day",
-        "4 Dining Halls",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // section2: {
+    //   clientName: "MAMMUT",
+    //   clientLogo: "/project-path/mammut/section2/mammut-logo.png",
+    //   clientDepartment: "MAMMUT | Energy Dept.",
+    //   clientDepartmentLogo: "/project-path/mammut/section2/talashim-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "Perspective",
+    //   blueprintLogo: "/project-path/mammut/section2/mammut-blueprint-logo.png",
+    //   blueprintTitle: "Consumption | Food | Waste (CFW)",
+    //   blueprintDescription: [
+    //     "Energy | Community | Sustainability (ECS) Perspective",
+    //   ],
+    //   goalTitle: "ECS Perspective Prototype",
+    //   goalDescription: [
+    //     "Prototype | Mammut World Complex (5000 People)",
+    //     "4800 Meal Portions per Day",
+    //     "4 Dining Halls",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
     section3: {
       title: "MAMMUT Project",
       images: [
@@ -464,40 +498,48 @@ export const projects: Project[] = [
     tagline: "dbst-after-School",
     state: "latest",
     slug: "dbst",
+
     section1: {
       color: "companies_red",
       clientName:
         "Deutsche Botschaftsschule Teheran (DBST) | German Embassy School Tehran",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
+
       problem: `• Low Environmental Awareness
-      • Limited Hands-On Learning`,
+        • Limited Hands-On Learning`,
+
       communityLedSolution: "After School Academy",
-      prototype: `5th-8th Grades (100 Students)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `5th-8th Grades (100 Students)`,
+      },
+
+      target: "Environmental Awareness",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Environmental Awareness",
     },
-    section2: {
-      clientName: "DBST",
-      clientLogo: "/project-path/dbst/section2/dbst-logo.png",
-      clientDepartment: "DBST | Principal Dept.",
-      clientDepartmentLogo: "/project-path/dbst/section2/dbst-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "After School",
-      blueprintLogo: "/project-path/dbst/section2/dbst-blueprint-logo.png",
-      blueprintTitle: "After School Academy Project",
-      blueprintDescription: [
-        "City & Architecture Awearness",
-        "Environment",
-        "Belonging",
-      ],
-      goalTitle: "Environmental Awareness",
-      goalDescription: [
-        "Prototype | 5th-8th Grades (100 Students)",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // section2: {
+    //   clientName: "DBST",
+    //   clientLogo: "/project-path/dbst/section2/dbst-logo.png",
+    //   clientDepartment: "DBST | Principal Dept.",
+    //   clientDepartmentLogo: "/project-path/dbst/section2/dbst-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "After School",
+    //   blueprintLogo: "/project-path/dbst/section2/dbst-blueprint-logo.png",
+    //   blueprintTitle: "After School Academy Project",
+    //   blueprintDescription: [
+    //     "City & Architecture Awearness",
+    //     "Environment",
+    //     "Belonging",
+    //   ],
+    //   goalTitle: "Environmental Awareness",
+    //   goalDescription: [
+    //     "Prototype | 5th-8th Grades (100 Students)",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
     section3: {
       title: "DBST Project",
       images: [
@@ -529,12 +571,17 @@ export const projects: Project[] = [
     section1: {
       color: "darasiab_green",
       clientName: "BAHAMAN",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `Not Existing A Private Club for C-Levels`,
       communityLedSolution: "Private Clubworking Space",
-      prototype: `BAHAMAN Clubworking Space (BCS)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `BAHAMAN Clubworking Space (BCS)`,
+      },
+
+      target: "Providing a Clubworking Space for C-Levels",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Providing a Clubworking Space for C-Levels",
       // link: "https://thebahaman.com/",
     },
   },
@@ -552,12 +599,17 @@ export const projects: Project[] = [
     section1: {
       color: "raad_green",
       clientName: "RAAD Educational Institute",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `Inadequacy of Spaces For People With Dsabilities`,
       communityLedSolution: "Adapting Dpaces For People  With Disabilities",
-      prototype: `People With Disabilities (PWD)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `People With Disabilities (PWD)`,
+      },
+
+      target: "Increasing People Awareness & Space Functionality",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Increasing People Awareness & Space Functionality",
       // link: "",
     },
 
@@ -589,14 +641,19 @@ export const projects: Project[] = [
     section1: {
       color: "palletabad_orange",
       clientName: "Haft-o-Hasht",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `Lack of Coworking Among the Existence Businesses`,
       communityLedSolution: "Community Events",
-      prototype: `• Events
-      • Talks
-      • Civic Visits`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `• Events
+        • Talks
+        • Civic Visits`,
+      },
+
+      target: "Empathy Sharing",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Empathy Sharing",
       // link: "http://patogh.my.canva.site/haftohasht-palletabad-community",
     },
 
@@ -623,38 +680,44 @@ export const projects: Project[] = [
     state: "old",
     ongoing: true,
     slug: "aseh",
+
     section1: {
       color: "aseh_gray",
       clientName: "ASEH CO. - Refrigeration Manufacturer",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
+
       problem: `• Inefficient Installation Practices
-• Lack of Structured Technical Training`,
+      • Lack of Structured Technical Training`,
 
       communityLedSolution: "Learning by Doing Academy",
-      // communityLedSolution: "Keune Care Ecosystem",
-      prototype: `Installers Community (1200 People)`,
 
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `Installers Community (1200 People)`,
+      },
+
+      target: "Raising Industrial Efficiency",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      // communityLedSolution: "Keune Care Ecosystem",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Raising Industrial Efficiency",
     },
-    section2: {
-      clientName: "ASEH",
-      clientLogo: "/project-path/aseh/section2/aseh-logo.png",
-      clientDepartment: "ASEH | R&D Dept.",
-      clientDepartmentLogo: "/project-path/aseh/section2/aseh-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "Academy",
-      blueprintLogo: "/project-path/aseh/section2/aseh-logo.png",
-      blueprintTitle: "ASEH Academy",
-      blueprintDescription: ["Academy for Installers"],
-      goalTitle: "Industrial Efficiency",
-      goalDescription: [
-        "Prototype | Refrigeration Installers Community (1200 People)",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // section2: {
+    //   clientName: "ASEH",
+    //   clientLogo: "/project-path/aseh/section2/aseh-logo.png",
+    //   clientDepartment: "ASEH | R&D Dept.",
+    //   clientDepartmentLogo: "/project-path/aseh/section2/aseh-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "Academy",
+    //   blueprintLogo: "/project-path/aseh/section2/aseh-logo.png",
+    //   blueprintTitle: "ASEH Academy",
+    //   blueprintDescription: ["Academy for Installers"],
+    //   goalTitle: "Industrial Efficiency",
+    //   goalDescription: [
+    //     "Prototype | Refrigeration Installers Community (1200 People)",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
     section3: {
       title: "ASEH Project",
       images: [
@@ -676,37 +739,44 @@ export const projects: Project[] = [
     tagline: "experience-garden",
     state: "old",
     slug: "darasiab",
+
     section1: {
       color: "darasiab_green",
       clientName: "DARASIAB",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
+
       problem: `• Theoretical Environmental Education
-• Lack of Experiential Learning`,
+      • Lack of Experiential Learning`,
 
       communityLedSolution: "Experience Garden for Kids",
-      prototype: `  International Schools (20 Schools)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `International Schools (20 Schools)`,
+      },
+
+      target: "Environmental Awareness",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Environmental Awareness",
     },
-    section2: {
-      clientName: "DARASIAB",
-      clientLogo: "/project-path/darasiab/section2/darasiab-logo.png",
-      clientDepartment: "DARASIAB | Principal Dept.",
-      clientDepartmentLogo: "/project-path/darasiab/section2/darasiab-logo.png",
-      bloompointLogo: "/bp-logo-yellow.png",
-      bloompointDepartment: "BloomPoint",
-      bloompointClsTitle: "After School",
-      blueprintLogo: "/project-path/darasiab/section2/darasiab-logo.png",
-      blueprintTitle: "Experience Garden Community",
-      blueprintDescription: ["Nature Awareness", "Environment", "Nurturing"],
-      goalTitle: "Environmental Awareness",
-      goalDescription: [
-        "Prototype | International Schools (20 Schools)",
-        "Nature-Based Experiences",
-        // "Viable Community Health & Wellbeing",
-        // "Increased Retention & Loyalty",
-      ],
-    },
+    // section2: {
+    //   clientName: "DARASIAB",
+    //   clientLogo: "/project-path/darasiab/section2/darasiab-logo.png",
+    //   clientDepartment: "DARASIAB | Principal Dept.",
+    //   clientDepartmentLogo: "/project-path/darasiab/section2/darasiab-logo.png",
+    //   bloompointLogo: "/bp-logo-yellow.png",
+    //   bloompointDepartment: "BloomPoint",
+    //   bloompointClsTitle: "After School",
+    //   blueprintLogo: "/project-path/darasiab/section2/darasiab-logo.png",
+    //   blueprintTitle: "Experience Garden Community",
+    //   blueprintDescription: ["Nature Awareness", "Environment", "Nurturing"],
+    //   goalTitle: "Environmental Awareness",
+    //   goalDescription: [
+    //     "Prototype | International Schools (20 Schools)",
+    //     "Nature-Based Experiences",
+    //     // "Viable Community Health & Wellbeing",
+    //     // "Increased Retention & Loyalty",
+    //   ],
+    // },
     section3: {
       title: "DARASIAB Project",
       images: [
@@ -734,14 +804,21 @@ export const projects: Project[] = [
     section1: {
       color: "nikan_yellow",
       clientName: "Nikan Chain Hospitals",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
+
       problem: `• Increasing Awareness
-• Disease Prevention
-• A Deeper Connection Between Nikan Hospital & the Public`,
+      • Disease Prevention
+      • A Deeper Connection Between Nikan Hospital & the Public`,
+
       communityLedSolution: "Building Health Through Community",
-      prototype: `Prevention | Community | Care (PCC)`,
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `Prevention | Community | Care (PCC)`,
+      },
+
+      target: "Deepr Relation & Increasing People Awareness",
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // target: "Deepr Relation & Increasing People Awareness",
       // link: "?",
     },
   },
@@ -764,7 +841,7 @@ export const projects: Project[] = [
   //     communityLedSolution: "-",
   //     prototype: `-`,
   //     // designatedGroup: "Keune Care Club Members",
-  //     // target: "-",
+  // target: "-",
   //     // link: "https://thebahaman.com/",
   //   },
   // },
@@ -782,10 +859,13 @@ export const projects: Project[] = [
     section1: {
       color: "darasiab_green",
       clientName: "EKBATANA COMPLEX",
-      // clientDescription: "Community-Driven Wellbeing Perspective",
       problem: `-`,
       communityLedSolution: "-",
-      prototype: `-`,
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `-`,
+      },
+      // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
       // target: "-",
       // link: "https://thebahaman.com/",

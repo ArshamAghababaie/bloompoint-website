@@ -72,10 +72,18 @@ export default function Ongoing() {
                     label: "Community-led Solution",
                     value: s1.communityLedSolution,
                   },
-                  { label: "Prototype", value: s1.prototype },
-                  { label: "Ecosystem", value: s1.ecosystem },
+
+                  ...(s1.prototypeOrEcosystem
+                    ? [
+                        {
+                          label: s1.prototypeOrEcosystem.label,
+                          value: s1.prototypeOrEcosystem.value,
+                        },
+                      ]
+                    : []),
+
                   { label: "Result or Target", value: s1.target },
-                ].filter((row) => row.value)
+                ]
               : [];
 
             return (
@@ -115,42 +123,43 @@ export default function Ongoing() {
 
                     {/* BOTTOM CONTENT */}
                     <div className="absolute inset-x-0 bottom-0 translate-y-full transition-transform duration-500 ease-out lg:group-hover:translate-y-0">
-                      <div className="flex w-full items-end gap-4 px-6 pb-5">
+                      <div className="flex w-full items-end gap-4 pl-6 pr-2 pb-5">
                         {/* Section 1 */}
                         {detailRows.length > 0 && (
-                          <div className="min-w-0 flex-1">
+                          <div className="min-w-0 flex flex-col">
                             {detailRows.map((row) => (
                               <div
                                 key={row.label}
-                                className="mb-2 flex items-baseline gap-x-2 whitespace-pre-line last:mb-0"
+                                className="mb-2 flex flex-col items-baseline gap-x-2 last:mb-0"
                               >
                                 <span className="shrink-0 font-DMSans text-[9px] font-semibold uppercase tracking-[0.12em] text-yellow md:text-[10px]">
                                   {row.label}
                                 </span>
 
-                                <span className="min-w-0 font-DMSans text-[11px] leading-relaxed text-white md:text-xs">
+                                <span className="pl-2 min-w-0 font-DMSans text-[11px] leading-relaxed text-white md:text-xs">
                                   {row.value}
                                 </span>
                               </div>
                             ))}
                           </div>
                         )}
-
-                        {/* Arrow */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={1.5}
-                          className="ml-2 h-6 w-6 shrink-0 -translate-x-2 text-yellow opacity-0 transition-all delay-75 duration-300 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 md:h-7 md:w-7"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
+                        <div className="pr-4">
+                          {/* Arrow */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={1.5}
+                            className="ml-2 h-6 w-6 shrink-0 -translate-x-2 text-yellow opacity-0 transition-all delay-75 duration-300 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 md:h-7 md:w-7"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>

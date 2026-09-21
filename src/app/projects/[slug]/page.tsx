@@ -73,14 +73,22 @@ export default async function ProjectPage({
   const detailRows = s1
     ? [
         { label: "Client", value: s1.clientName },
-        // { label: "Description", value: s1.clientDescription },
         { label: "Problem or Need", value: s1.problem },
-        { label: "Community-led Solution", value: s1.communityLedSolution },
-        { label: "Prototype", value: s1.prototype },
-        { label: "Ecosystem", value: s1.ecosystem },
-        // { label: "Designated Group", value: s1.designatedGroup },
+        {
+          label: "Community-led Solution",
+          value: s1.communityLedSolution,
+        },
+
+        ...(s1.prototypeOrEcosystem
+          ? [
+              {
+                label: s1.prototypeOrEcosystem.label,
+                value: s1.prototypeOrEcosystem.value,
+              },
+            ]
+          : []),
+
         { label: "Result or Target", value: s1.target },
-        // ...(s1.link ? [{ label: "Website", value: s1.link }] : []),
       ]
     : [];
 
