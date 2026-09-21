@@ -37,20 +37,20 @@ export interface ProjectSection1 {
   // link?: string;
 }
 
-// export interface ProjectSection2 {
-//   clientName?: string;
-//   clientLogo?: string;
-//   clientDepartment?: string;
-//   clientDepartmentLogo?: string;
-//   bloompointLogo?: string;
-//   bloompointDepartment?: string;
-//   bloompointClsTitle?: string;
-//   blueprintLogo?: string;
-//   blueprintTitle?: string;
-//   blueprintDescription?: string[];
-//   goalTitle?: string;
-//   goalDescription?: string[];
-// }
+export interface ProjectSection2 {
+  clientName?: string;
+  clientLogo?: string;
+  clientDepartment?: string;
+  clientDepartmentLogo?: string;
+  bloompointLogo?: string;
+  bloompointDepartment?: string;
+  bloompointClsTitle?: string;
+  blueprintLogo?: string;
+  blueprintTitle?: string;
+  blueprintDescription?: string[];
+  goalTitle?: string;
+  goalDescription?: string[];
+}
 
 export interface ProjectSection3 {
   title?: string;
