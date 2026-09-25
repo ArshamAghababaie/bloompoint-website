@@ -127,6 +127,7 @@ export const projects: Project[] = [
     tagline: "food-waste-management",
     state: "old",
     slug: "crouse",
+    overview: `Crouse Food Waste Management pilots Consumption, Food, Waste with a focused research community, connecting behavior, awareness, and practical action to reduce daily food waste at scale through measurable prototyping.`,
 
     section1: {
       color: "crouse_blue",
@@ -257,15 +258,16 @@ export const projects: Project[] = [
     category: "Medium-Sized Businesses",
     image: "/projects-cover-image/SMEs/keune-care.jpg",
     tagline: "community-wellbeing",
-    state: "latest",
+    state: "old",
     ongoing: true,
     slug: "keune-care",
+    overview: `Keune Care Ecosystem connects personalized haircare consultation with a care community, transforming customer relationships through guidance, engagement, belonging, and ongoing care beyond product transactions, building loyalty through meaningful customer interaction.`,
 
     section1: {
       color: "keune_umber",
       clientName: "Keune Care",
 
-      problem: `• Consultant Overload`,
+      problem: `Consultant Overload`,
 
       communityLedSolution: "Keune Care Ecosystem",
 
@@ -328,7 +330,9 @@ export const projects: Project[] = [
     image: "/projects-cover-image/LEs/mahram.jpg",
     tagline: "culinary-learning",
     slug: "mahram",
+    overview: `Mahram Culinary Academy transforms product use into culinary learning, combining online and in-person masterclasses to build a practical cooking community and regenerate engagement around food and products through shared learning.`,
     state: "old",
+
     section1: {
       color: "companies_red",
       clientName: "MAHRAM CO. - Food Industries (Since 1970)",
@@ -343,7 +347,7 @@ export const projects: Project[] = [
       target: "Regenerating Culinary Learning",
 
       // clientDescription: "Community-Driven Wellbeing Perspective",
-      // designatedGroup: "Keune Care Club Members",
+      // designatedGroup: "Mahram Care Club Members",
     },
     // section2: {
     //   clientName: "MAHRAM CO.",
@@ -388,17 +392,18 @@ export const projects: Project[] = [
     state: "latest",
     ongoing: true,
     slug: "avh",
+    overview: `AVH creates an aviation experience and engagement center, bringing Iran’s aviation community together through learning, connection, shared experiences, and accessible spaces that strengthen industry participation, discovery, and professional relationships together.`,
 
     section1: {
       color: "avh_blue",
       clientName: "Iranian Aviation Community",
 
-      problem: `• Not Existing An Iranian Aviation Community`,
+      problem: "Aviation Weak Community Engagements",
 
       communityLedSolution: "Aviation Experience and Engagement Center",
 
       prototypeOrEcosystem: {
-        label: "Prototype",
+        label: "Ecosystem",
         value: `Aviation Hub (AVH)`,
       },
 
@@ -424,13 +429,13 @@ export const projects: Project[] = [
   {
     id: "6",
     name: "MAMMUT",
-    subName: "GREEN INDUSTRIES",
+    subName: "MANIFACTURING INDUSTRIES",
     category: "Large Enterprises",
     image: "/projects-cover-image/LEs/mammut.jpg",
     tagline: "industrial-sustainability",
     state: "latest",
     slug: "mammut",
-    overview: "Lorem epsum sdkfjhs; djf ;sdlksjd f;ksad jfhg lkd sfjh ;ddghfgf",
+    overview: `Mammut Green Industries explores food waste through an Energy, Community, Sustainability perspective, using a focused prototype to connect everyday consumption with broader industrial green management opportunities and practical sustainability action.`,
 
     section1: {
       color: "companies_red",
@@ -440,7 +445,7 @@ export const projects: Project[] = [
 
       prototypeOrEcosystem: {
         label: "Prototype",
-        value: `Consumption | Food | Waste (CFW)`,
+        value: `CFW Project | Consumption | Food | Waste`,
       },
 
       target: " Industrial Green Management",
@@ -498,20 +503,24 @@ export const projects: Project[] = [
     tagline: "dbst-after-School",
     state: "latest",
     slug: "dbst",
+    overview: `DBST Kidstadt After School turns environmental education
+                    into hands-on community learning, engaging 100 students from
+                    grades five to eight through activities that build
+                    environmental awareness, curiosity, and everyday sustainable
+                    habits.`,
 
     section1: {
       color: "companies_red",
       clientName:
         "Deutsche Botschaftsschule Teheran (DBST) | German Embassy School Tehran",
 
-      problem: `• Low Environmental Awareness
-        • Limited Hands-On Learning`,
+      problem: "Building a Stronger Community",
 
       communityLedSolution: "After School Academy",
 
       prototypeOrEcosystem: {
         label: "Prototype",
-        value: `5th-8th Grades (100 Students)`,
+        value: `City & Architecture Awareness (100 Students)`,
       },
 
       target: "Environmental Awareness",
@@ -567,6 +576,7 @@ export const projects: Project[] = [
     state: "old",
     ongoing: true,
     slug: "bahaman",
+    overview: `Bahaman Private Business Club develops a dedicated clubworking environment for C-level professionals, combining private workspace and community interaction to support meaningful connections among business leaders, knowledge exchange, collaboration, and belonging.`,
 
     section1: {
       color: "darasiab_green",
@@ -595,6 +605,7 @@ export const projects: Project[] = [
     tagline: "accessibility-&-adjustment (A&A)",
     state: "old",
     slug: "pwd",
+    overview: `PWD Accessibility and Adjustment adapts spaces around the needs of people with disabilities, combining awareness, community participation, and practical spatial improvements to increase functionality and inclusion across everyday environments.`,
 
     section1: {
       color: "raad_green",
@@ -680,6 +691,7 @@ export const projects: Project[] = [
     state: "old",
     ongoing: true,
     slug: "aseh",
+    overview: `ASEH Academy transforms technical installation training into a learning-by-doing community, connecting 1,200 installers through practical education designed to strengthen skills, consistency, collaboration, and industrial efficiency across professional installation networks.`,
 
     section1: {
       color: "aseh_gray",
@@ -739,6 +751,7 @@ export const projects: Project[] = [
     tagline: "experience-garden",
     state: "old",
     slug: "darasiab",
+    overview: `Darasiab Experience Garden transforms environmental education into experiential learning, creating an engaging model for international schools where children explore nature, sustainability, and environmental awareness through direct experience, discovery, and shared activities.`,
 
     section1: {
       color: "darasiab_green",
@@ -800,6 +813,7 @@ export const projects: Project[] = [
     state: "old",
     ongoing: true,
     slug: "nikan",
+    overview: `Nikan Community Health and Well-being builds stronger connections between hospitals and the public through prevention, community, and care, creating pathways for awareness, participation, and healthier communities through proactive engagement.`,
 
     section1: {
       color: "nikan_yellow",
@@ -855,6 +869,7 @@ export const projects: Project[] = [
     tagline: "",
     state: "old",
     slug: "ekbatana",
+    overview: `Ekbatana Complex Services explores community-oriented services within a complex environment, applying BloomPoint’s approach to understand opportunities for better connection, experience, and value across its users, spaces, and everyday interactions together.`,
 
     section1: {
       color: "darasiab_green",

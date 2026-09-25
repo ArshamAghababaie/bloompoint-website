@@ -1,19 +1,23 @@
 "use client";
+
 import Image from "next/image";
 import { basePath } from "../../../lib/basePath";
-import Link from "next/dist/client/link";
+// import Link from "next/dist/client/link";
+
 export default function PathCircle() {
   const projects = [
     {
       id: "01",
       name: "Crouse",
-      imageSrc: "/validated-projects/crouse.jpg",
+      // imageSrc: "/validated-projects/crouse.jpg",
+      imageSrc: "/validated-projects/crouse1.jpg",
       slug: "crouse",
     },
     {
       id: "02",
       name: "Keune",
-      imageSrc: "/validated-projects/keune.jpg",
+      // imageSrc: "/validated-projects/keune.jpg",
+      imageSrc: "/validated-projects/keune1.jpg",
       slug: "keune",
     },
   ];
@@ -31,8 +35,9 @@ export default function PathCircle() {
                 alt={basePath + p.name}
                 width={1600}
                 height={900}
-                className="w-full h-auto border-b border-neutral-400"
+                className="w-full h-auto"
               />
+
               {/* ─── PROJECT LINK BUTTONS ─── */}
               {/* <div className="flex items-center justify-center pt-3">
                 <Link href="/projects/[slug]" as={`/projects/${p.slug}`}>

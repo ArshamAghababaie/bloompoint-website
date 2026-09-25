@@ -7,9 +7,9 @@ export default function Pricing() {
 
   const [activeTab, setActiveTab] = useState<Tab>("hybrid");
 
-  //   const toggle = () => {
-  //     setActiveTab((prev) => (prev === "hybrid" ? "subscription" : "hybrid"));
-  //   };
+  const toggle = () => {
+    setActiveTab((prev) => (prev === "hybrid" ? "subscription" : "hybrid"));
+  };
 
   const hybridPlans = [
     {

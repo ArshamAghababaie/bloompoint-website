@@ -90,7 +90,7 @@ export default function ProblemNeed({
   return (
     <div
       id="problem-need"
-      className="relative z-10 pb-12 md:pb-12 px-10 bg-yellow text-neutral-950"
+      className="relative z-10 pb-12 md:pb-16 px-10 bg-yellow text-neutral-950"
     >
       {/* Context */}
       {/* <div className="reveal flex items-center pt-20">
@@ -322,7 +322,7 @@ export default function ProblemNeed({
 
       {/* BOOK A MEETING Button (Hero Style) */}
       <div>
-        <div className="flex items-center justify-center pt-6">
+        <div className="flex items-center justify-center pt-2 md:pt-18">
           <div className="relative mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
             <div className="absolute inset-0 bg-light-gray animate-underline-ltr"></div>
           </div>
@@ -330,9 +330,9 @@ export default function ProblemNeed({
             {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
             <button
               onClick={scrollToForm}
-              className=" font-bebas tracking-wider border pt-0.5 sm:pt-1 rounded-lg sm:rounded-xl px-9 sm:px-18 text-neutral-800 hover:text-light-gray text-lg sm:text-xl md:text-2xl lg:pointer-fine:text-[36px] transition-colors duration-200 cursor-none"
+              className="bg-amber-400 font-bebas tracking-wider border pt-0.5 sm:pt-1 rounded-lg sm:rounded-xl px-9 sm:px-20 text-neutral-800 hover:text-light-gray text-lg sm:text-xl md:text-2xl lg:pointer-fine:text-[32px] transition-colors duration-200 cursor-none"
             >
-              BOOK A MEETING / DEMO
+              BOOK A MEETING [DEMO]
             </button>
           </p>
           <div className="relative ml-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">

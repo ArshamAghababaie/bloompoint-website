@@ -101,39 +101,53 @@ export default async function ProjectPage({
         className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col gap-x-16 gap-y-4 max-[767px]:px-6 max-[767px]:pt-24 max-[767px]:pb-10 max-[767px]:gap-y-6">
-          {/* Upper section: client logo + project name, pinned to the top */}
-          <div className="flex flex-col reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9 max-[767px]:max-w-full max-[767px]:text-5xl max-[767px]:mb-7">
-            <h1 className="">{project.name}</h1>
-            <h1 className="">{project.subName}</h1>
-          </div>
+        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col max-[767px]:px-6 max-[767px]:pt-24 max-[767px]:pb-10">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-x-16">
+            {/* Left column: project name + information */}
+            <div className="flex flex-col">
+              {/* Upper section: client logo + project name, pinned to the top */}
+              <div className="flex flex-col reveal reveal-delay-2 max-w-xl font-bebas uppercase text-5xl md:text-6xl leading-none mb-9 max-[767px]:max-w-full max-[767px]:text-5xl max-[767px]:mb-7">
+                <h1 className="">{project.name}</h1>
+                <h1 className="">{project.subName}</h1>
+              </div>
 
-          <div className="flex flex-col mt-20 max-[767px]:mt-4">
-            <div className="reveal reveal-delay-3 max-w-4xl">
-              {detailRows.map((row) => (
-                <div
-                  key={row.label}
-                  className="flex mb-3 gap-x-2 items-baseline max-[767px]:gap-x-3 max-[767px]:mb-3 max-[767px]:whitespace-pre-line"
-                >
-                  <span className="font-DMSans text-sm uppercase tracking-widest font-semibold text-neutral-950 max-[767px]:text-[0.65rem] max-[767px]:tracking-[0.12em]">
-                    {row.label}
-                  </span>
-                  {row.label === "Website" && row.value ? (
-                    <Link
-                      href={row.value}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline cursor-none lg:hover:text-neutral-300 transition-colors duration-150"
+              <div className="flex flex-col mt-20 max-[767px]:mt-4">
+                <div className="reveal reveal-delay-3 max-w-4xl">
+                  {detailRows.map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex mb-3 gap-x-2 items-baseline max-[767px]:gap-x-3 max-[767px]:mb-3"
                     >
-                      Visit website
-                    </Link>
-                  ) : (
-                    <span className="font-DMSans leading-relaxed max-[767px]:text-[0.85rem]">
-                      {row.value}
-                    </span>
-                  )}
+                      <span className="font-DMSans text-sm uppercase tracking-widest text-neutral-950 max-[767px]:text-[0.65rem] max-[767px]:tracking-[0.12em]">
+                        {row.label}
+                      </span>
+
+                      {row.label === "Website" && row.value ? (
+                        <Link
+                          href={row.value}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline cursor-none lg:hover:text-neutral-300 transition-colors duration-150"
+                        >
+                          Visit website
+                        </Link>
+                      ) : (
+                        <span className="font-DMSans leading-relaxed max-[767px]:text-[0.85rem]">
+                          {row.value}
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            {/* Right column: dashed overview area */}
+            <div className="border border-dashed rounded-4xl p-12 px-18 bg-white/5 text-sm md:text-lg mdtext-xl font-DMSans font-light flex items-center justify-center h-full max-[767px]:mt-8 max-[767px]:p-12 max-[767px]:h-auto">
+              {/* <h2 className="text-neutral-950 text-4xl font-bold font-DMSans">
+          Overview
+        </h2> */}
+              <p>{project.overview}</p>
             </div>
           </div>
         </div>

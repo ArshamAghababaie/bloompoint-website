@@ -36,13 +36,13 @@ export default function Page() {
       <PathCircle />
       <Ongoing />
       <BPEcosystem />
-      <FAQ />
       <BookAMeeting
         selectedProblems={selectedProblems}
         selectedNeeds={selectedNeeds}
         otherProblem={otherProblem}
         otherNeed={otherNeed}
       />
+      <FAQ />
       <Footer />
     </div>
   );

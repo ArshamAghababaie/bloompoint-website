@@ -11,21 +11,21 @@ export default function Solutions() {
   const solutions = [
     {
       title: (
-        <div className="group relative flex flex-col gap-3">
-          <span className="font-DMSans text-3xl lg:text-[40px] xl:text-5xl text-neutral-700 whitespace-pre-line">
+        <div className="group relative flex flex-col gap-0">
+          <span className="font-DMSans text-3xl lg:text-[40px] text-neutral-700 whitespace-pre-line">
             [01]
           </span>
-          <h1 className="font-DMSans text-2xl lg:text-[33px] xl:text-5xl text-light-gray whitespace-pre-line">
+          <h1 className="font-DMSans text-2xl lg:text-[33px] xl:text-[42px] text-light-gray whitespace-pre-line">
             A <span className="text-yellow">Path</span> with Checkpoints
           </h1>
         </div>
       ),
       subtitle: (
-        <div className="group relative flex flex-col lg:gap-1 gap-px pt-3">
-          <h1 className="font-DMSans text-[20px] lg:text-2xl text-light-gray whitespace-pre-line">
+        <div className="group relative flex flex-col lg:gap-1 gap-px pt-0">
+          <h1 className="font-DMSans text-[20px] text-light-gray whitespace-pre-line">
             Entry Point → Prototype
           </h1>
-          <h1 className="font-DMSans text-[20px] lg:text-2xl text-yellow whitespace-pre-line">
+          <h1 className="font-DMSans text-[20px] text-yellow whitespace-pre-line">
             Outcome |{" "}
             <span className="text-light-gray">Short Term Results</span>
           </h1>
@@ -74,21 +74,21 @@ export default function Solutions() {
     // },
     {
       title: (
-        <div className="group relative flex flex-col gap-3">
-          <span className="font-DMSans text-3xl lg:text-[40px] xl:text-5xl text-neutral-700 whitespace-pre-line">
+        <div className="group relative flex flex-col gap-1">
+          <span className="font-DMSans text-3xl lg:text-[40px] text-neutral-700 whitespace-pre-line">
             [02]
           </span>
-          <h1 className="font-DMSans text-2xl lg:text-[33px] xl:text-5xl text-light-gray whitespace-pre-line">
+          <h1 className="font-DMSans text-2xl lg:text-[33px] xl:text-[42px] text-light-gray whitespace-pre-line">
             A <span className="text-yellow">Circular</span> System
           </h1>
         </div>
       ),
       subtitle: (
-        <div className="group relative flex flex-col lg:gap-1 gap-px pt-3">
-          <h1 className="font-DMSans text-[20px] lg:text-2xl text-light-gray duration-500 whitespace-pre-line">
+        <div className="group relative flex flex-col lg:gap-1 gap-px pt-0">
+          <h1 className="font-DMSans text-[20px] text-light-gray duration-500 whitespace-pre-line">
             Ecosystem → Supervision / Coordination
           </h1>
-          <h1 className="font-DMSans text-[20px] lg:text-2xl text-yellow duration-500 delay-200 whitespace-pre-line">
+          <h1 className="font-DMSans text-[20px] text-yellow duration-500 delay-200 whitespace-pre-line">
             Outcome | <span className="text-light-gray">Long Term Results</span>
           </h1>
         </div>
@@ -133,11 +133,11 @@ export default function Solutions() {
 
   return (
     <div id="solutions" className="relative z-10 min-h-screen bg-neutral-950">
-      <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 text-center font-bebas tracking-wide">
-        <h1 className="text-[50px] uppercase leading-none text-light-gray sm:text-[120px] md:text-[120px] lg:text-[160px]">
+      <div className="reveal reveal-delay-1 flex justify-center px-4 pt-14 md:pt-24 text-center font-bebas tracking-wide">
+        <h1 className="text-[50px] uppercase leading-none text-light-gray sm:text-[120px] md:text-[120px] lg:text-[150px]">
           solution
         </h1>
-        <h1 className="xl:ml-3 text-[50px] uppercase leading-none text-yellow sm:text-[120px] md:text-[120px] lg:text-[160px]">
+        <h1 className="xl:ml-3 text-[50px] uppercase leading-none text-yellow sm:text-[120px] md:text-[120px] lg:text-[150px]">
           &nbsp;formats
         </h1>
       </div>
@@ -155,12 +155,12 @@ export default function Solutions() {
         </div>
       </div>
 
-      <div className="flex reveal reveal-delay-3 px-10 md:px-12 pt-4 font-DMSans">
-        {/* <span className="text-sm text-neutral-600">
+      {/* <div className="flex reveal reveal-delay-3 px-10 md:px-12 pt-4 font-DMSans">
+        <span className="text-sm text-neutral-600">
           [ Hover over the circles to reach more information. ]
-        </span> */}
-      </div>
-      <div className="flex flex-col lg:flex-row gap-0 pt-3 sm:pt-14 justify-between">
+        </span>
+      </div> */}
+      <div className="flex flex-col lg:flex-row gap-0 pt-3 md:px-32 sm:pt-32 justify-between">
         {solutions.map((s, i) => (
           <div
             key={i}
