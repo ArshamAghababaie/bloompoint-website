@@ -3,7 +3,7 @@
 // const basePath = isProd ? "/bloompoint-website" : "";
 
 const nextConfig = {
-  output: "export",
+  // output: "export",
 
   images: {
     unoptimized: true,
@@ -15,3 +15,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
