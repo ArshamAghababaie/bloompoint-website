@@ -129,7 +129,7 @@ function OrbitRingLayer({
 
   return (
     <div
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-700 dashed pointer-events-none"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-600 dashed pointer-events-none"
       style={{ width: ring.diameter, height: ring.diameter }}
     >
       <div
@@ -286,11 +286,13 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <div className="z-10 flex items-end absolute bottom-7 left-1/2 w-fit">
+
+      {/* VERTICAL SCROLL SCHEMA */}
+      {/* <div className="z-10 flex items-end absolute bottom-7 left-1/2 w-fit">
         <div className="relative mt-2 w-[0.1rem] rounded-full h-8 overflow-hidden bg-neutral-600">
           <div className="absolute inset-0 bg-yellow animate-scroll-line"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

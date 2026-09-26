@@ -116,9 +116,9 @@ export default async function ProjectPage({
                   {detailRows.map((row) => (
                     <div
                       key={row.label}
-                      className="flex mb-3 gap-x-2 items-baseline max-[767px]:gap-x-3 max-[767px]:mb-3"
+                      className="flex flex-col mb-3 gap-x-2 items-baseline max-[767px]:gap-x-3 max-[767px]:mb-3"
                     >
-                      <span className="font-DMSans text-sm uppercase tracking-widest text-neutral-950 max-[767px]:text-[0.65rem] max-[767px]:tracking-[0.12em]">
+                      <span className="font-DMSans text-sm uppercase tracking-widest font-bold text-neutral-950 max-[767px]:text-[0.65rem] max-[767px]:tracking-[0.12em]">
                         {row.label}
                       </span>
 
@@ -143,7 +143,7 @@ export default async function ProjectPage({
             </div>
 
             {/* Right column: dashed overview area */}
-            <div className="border border-dashed rounded-4xl p-12 px-18 bg-white/5 text-sm md:text-lg mdtext-xl font-DMSans font-light flex items-center justify-center h-full max-[767px]:mt-8 max-[767px]:p-12 max-[767px]:h-auto">
+            <div className="reveal reveal-delay-2 border border-dashed rounded-4xl p-12 px-18 bg-white/5 text-sm md:text-lg mdtext-xl font-DMSans font-light flex items-center justify-center h-full max-[767px]:mt-8 max-[767px]:p-12 max-[767px]:h-auto">
               {/* <h2 className="text-neutral-950 text-4xl font-bold font-DMSans">
           Overview
         </h2> */}
@@ -186,7 +186,7 @@ export default async function ProjectPage({
               style={{ height: "80vh" }}
             >
               <p className="font-DMSans text-neutral-500 text-lg">
-                The report will be available soon...
+                The document will be available soon...
               </p>
             </div>
           )}

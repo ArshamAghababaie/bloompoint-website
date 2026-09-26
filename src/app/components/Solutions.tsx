@@ -146,7 +146,7 @@ export default function Solutions() {
         <div className="relative mr-2 w-6 sm:w-8 rounded-full h-px overflow-hidden bg-neutral-600">
           <div className="absolute inset-0 bg-yellow animate-underline-ltr"></div>
         </div>
-        <p className="uppercase tracking-wider text-[14px] sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-200 font-DMSans font-light">
+        <p className="uppercase tracking-wider text-[14px] sm:text-lg md:text-xl lg:pointer-fine:text-lg text-neutral-300 font-DMSans font-light">
           {/* <span className="animate-text-sweep font-semibold text-xl text-transparent bg-clip-text"> */}
           the growth intelligence loop
         </p>

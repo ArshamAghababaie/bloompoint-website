@@ -101,7 +101,7 @@ export default function FAQ() {
         {faqs.map((faq, i) => {
           const isOpen = openIndex === i;
           return (
-            <div className="border-b-[0.5px] border-neutral-800" key={i}>
+            <div key={i} className="border-b-[0.5px] border-neutral-700/60">
               <button
                 className="flex w-full items-center justify-between gap-6 py-5 text-left cursor-none"
                 onClick={() => toggle(i)}

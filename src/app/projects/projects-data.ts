@@ -127,7 +127,9 @@ export const projects: Project[] = [
     tagline: "food-waste-management",
     state: "old",
     slug: "crouse",
-    overview: `Crouse Food Waste Management pilots Consumption, Food, Waste with a focused research community, connecting behavior, awareness, and practical action to reduce daily food waste at scale through measurable prototyping.`,
+    overview: `Crouse Food Waste Management pilots Consumption, Food, Waste
+    with a focused research community, connecting behavior, awareness, and
+    practical action to reduce daily food waste at scale through measurable prototyping.`,
 
     section1: {
       color: "crouse_blue",
@@ -273,8 +275,7 @@ export const projects: Project[] = [
 
       prototypeOrEcosystem: {
         label: "Ecosystem",
-        value: `• Online Haircare Consultancy (OHC)
-        • Community Care Club (CCC)`,
+        value: `Online Haircare Consultancy (OHC) + Community Care Club (CCC)`,
       },
 
       target: "Community Wellbeing",

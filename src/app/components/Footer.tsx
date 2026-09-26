@@ -23,8 +23,8 @@ const contactLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 bg-neutral-950 px-15 pt-20 pb-10 border-t border-[rgba(245,245,240,0.08)] max-[767px]:px-6 max-[767px]:pt-15 max-[767px]:pb-7.5">
-      <div className="grid grid-cols-[2fr_1fr] gap-15 pb-15 border-b border-[rgba(245,245,240,0.08)] max-[1023px]:grid-cols-2 max-[1023px]:gap-10 max-[767px]:grid-cols-1 max-[767px]:gap-10 max-[767px]:pb-10">
+    <footer className="relative z-10 bg-neutral-950 px-15 pt-20 pb-10 border-t border-[rgba(245,245,240,0.1)] max-[767px]:px-6 max-[767px]:pt-15 max-[767px]:pb-7.5">
+      <div className="grid grid-cols-[2fr_1fr] gap-15 pb-15 border-b border-[rgba(245,245,240,0.1)] max-[1023px]:grid-cols-2 max-[1023px]:gap-10 max-[767px]:grid-cols-1 max-[767px]:gap-10 max-[767px]:pb-10">
         {/* Brand */}
         <div>
           <div className="flex items-center mb-2 text-2xl font-DMSans font-bold">
@@ -44,7 +44,7 @@ export default function Footer() {
             />
           </div>
 
-          <p className="max-w-65 text-[0.85rem] font-light leading-[1.7] text-[rgba(245,245,240,0.4)]">
+          <p className="max-w-65 text-[0.85rem] font-DMSans font-light leading-[1.7] text-neutral-500">
             BloomPoint is a B2B platform that enables businesses, schools, third
             places and cities to design, regenerate, and manage communities for
             new outcomes.
@@ -52,7 +52,7 @@ export default function Footer() {
 
           <a
             href="mailto:info@bloompoint.world"
-            className="block mt-3 font-DMSans text-[0.8rem] tracking-[0.06em] text-yellow no-underline cursor-none"
+            className="block mt-3 font-DMSans text-[0.8rem] tracking-[0.09rem] text-yellow no-underline cursor-none"
           >
             info@bloompoint.world
           </a>
@@ -159,7 +159,7 @@ export default function Footer() {
       </div>
 
       <div className="flex justify-start max-[767px]:justify-center items-center pt-8 max-[767px]:items-start">
-        <span className="font-DMSans text-xs tracking-wider text-neutral-600">
+        <span className="font-DMSans text-xs tracking-wider text-neutral-500">
           © {new Date().getFullYear()} BloomPoint. All rights reserved.
         </span>
       </div>

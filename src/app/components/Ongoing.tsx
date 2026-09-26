@@ -146,7 +146,7 @@ export default function Ongoing() {
                             ))}
                           </div>
                         )}
-                        <div className="pr-4">
+                        <div className="absolute bottom-4 right-10">
                           {/* Arrow */}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ export default function Ongoing() {
                             fill="none"
                             stroke="currentColor"
                             strokeWidth={1.5}
-                            className="ml-2 h-6 w-6 shrink-0 -translate-x-2 text-yellow opacity-0 transition-all delay-75 duration-300 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 md:h-7 md:w-7"
+                            className="h-6 w-6 shrink-0 -translate-x-3 text-yellow opacity-0 transition-all delay-150 duration-300 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 md:h-7 md:w-7"
                           >
                             <path
                               strokeLinecap="round"

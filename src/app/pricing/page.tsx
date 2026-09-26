@@ -66,7 +66,7 @@ export default function Pricing() {
       name: "Free Trial",
       duration: "2 Weeks",
       amount: "€0",
-      amountSub: "/ Month",
+      amountSub: "/ Account",
       // amount2: "+ €0,000",
       // amountSub2: "/ Setup",
       features: ["Concept Idea [Strategy Planning]"],
@@ -116,7 +116,7 @@ export default function Pricing() {
   ];
 
   const [isSubscription, setIsSubscription] = useState(true);
-  const [displayedSubscription, setDisplayedSubscription] = useState(false);
+  const [displayedSubscription, setDisplayedSubscription] = useState(true);
   const [plansVisible, setPlansVisible] = useState(true);
   const activePlans = displayedSubscription
     ? subscriptionPlans
@@ -144,7 +144,7 @@ export default function Pricing() {
         {activePlans.map((h, i) => (
           <div
             key={i}
-            className={`group reveal reveal-delay-${i + 3} flex-col p-10 border border-neutral-600 rounded-3xl hover:bg-yellow transition-colors duration-200 max-[1023px]:p-8 max-[767px]:p-7`}
+            className={`group reveal reveal-delay-${i + 3} flex-col p-10 border border-neutral-600 shadow-2xl shadow-neutral-200 rounded-3xl hover:bg-yellow transition-colors duration-200 max-[1023px]:p-8 max-[767px]:p-7`}
           >
             {/* first section */}
             <div className="flex-col h-110 max-[1023px]:h-auto">
@@ -186,11 +186,11 @@ export default function Pricing() {
                     key={i}
                     className="flex border-b border-neutral-300 group-hover:border-neutral-600 py-2"
                   >
-                    <span className="flex justify-start items-baseline -mt-1 pr-2 group-hover:text-neutral-700 transition duration-200">
+                    <span className="flex justify-start items-baseline -mt-1 pr-2 group-hover:text-neutral-800 transition duration-200">
                       →
                     </span>
 
-                    <span className="text-sm text-neutral-500 font-DMSans font-medium group-hover:text-neutral-600 transition duration-200">
+                    <span className="text-sm text-neutral-500 font-DMSans font-medium group-hover:text-neutral-800 transition duration-200">
                       {f}
                     </span>
                   </div>

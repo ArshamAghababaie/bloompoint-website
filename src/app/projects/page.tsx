@@ -116,7 +116,7 @@ export default function Projects() {
           {/* ALL */}
           <button
             onClick={selectAll}
-            className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
+            className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border cursor-none ${
               isAllSelected
                 ? "bg-yellow text-neutral-950 border-yellow hover:bg-yellow/70 hover:border-yellow/10"
                 : "bg-transparent text-yellow border-yellow hover:text-yellow/60"
@@ -130,7 +130,7 @@ export default function Projects() {
             <button
               key={category}
               onClick={() => toggleFilter(category)}
-              className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
+              className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border cursor-none ${
                 selectedFilters.has(category)
                   ? "bg-yellow text-neutral-950 border-yellow hover:bg-yellow/70 hover:border-yellow/10"
                   : "bg-transparent text-yellow border-yellow hover:text-yellow/60"
@@ -146,13 +146,13 @@ export default function Projects() {
           {/* Ongoing */}
           <button
             onClick={() => toggleFilter("Ongoing")}
-            className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border ${
+            className={`px-4 md:px-4 py-2 md:py-1 rounded-xl font-DMSans text-xs md:text-sm tracking-widest uppercase transition-all duration-300 border cursor-none ${
               selectedFilters.has("Ongoing")
                 ? "bg-red-500 text-white border-red-500 hover:bg-red-500/70 hover:border-red-500/10"
                 : "bg-transparent text-red-500 border-red-500 hover:text-red-500/60"
             }`}
           >
-            Ongoing{" "}
+            Ongoing
             <span className="opacity-60">
               ({projects.filter((project) => project.ongoing === true).length})
             </span>
@@ -197,21 +197,22 @@ export default function Projects() {
                       {project.subName}
                     </h3>
                   </div>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    className="w-6 h-6 text-yellow shrink-0 ml-3 -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 delay-75"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
+                  <div className="absolute bottom-2 right-4 ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      className="w-6 h-6 text-yellow shrink-0 -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 delay-75"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
 
