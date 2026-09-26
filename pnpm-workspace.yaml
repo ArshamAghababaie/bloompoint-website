@@ -1,3 +1,6 @@
+packages:
+  - "."
+
 allowBuilds:
   esbuild: false
   sharp: true
@@ -7,11 +10,11 @@ ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
 minimumReleaseAgeExclude:
-  - '@cloudflare/workerd-darwin-64@1.20260925.1'
-  - '@cloudflare/workerd-darwin-arm64@1.20260925.1'
-  - '@cloudflare/workerd-linux-64@1.20260925.1'
-  - '@cloudflare/workerd-linux-arm64@1.20260925.1'
-  - '@cloudflare/workerd-windows-64@1.20260925.1'
+  - "@cloudflare/workerd-darwin-64@1.20260925.1"
+  - "@cloudflare/workerd-darwin-arm64@1.20260925.1"
+  - "@cloudflare/workerd-linux-64@1.20260925.1"
+  - "@cloudflare/workerd-linux-arm64@1.20260925.1"
+  - "@cloudflare/workerd-windows-64@1.20260925.1"
   - miniflare@5.20260925.0-alpha
   - workerd@1.20260925.1
   - wrangler@4.141.0
