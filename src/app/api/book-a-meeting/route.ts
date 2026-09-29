@@ -9,6 +9,15 @@ export async function POST(request: Request) {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
+    console.log("KEY DEBUG", {
+      exists: !!resendApiKey,
+      length: resendApiKey?.length,
+      startsWithRe: resendApiKey?.startsWith("re_"),
+      hasWhitespace: /\s/.test(resendApiKey ?? ""),
+      hasQuotes: /["']/.test(resendApiKey ?? ""),
+      last4: resendApiKey?.slice(-4),
+    });
+
     const resend = new Resend(resendApiKey);
 
     const requestData = await request.json();
@@ -129,18 +138,18 @@ export async function POST(request: Request) {
     });
 
     console.log("RESEND RESULT", {
-  data,
-  error: error
-    ? {
-        name: error.name,
-        message: error.message,
-      }
-    : null,
-});
+      data,
+      error: error
+        ? {
+            name: error.name,
+            message: error.message,
+          }
+        : null,
+    });
 
-if (error) {
-  throw new Error(`Resend error: ${error.message}`);
-}
+    if (error) {
+      throw new Error(`Resend error: ${error.message}`);
+    }
 
     return NextResponse.json({
       success: true,
