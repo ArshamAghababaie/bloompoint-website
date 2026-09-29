@@ -132,7 +132,16 @@ export async function POST(request: Request) {
       success: true,
     });
   } catch (error) {
-    console.error("Book a meeting email error:", error);
+    console.error(
+      "Book a meeting email error:",
+      error instanceof Error
+        ? {
+            name: error.name,
+            message: error.message,
+            stack: error.stack,
+          }
+        : error,
+    );
 
     return NextResponse.json(
       {
