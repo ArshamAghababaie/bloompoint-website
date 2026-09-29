@@ -9,15 +9,6 @@ export async function POST(request: Request) {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
-    console.log("KEY DEBUG", {
-      exists: !!resendApiKey,
-      length: resendApiKey?.length,
-      startsWithRe: resendApiKey?.startsWith("re_"),
-      hasWhitespace: /\s/.test(resendApiKey ?? ""),
-      hasQuotes: /["']/.test(resendApiKey ?? ""),
-      last4: resendApiKey?.slice(-4),
-    });
-
     const resend = new Resend(resendApiKey);
 
     const requestData = await request.json();
