@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
     const resend = new Resend(resendApiKey);
 
-    const data = await request.json();
+    const requestData = await request.json();
 
     const {
       name,
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       selectedNeeds,
       otherProblem,
       otherNeed,
-    } = data;
+    } = requestData;
 
     if (!name || !email || !purpose) {
       return NextResponse.json(
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
         ? selectedProblems.map((item: string) => `<li>${item}</li>`).join("")
         : "<li>None specified</li>";
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Book A Meeting <noreply@bloompoint.world>",
       to: ["info@bloompoint.world"],
       replyTo: email,
@@ -127,6 +127,20 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+
+    console.log("RESEND RESULT", {
+  data,
+  error: error
+    ? {
+        name: error.name,
+        message: error.message,
+      }
+    : null,
+});
+
+if (error) {
+  throw new Error(`Resend error: ${error.message}`);
+}
 
     return NextResponse.json({
       success: true,
