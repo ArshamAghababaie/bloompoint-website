@@ -13,6 +13,7 @@
   --companies-red: oklch(0.5195 0.1825 23.91); /* MAMMUT - DBST */
   --aseh-gray: oklch(0.5522 0.0179 216.79); /* ASEH */
   --darasiab-green: oklch(0.4586 0.1014 150.23); /* DARASIAB */
+  --restrooms-blue: oklch(0.2871 0.0974 271.05); /* RESTROOMS */
 }
 
 @theme inline {
@@ -29,6 +30,7 @@
   --color-aseh-gray: var(--aseh-gray);
   --color-darasiab-green: var(--darasiab-green);
   --color-nikan-yellow: var(--nikan-yellow);
+  --color-restrooms-blue: var(--restrooms-blue);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

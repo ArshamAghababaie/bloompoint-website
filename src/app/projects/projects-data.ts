@@ -18,7 +18,8 @@ export type ProjectColor =
   | "companies_red"
   | "aseh_gray"
   | "darasiab_green"
-  | "nikan_yellow";
+  | "nikan_yellow"
+  | "restrooms_blue";
 
 export interface ProjectSection1 {
   color: ProjectColor;
@@ -32,9 +33,9 @@ export interface ProjectSection1 {
   };
 
   target?: string;
+  link?: string;
   // clientDescription: string;
   // designatedGroup: string;
-  // link?: string;
 }
 
 export interface ProjectSection2 {
@@ -412,7 +413,7 @@ export const projects: Project[] = [
 
       // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // link: "http://avh.center/",
+      link: "http://avh.center/",
     },
   },
 
@@ -425,8 +426,46 @@ export const projects: Project[] = [
     tagline: "tourism-industry",
     state: "old",
     slug: "restrooms",
-  },
+    overview: `Restrooms Smart Self-Cleaner transforms public restroom management through a smart self-cleaning system, combining technology, hygiene, and user experience to enhance cleanliness, accessibility, and satisfaction for users in public spaces.`,
 
+    section1: {
+      color: "restrooms_blue",
+      clientName: "Municipality / Tourism Authority",
+
+      problem: "Lack of Clean & Accessible Public Restrooms",
+
+      communityLedSolution: "Smart Self-Cleaning Restroom System",
+
+      prototypeOrEcosystem: {
+        label: "Prototype",
+        value: `Restrooms Smart Self-Cleaner`,
+      },
+
+      target: "",
+
+      // clientDescription: "Community-Driven Wellbeing Perspective",
+      // designatedGroup: "Keune Care Club Members",
+      // link: "",
+    },
+
+    section3: {
+      title: "Restrooms Project",
+      images: [
+        "/project-path/restrooms/section3/restrooms_02.jpg",
+        "/project-path/restrooms/section3/restrooms_03.jpg",
+        "/project-path/restrooms/section3/restrooms_06.jpg",
+        "/project-path/restrooms/section3/restrooms_07.jpg",
+        "/project-path/restrooms/section3/restrooms_08.jpg",
+        "/project-path/restrooms/section3/restrooms_09.jpg",
+        "/project-path/restrooms/section3/restrooms_10.jpg",
+        "/project-path/restrooms/section3/restrooms_13.jpg",
+        "/project-path/restrooms/section3/restrooms_14.jpg",
+        "/project-path/restrooms/section3/restrooms_15.jpg",
+        "/project-path/restrooms/section3/restrooms_16.jpg",
+        "/project-path/restrooms/section3/restrooms_18.jpg",
+      ],
+    },
+  },
   {
     id: "6",
     name: "MAMMUT",
@@ -449,7 +488,7 @@ export const projects: Project[] = [
         value: `CFW Project | Consumption | Food | Waste`,
       },
 
-      target: " Industrial Green Management",
+      target: "Industrial Green Management",
       // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
     },
@@ -593,7 +632,7 @@ export const projects: Project[] = [
       target: "Providing a Clubworking Space for C-Levels",
       // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // link: "https://thebahaman.com/",
+      // link: "",
     },
   },
 
@@ -649,6 +688,7 @@ export const projects: Project[] = [
     tagline: "coworking-spaces-communities",
     state: "old",
     slug: "pallet-abad",
+    overview: `Haft-o-Hasht Pallet Abad Community transforms coworking spaces into community hubs, connecting existing businesses through events, talks, and civic visits to foster collaboration, knowledge sharing, and a sense of belonging among professionals.`,
 
     section1: {
       color: "palletabad_orange",
@@ -658,15 +698,13 @@ export const projects: Project[] = [
 
       prototypeOrEcosystem: {
         label: "Prototype",
-        value: `• Events
-        • Talks
-        • Civic Visits`,
+        value: `Events | Talks | Civic Visits`,
       },
 
       target: "Empathy Sharing",
       // clientDescription: "Community-Driven Wellbeing Perspective",
       // designatedGroup: "Keune Care Club Members",
-      // link: "http://patogh.my.canva.site/haftohasht-palletabad-community",
+      link: "http://patogh.my.canva.site/haftohasht-palletabad-community",
     },
 
     // section3: {
@@ -820,9 +858,7 @@ export const projects: Project[] = [
       color: "nikan_yellow",
       clientName: "Nikan Chain Hospitals",
 
-      problem: `• Increasing Awareness
-      • Disease Prevention
-      • A Deeper Connection Between Nikan Hospital & the Public`,
+      problem: `Increasing Awareness | Disease Prevention`,
 
       communityLedSolution: "Building Health Through Community",
 

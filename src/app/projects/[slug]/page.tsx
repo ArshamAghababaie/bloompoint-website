@@ -21,6 +21,7 @@ const colorMap: Record<string, string> = {
   aseh_gray: "oklch(0.5522 0.0179 216.79)",
   darasiab_green: "oklch(0.4586 0.1014 150.23)",
   nikan_yellow: "oklch(0.8372 0.1494 85)",
+  restrooms_blue: "oklch(0.2871 0.0974 271.05)",
   yellow: "oklch(0.8634 0.1657 88.82)",
   green: "#22c55e",
   red: "#ef4444",
@@ -43,6 +44,7 @@ const textColorMap: Record<string, string> = {
   aseh_gray: "text-white",
   darasiab_green: "text-white",
   nikan_yellow: "text-white",
+  restrooms_blue: "text-white",
 };
 
 export function generateStaticParams() {
@@ -89,6 +91,7 @@ export default async function ProjectPage({
           : []),
 
         { label: "Result or Target", value: s1.target },
+        ...(s1.link ? [{ label: "Website", value: s1.link }] : []),
       ]
     : [];
 
@@ -98,10 +101,10 @@ export default async function ProjectPage({
 
       {/* ─── SECTION 1 : Overview ─── */}
       <section
-        className={`sticky top-0 z-0 h-screen ${textColor} flex flex-col`}
+        className={`sticky top-0 z-0 min-h-screen ${textColor} flex flex-col`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className="h-full px-10 md:px-16 lg:px-20 pt-64 pb-16 flex flex-col max-[767px]:px-6 max-[767px]:pt-24 max-[767px]:pb-10">
+        <div className="px-10 md:px-16 lg:px-20 pt-48 pb-16 flex flex-col max-[767px]:px-6 max-[767px]:pt-24 max-[767px]:pb-10">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-x-16">
             {/* Left column: project name + information */}
             <div className="flex flex-col">

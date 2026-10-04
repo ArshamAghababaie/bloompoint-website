@@ -60,8 +60,8 @@ export default function Ongoing() {
       </div>
 
       {/* Projects */}
-      <div className="reveal reveal-delay-3 relative mt-10 px-10 sm:mt-18 sm:px-12 md:mt-20 md:px-10 lg:mt-18 lg:px-12">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3 lg:gap-10">
+      <div className="reveal reveal-delay-3 relative mt-10 px-10 sm:mt-18 sm:px-12 md:mt-20 md:px-10 lg:mt-18 lg:px-32">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3 lg:gap-12">
           {latestProjects.map((project) => {
             const s1 = project.section1;
             const detailRows = s1
